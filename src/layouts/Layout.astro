@@ -16,6 +16,62 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fi_FI" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://vattu-site.vercel.app/#business",
+          "name": "LVI-insinööritoimisto Vattu Oy",
+          "url": "https://vattu-site.vercel.app",
+          "email": "oskari@vattu.fi",
+          "telephone": "+358407656096",
+          "vatID": "FI35626898",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Leineläntie 15 H 39",
+            "postalCode": "01340",
+            "addressLocality": "Vantaa",
+            "addressCountry": "FI"
+          },
+          "areaServed": [
+            { "@type": "State", "name": "Uusimaa" },
+            { "@type": "State", "name": "Pirkanmaa" },
+            { "@type": "State", "name": "Keski-Suomi" }
+          ],
+          "serviceType": [
+            "LVI-suunnittelu",
+            "Energiatodistus",
+            "Energiaselvitys",
+            "Patteriverkoston tasapainotus",
+            "Olosuhde- ja energiasimulointi"
+          ],
+          "employee": {
+            "@type": "Person",
+            "name": "Oskari Vattu",
+            "jobTitle": "LVI-suunnittelija",
+            "sameAs": "https://www.linkedin.com/in/oskari-vattu-517936280/"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/oskari-vattu-517936280/",
+            "https://www.finder.fi/LVI-suunnittelu/LVI-insin%C3%B6%C3%B6ritoimisto+Vattu+Oy/Vantaa/yhteystiedot/4233293"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://vattu-site.vercel.app/#website",
+          "url": "https://vattu-site.vercel.app",
+          "name": "LVI-insinööritoimisto Vattu Oy",
+          "inLanguage": "fi",
+          "publisher": { "@id": "https://vattu-site.vercel.app/#business" }
+        }
+      ]
+    })} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
