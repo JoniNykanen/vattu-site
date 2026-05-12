@@ -1,0 +1,296 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Hääkuvaus",
+  "alternateName": "Ruska Wedding Frames",
+  "serviceType": "Hääkuvaus",
+  "description": "Hääkuvaus ja häävideo koko Suomessa. Joel Nykänen — selkeät paketit, ei ennakkomaksuja.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "Country", "name": "Finland" },
+  "url": "https://ruskamedia.com/haakuvaus/",
+  "offers": [
+    { "@type": "Offer", "name": "Hääpotretit", "price": "500", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Potretit + vihkitilaisuus", "price": "700", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Potretit + vihki + juhla (8h)", "price": "1600", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Koko päivä (12h)", "price": "2000", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Häävideo", "price": "2500", "priceCurrency": "EUR" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Paljonko hääkuvaus maksaa?", "acceptedAnswer": { "@type": "Answer", "text": "Hääkuvauspaketit alkaen 500 € (potrettikuvaus). Koko päivän dokumentaarinen kuvaus (12h) 2 000 €. Häävideo 2 500 €. Matkakulut lisätään kaupungin mukaan." }},
+    { "@type": "Question", "name": "Milloin hääkuvaaja kannattaa varata?", "acceptedAnswer": { "@type": "Answer", "text": "Suosittelemme varaamaan 12–18 kuukautta ennen häitä. Suosituimmat viikonloput täyttyvät nopeasti." }},
+    { "@type": "Question", "name": "Matkustatko Jyväskylän ulkopuolelle?", "acceptedAnswer": { "@type": "Answer", "text": "Kyllä — kuvaan häitä ympäri Suomea. Matkakulut lasketaan lomakkeessa automaattisesti kaupungin mukaan." }},
+    { "@type": "Question", "name": "Onko teillä kirjallinen sopimus?", "acceptedAnswer": { "@type": "Answer", "text": "Aina — kirjallinen sopimus jokaiseen kuvaukseen. Ei yllätyksiä." }},
+    { "@type": "Question", "name": "Mitä jos peruutan hääkuvauksen?", "acceptedAnswer": { "@type": "Answer", "text": "Peruutus on maksuton yli 30 päivää ennen häitä. Ei ennakkovarausmaksua." }},
+    { "@type": "Question", "name": "Toimitetaanko kuvat painetussa muodossa?", "acceptedAnswer": { "@type": "Answer", "text": "Toimitus digitaalisena — korkearesoluutioiset tiedostot verkkolatauslinkin kautta. Painopalvelut voi tilata erikseen." }}
+  ]
+};
+
+const galleryImages = [
+  { src: 'https://ruskamedia.com/wp-content/uploads/2020/04/Haapotrettien-valokuvaus.jpg', alt: 'Hääkuvaus luonnossa' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Tampere.jpg', alt: 'Hääkuvaus Tampere' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Turku.jpg', alt: 'Hääkuvaus Turku' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Häiden-valokuvaus-Helsinki.jpg', alt: 'Hääkuvaus Helsinki' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Lappeenranta.jpg', alt: 'Hääkuvaus Lappeenranta' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Valokuvaus-häihin-hinta.jpg', alt: 'Valokuvaus häihin' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Oulu.jpg', alt: 'Hääkuvaus Oulu' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2020/04/Haavalokuvaus-Joel-Nykanen.jpg', alt: 'Joel Nykänen' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Jyväskylä.jpg', alt: 'Hääkuvaus Jyväskylä' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Häävalokuvausta-koko-Suomessa-Ruska-Media.jpg', alt: 'Häävalokuvausta Suomessa' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2020/04/Valokuvaaja-haihin.jpg', alt: 'Valokuvaaja häihin' },
+  { src: 'https://ruskamedia.com/wp-content/uploads/2022/11/Häävalokuvaaja.jpg', alt: 'Häävalokuvaaja' },
+];
+---
+
+<style>
+  .split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+  }
+  .split-img {
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+  }
+  .split-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+  }
+  .split-text h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .split-text p { font-size: 14px; line-height: 1.8; }
+  .split-text .price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin: 16px 0 24px;
+  }
+
+  @media (max-width: 768px) {
+    .split-section { grid-template-columns: 1fr; }
+    .split-text { padding: 40px 24px; }
+  }
+</style>
+
+<Layout
+  title="Hääkuvaus koko Suomessa — hinnat, paketit & dokumentaarinen hääkuvaus"
+  description="Hääkuvaus ja häävideo koko Suomessa. Dokumentaarinen hääkuvaus, paketit 500–2500€, ei ennakkomaksuja. Ruska Wedding Frames by Joel Nykänen."
+  canonical="https://ruskamedia.com/haakuvaus/"
+  schema={[serviceSchema, faqSchema]}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:600px;">
+    <video autoplay muted loop playsinline aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" style="z-index:0;">
+      <source src="https://ruskamedia.com/wp-content/uploads/2022/11/Ruska-Media-Haakuvaus-Joel-Nykanen.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black" style="opacity:0.55; z-index:1;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:2; margin-top:70px;">
+      <p class="text-gray-400 uppercase tracking-widest" style="font-size:13px; margin-bottom:12px;">Ruska Wedding Frames by Joel Nykänen</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:40px;">Hääkuvaus koko Suomessa</h1>
+      <a href="/varaa/haakuvaus/" class="btn-white" style="margin-top:32px; align-self:center;">
+        Varaa hääkuvaus
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 1: Intro — text left, Joel photo right (dark) -->
+  <div class="split-section" style="background-color:#2c2c2c;">
+    <div class="split-text">
+      <h2 style="color:#fff;">Hääkuvaus – Joel Nykänen</h2>
+      <p style="color:#bbbbbb;">
+        Buukattuanne hääkuvauksen Ruskan kautta minä toimin kuvaajan roolissa. Minulla on takana vuosien kokemus hää-alalta ja kuvaan mieluusti juuri teidänkin häät missä päin Suomea tahansa. Haluan olla joustava enkä veloita minkäänlaisia ennakkovaraus- tai peruutusmaksuja, kunhan kuvaus perutaan yli 30 päivää ennen juhlia. Kuvauksesta tehdään aina kirjallinen sopimus.
+      </p>
+    </div>
+    <div class="split-img" style="background-image:url('https://ruskamedia.com/wp-content/uploads/2024/09/Haakuvaaja-Joel-Nykanen.jpg');"></div>
+  </div>
+
+  <!-- GALLERY -->
+  <section style="background-color:#111; padding:0;">
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px;">
+      {galleryImages.map((img) => (
+        <div style="aspect-ratio:1; overflow:hidden;">
+          <img src={img.src} alt={img.alt}
+            style="width:100%; height:100%; object-fit:cover; filter:grayscale(100%);"
+            loading="lazy"
+            tabindex="0"
+            onmouseover="this.style.filter='grayscale(0%)';"
+            onmouseout="this.style.filter='grayscale(100%)';"
+            onfocus="this.style.filter='grayscale(0%)';"
+            onblur="this.style.filter='grayscale(100%)';" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PACKAGE 1: image left, text right (dark) -->
+  <div class="split-section" style="background-color:#2c2c2c;">
+    <div class="split-img" style="background-image:url('https://ruskamedia.com/wp-content/uploads/2024/09/Ruska-Media-Haapotretit.jpg');"></div>
+    <div class="split-text">
+      <h2 style="color:#fff;">Hääkuvaus – Potretit</h2>
+      <p class="price" style="color:#fff;">500€ sis. alv.</p>
+      <p style="color:#bbbbbb;">Potrettikuvaus asiakkaan toivomassa miljöössä.</p>
+      <a href="/varaa/haakuvaus/" class="btn-white" style="margin-top:24px;">Varaa tämä paketti</a>
+    </div>
+  </div>
+
+  <!-- PACKAGE 2: text left, image right (white) -->
+  <div class="split-section" style="background-color:#fff;">
+    <div class="split-text">
+      <h2 style="color:#1a1a1a;">Hääkuvaus – Potretit + vihkitilaisuus</h2>
+      <p class="price" style="color:#1a1a1a;">700€ sis. alv.</p>
+      <p style="color:#555;">Potrettikuvaus asiakkaan toivomassa miljöössä sekä vihkitilaisuuden kuvaus.</p>
+      <a href="/varaa/haakuvaus/" class="btn-dark">Varaa tämä paketti</a>
+    </div>
+    <div class="split-img" style="background-image:url('https://ruskamedia.com/wp-content/uploads/2024/09/Ruska-Media-Vihkitilaisuuden-valokuvaus.jpg');"></div>
+  </div>
+
+  <!-- PACKAGE 3: image left, text right (dark) -->
+  <div class="split-section" style="background-color:#2c2c2c;">
+    <div class="split-img" style="background-image:url('https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaaja-Ruska-Media.jpg');"></div>
+    <div class="split-text">
+      <h2 style="color:#fff;">Hääkuvaus – Potretit + vihkitilaisuus + juhla (8h)</h2>
+      <p class="price" style="color:#fff;">1600€ sis. alv.</p>
+      <p style="color:#bbbbbb;">Potrettikuvaus ja/tai esim first lookit asiakkaan toivomassa miljöössä sekä vihkitilaisuuden kuvaus ja juhla.</p>
+      <a href="/varaa/haakuvaus/" class="btn-white" style="margin-top:24px;">Varaa tämä paketti</a>
+    </div>
+  </div>
+
+  <!-- PACKAGE 4: text left, image right (white) -->
+  <div class="split-section" style="background-color:#fff;">
+    <div class="split-text">
+      <h2 style="color:#1a1a1a;">Hääkuvaus – Koko päivän dokumentaarinen kuvaus (12h)</h2>
+      <p class="price" style="color:#1a1a1a;">2000€ sis. alv.</p>
+      <p style="color:#555;">Koko päivän paketti sisältäen kaiken hääparin toivoman kuten esim aamun valmistelut, first lookit, hääpotretit, vihkitilaisuuden ja juhlan kuvaamisen.</p>
+      <a href="/varaa/haakuvaus/" class="btn-dark">Varaa tämä paketti</a>
+    </div>
+    <div class="split-img" style="background-image:url('https://ruskamedia.com/wp-content/uploads/2025/12/Dokumentaarinen-haakuvaus-valmistautuminen.jpg');"></div>
+  </div>
+
+  <!-- PACKAGE 5: Häävideo — text left, 2 YouTube right (dark) -->
+  <div id="lomake" class="split-section" style="background-color:#2c2c2c; grid-template-columns:1fr 2fr;">
+    <div class="split-text">
+      <h2 style="color:#fff;">Häävideo</h2>
+      <p class="price" style="color:#fff;">2500€ sis. alv.</p>
+      <p style="color:#bbbbbb;">Häävideo ikuistaa tärkeän päivänne liikkuvan kuvan muodossa. Teemme noin viiden minuutin mittaisia elokuvamaisia koostevideoita koko hääpäivän tapahtumista.</p>
+      <a href="/varaa/haakuvaus/" class="btn-white" style="margin-top:24px;">Varaa tämä paketti</a>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px; padding:40px;">
+      <div style="position:relative; width:100%; padding-top:56.25%;">
+        <iframe
+          src="https://www.youtube.com/embed/Tstd8wvHNj0"
+          title="Vilma & Matti – Wedding Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+          style="position:absolute; inset:0; width:100%; height:100%;"
+        ></iframe>
+      </div>
+      <div style="position:relative; width:100%; padding-top:56.25%; margin-top:8px;">
+        <iframe
+          src="https://www.youtube.com/embed/wMdREX4vKvc"
+          title="Anna & Hannu – Wedding Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+          style="position:absolute; inset:0; width:100%; height:100%;"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOIMITUSALUE — kaupunkilinkit -->
+  <section style="background-color:#1a1a1a; padding:60px 20px; text-align:center;">
+    <div style="max-width:700px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-4" style="font-size:20px;">Kuvaan häitä ympäri Suomea</h2>
+      <p style="color:#999; font-size:14px; margin-bottom:32px;">Katso kaupunkikohtaiset sivut matkakuluineen:</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="/haakuvaus/jyvaskyla/" class="btn-ghost">Hääkuvaus Jyväskylä</a>
+        <a href="/haakuvaus/tampere/" class="btn-ghost">Hääkuvaus Tampere</a>
+        <a href="/haakuvaus/helsinki/" class="btn-ghost">Hääkuvaus Helsinki</a>
+        <a href="/haakuvaus/turku/" class="btn-ghost">Hääkuvaus Turku</a>
+        <a href="/haakuvaus/oulu/" class="btn-ghost">Hääkuvaus Oulu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOKUMENTAARINEN HÄÄKUVAUS -->
+  <section style="background-color:#1a1a1a; padding:70px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#666; font-family:'Dosis',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; margin-bottom:12px;">Tyylilaji</p>
+      <h2 class="font-heading text-white uppercase tracking-widest" style="font-size:22px; margin-bottom:24px;">Dokumentaarinen hääkuvaus</h2>
+      <p style="color:#bbb; font-size:15px; line-height:1.9; max-width:640px; margin:0 auto 32px;">
+        Dokumentaarinen hääkuvaus tarkoittaa, että kuvaaja seuraa hääpäivän kulkua luonnollisesti ilman lavastettuja tilanteita. En ohjaa poseerauksia — tallennan aidot tunteet, katseet ja hetket sellaisina kuin ne tapahtuvat. Lopputulos on rehellinen ja ajaton.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; max-width:640px; margin:0 auto 40px;">
+        {['Ei lavastettuja tilanteita', 'Aito tunnelma tallennettuna', 'Huomaamaton läsnäolo', 'Kestää katsomista vuosikymmeniä'].map(p => (
+          <div style="background:#222; border-radius:4px; padding:16px; border-left:2px solid #fd8c03;">
+            <p style="color:#ccc; font-family:'Dosis',sans-serif; font-size:13px;">{p}</p>
+          </div>
+        ))}
+      </div>
+      <a href="/varaa/haakuvaus/" class="btn-white">Varaa dokumentaarinen hääkuvaus</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#111; padding:60px 20px;" class="faq">
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Paljonko hääkuvaus maksaa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Potrettikuvaus alkaa 500 eurosta, koko päivän dokumentaarinen kuvaus (12 tuntia) on 2 000 €, häävideo 2 500 €. Matkakulut lasketaan sijainnin mukaan — ne näkyvät varauslomakkeessa.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Milloin hääkuvaaja kannattaa varata?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">12–18 kuukautta etukäteen on realistinen suositus. Kesäkuun ja elokuun lauantait menevät ensimmäisinä — joskus kaksi vuotta etukäteen.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Matkustatko Jyväskylän ulkopuolelle?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kyllä. Olen kuvannut ympäri Suomea, eikä se ole ongelma. Matkakulut lasketaan kaupungin mukaan — ne näkyvät varauslomakkeessa automaattisesti.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Onko teillä kirjallinen sopimus?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Aina. Jokainen kuvaus tehdään kirjallisella sopimuksella — molempien etu.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Mitä jos peruutan hääkuvauksen?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Jos peruutat yli 30 päivää ennen häitä, ei makseta mitään. Ei ennakkovarausmaksua, ei peruutusmaksua. En halua tehdä varautumisesta stressaavaa.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Toimitetaanko kuvat painetussa muodossa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kuvat toimitetaan digitaalisena — korkearesoluutioiset tiedostot latauslinkin kautta. Painopalvelut onnistuvat erikseen tarpeen mukaan.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color:#111; padding:60px 20px; text-align:center;">
+    <div style="max-width:600px; margin:0 auto;">
+      <h3 class="font-heading text-white uppercase tracking-widest mb-4" style="font-size:18px;">
+        Etsitkö esiintyjää häihisi? Tutustu Ruska Eventin DJ-palveluihin.
+      </h3>
+      <p style="color:#888; font-size:14px; margin-bottom:32px;">
+        Katso valmiiksi räätälöidyt DJ-paketit hintoineen ja varaa kätevästi painamalla tästä
+      </p>
+      <a href="https://ruskaevent.com/" class="btn-white">Ruska Event</a>
+    </div>
+  </section>
+
+</Layout>

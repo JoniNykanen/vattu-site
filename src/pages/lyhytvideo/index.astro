@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Lyhytvideot yrityksille",
+  "serviceType": "Lyhytvideotuotanto",
+  "description": "Lyhytvideot yrityksille TikTokiin, Instagram Reelsiin ja YouTube Shortsiin — kampanjakuvaukset ja kuukausipaketit.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "Country", "name": "Finland" },
+  "url": "https://ruskamedia.com/lyhytvideo/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Paljonko lyhytvideot maksavat?", "acceptedAnswer": { "@type": "Answer", "text": "Kampanjakuvaus (1 päivä, 5–8 valmista lyhytvideota) alkaen 1 200 €. Kuukausipaketti S (4 videota/kk) alkaen 890 €/kk, paketti M (8 videota/kk) alkaen 1 600 €/kk. Pyydä tarjous niin räätälöidään teille sopiva kokonaisuus." }},
+    { "@type": "Question", "name": "Missä kuvaatte?", "acceptedAnswer": { "@type": "Answer", "text": "Jyväskylässä ja koko Suomessa. Kuvauspalkkio sisältää matkakulut Jyväskylän sisällä — muualle km-korvaus." }},
+    { "@type": "Question", "name": "Kuinka nopeasti valmistuu?", "acceptedAnswer": { "@type": "Answer", "text": "Tyypillisesti 1–2 viikkoa kuvauksesta toimitukseen." }},
+    { "@type": "Question", "name": "Toimiiko lyhytvideo B2B-yrityksille?", "acceptedAnswer": { "@type": "Answer", "text": "Kyllä — LinkedIn-videot ja YouTube Shorts toimivat erinomaisesti myös B2B-markkinoinnissa." }}
+  ]
+};
+---
+<Layout
+  title="Lyhytvideot yrityksille — TikTok, Reels & Shorts | Ruska Media"
+  description="Tuotamme lyhytvideot yrityksille someen — TikTok, Instagram Reels ja YouTube Shorts. Kampanjakuvaukset ja kuukausipaketit. Jyväskyläläinen videotuotantotiimi, koko Suomi."
+  canonical="https://ruskamedia.com/lyhytvideo/"
+  schema={[serviceSchema, faqSchema]}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:600px; background-image:url('https://ruskamedia.com/wp-content/uploads/2025/08/Ruska-Media-Lyhytvideot.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.6;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">TikTok · Instagram Reels · YouTube Shorts</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:40px;">Lyhytvideot yrityksille</h1>
+      <p class="text-gray-300 mt-4" style="font-size:17px; font-weight:100; max-width:560px;">Someen suunniteltuja lyhytvideot — nopeita, tyylikkäitä ja aidosti koukuttavia.</p>
+      <a href="/tiimi-yhteystiedot" class="btn-white" style="margin-top:32px; align-self:center;">
+        Kysy tarjous
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbb; font-size:15px; line-height:1.9;">
+        Some palkitsee säännöllisyyttä, ei täydellisyyttä. Yritys joka julkaisee neljä hyvää lyhytvideota kuukaudessa näkyy enemmän kuin yritys joka julkaisee yhden täydellisen videon vuodessa. Ruska Media tuottaa lyhytvideot suunnitellusti ja toistuvasti — niin että teidän ei tarvitse miettiä sisältöä, vaan vain liiketoimintaa.
+      </p>
+    </div>
+  </section>
+
+  <!-- MITÄ LYHYTVIDEO TEKEE -->
+  <section style="background-color:#222; padding:70px 20px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-12" style="font-size:20px; text-align:center;">Näy siellä missä asiakkaasi ovat</h2>
+      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0;">
+        {[
+          ['Tavoittavuus', 'Algoritmit suosivat lyhytvideoita — orgaaninen näkyvyys kasvaa ilman mainosbudjettia.'],
+          ['Luottamus', 'Kasvo, ääni ja tarina rakentavat luottamuksen nopeammin kuin teksti tai kuva yksin.'],
+          ['Tehokkuus', 'Yksi kuvauspäivä tuottaa 5–8 valmista videota — behind-the-scenes, tuote-esittelyt ja mainokset.'],
+          ['Skaalautuvuus', 'Toimii kaikenkokoisille yrityksille — ei vaadita isoa budjettia, vaan säännöllisyyttä.'],
+        ].map(([otsikko, teksti]) => (
+          <div style="padding:32px 36px; border-top:1px solid rgba(255,255,255,0.07); border-right:1px solid rgba(255,255,255,0.07);">
+            <div style="font-family:'Dosis',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:#fd8c03; margin-bottom:10px;">{otsikko}</div>
+            <p style="color:#aaa; font-size:14px; line-height:1.8; margin:0;">{teksti}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MITÄ TUOTAMME -->
+  <section style="background-color:#1a1a1a; padding:70px 20px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-12" style="font-size:20px; text-align:center;">Mitä tuotamme</h2>
+      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;">
+        {[
+          ['TikTok-videot', '15–60 sek, vertikaalinen formaatti. TikTok palkitsee trendeissä mukana olevaa sisältöä — orgaaninen tavoittavuus voi olla huomattava ilman mainontaa.'],
+          ['Instagram Reels', '15–90 sek. Esteettisempi ja brändilähtöisempi kuin TikTok — toimii erityisen hyvin olemassa olevan seuraajakunnan sitouttamisessa.'],
+          ['YouTube Shorts', 'Alle 60 sek. Pitkäikäisempi kuin muut alustat — Shorts-video voi tuoda katseluja vielä vuosien päästä julkaisusta.'],
+          ['LinkedIn-videot', 'B2B-yrityksille ja rekrytointiin. LinkedIn-videoilla on korkea sitoutumisaste ammatillisessa kohderyhmässä — erottuu tekstipostauksista selvästi.'],
+        ].map(([otsikko, teksti]) => (
+          <div style="padding:28px 28px 24px; border-top:2px solid #fd8c03;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">{otsikko}</h3>
+            <p style="color:#888; font-size:14px; line-height:1.75; margin:0;">{teksti}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSESSI -->
+  <section style="background-color:#111; padding:60px 20px;">
+    <div style="max-width:700px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-10" style="font-size:20px; text-align:center;">Prosessi</h2>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        {[
+          ['Brief', 'Käydään läpi tavoite, kohderyhmä ja kanavat.'],
+          ['Kuvaukset', '1 päivä, useita klippejä — Jyväskylässä tai teidän tiloissanne.'],
+          ['Editointi', 'Tekstit, musiikki, alaotsikot, formaatti per kanava.'],
+          ['Toimitus', 'Valmiit tiedostot oikeissa formaateissa — TikTok, Reels, Shorts.'],
+        ].map(([vaihe, kuvaus], i) => (
+          <div style="display:flex; gap:24px; align-items:flex-start;">
+            <div style="min-width:36px; height:36px; background-color:#2c2c2c; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fd8c03; font-family:'Dosis',sans-serif; font-weight:700; font-size:14px; flex-shrink:0;">{i + 1}</div>
+            <div>
+              <div style="color:#fff; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">{vaihe}</div>
+              <div style="color:#999; font-size:14px; line-height:1.7;">{kuvaus}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HINNOITTELU -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-2" style="font-size:20px; text-align:center;">Hinnoittelu</h2>
+      <p style="color:#888; font-size:14px; text-align:center; margin-bottom:40px;">Yritykset tilaavat lyhytvideot pakettina — ei yksittäisiä videoita.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+        {[
+          {
+            nimi: 'Kampanjakuvaus',
+            kuvaus: '1 kuvauspäivä, 5–8 valmista lyhytvideota. Editointi, tekstit ja musiikki mukana. Sopii lanseerauksiin ja kampanjoihin.',
+            hinta: 'alkaen 1 200 €',
+            cta: false,
+          },
+          {
+            nimi: 'Kuukausipaketti S',
+            kuvaus: '4 lyhytvideota kuukaudessa. Jatkuva julkaisurytmi someen. Sopii yrityksille jotka haluavat pysyä näkyvillä.',
+            hinta: 'alkaen 890 € / kk',
+            cta: true,
+          },
+          {
+            nimi: 'Kuukausipaketti M',
+            kuvaus: '8 lyhytvideota kuukaudessa. Monipuolinen sisältöstrategia — useampi kanava ja formaatti.',
+            hinta: 'alkaen 1 600 € / kk',
+            cta: false,
+          },
+        ].map(p => (
+          <a href="/varaa/lyhytvideo" aria-label={`Varaa ${p.nimi}`} class="pricing-card" style={`background-color:#2a2a2a; border-radius:4px; padding:28px 28px 24px; gap:12px; ${p.cta ? 'border-top:3px solid #fd8c03;' : 'border-top:3px solid #2a2a2a;'}`}>
+            <div style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">{p.nimi}</div>
+            <div style="color:#999; font-size:14px; line-height:1.75; flex:1;">{p.kuvaus}</div>
+            <div style="color:#fd8c03; font-family:'Dosis',sans-serif; font-size:16px; font-weight:700; margin-top:4px;">{p.hinta}</div>
+          </a>
+        ))}
+      </div>
+      <p style="color:#666; font-size:12px; text-align:center; margin-top:24px; text-transform:uppercase; letter-spacing:0.1em;">Kaikki hinnat sis. ALV 0 % — tarjous räätälöidään tarpeen mukaan</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;" class="faq">
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Paljonko lyhytvideot maksavat?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kampanjakuvaus yhdeltä päivältä (5–8 videota) alkaa 1 200 eurosta. Kuukausipaketti S alkaa 890 €/kk, paketti M 1 600 €/kk. Jos tarve on jotain muuta, kerro — räätälöidään.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Missä kuvaatte?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Jyväskylässä ja tarvittaessa koko Suomessa. Jyväskylän sisällä matkakuluja ei tule — muualle lisätään km-korvaus.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Kuinka nopeasti valmistuu?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Yleensä 1–2 viikkoa kuvauspäivästä valmiiseen videoon. Kiireellisistä projekteista voidaan sopia erikseen.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Toimiiko lyhytvideo B2B-yrityksille?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kyllä. LinkedIn ja YouTube Shorts toimivat hyvin myös B2B:ssä — ostaja on silti ihminen, ei yritys.</p>
+      </details>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="/tiimi-yhteystiedot" class="btn-white">Kysy tarjous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

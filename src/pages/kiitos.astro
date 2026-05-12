@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Kiitos yhteydenotosta — Ruska Media"
+  description="Kiitos! Olemme vastaanottaneet lomakkeesi ja otamme yhteyttä 1–2 arkipäivässä."
+  canonical="https://ruskamedia.com/kiitos/"
+  noindex={true}
+>
+
+  <section style="background-color:#111; min-height:90vh; display:flex; align-items:center; justify-content:center; padding:80px 20px; text-align:center;">
+    <div style="max-width:560px;">
+
+      <!-- Ikoni -->
+      <div style="width:72px; height:72px; background-color:#1e1e1e; border:1px solid #2a2a2a; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 32px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <p style="font-family:'Dosis',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; color:#666; margin-bottom:16px;">Ruska Media</p>
+
+      <h1 class="font-heading text-white font-normal" style="font-size:36px; margin-bottom:20px; line-height:1.2;">
+        Kiitos yhteydenotosta!
+      </h1>
+
+      <p style="color:#888; font-size:15px; font-family:'Dosis',sans-serif; line-height:1.8; margin-bottom:40px;">
+        Olemme vastaanottaneet lomakkeesi. Palaamme sinulle <strong style="color:#ccc;">1–2 arkipäivän sisällä</strong> sähköpostitse tai puhelimitse.
+      </p>
+
+      <div style="background-color:#1a1a1a; border:1px solid #2a2a2a; border-radius:4px; padding:28px; margin-bottom:40px; text-align:left;">
+        <p style="font-family:'Dosis',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; color:#666; margin-bottom:16px;">Yhteystiedot</p>
+        <p style="font-family:'Dosis',sans-serif; font-size:14px; color:#aaa; margin-bottom:8px;">
+          Joel Nykänen — <a href="mailto:joel@ruskamedia.com" style="color:#fff; text-decoration:none;">joel@ruskamedia.com</a>
+        </p>
+        <p style="font-family:'Dosis',sans-serif; font-size:14px; color:#aaa;">
+          <a href="tel:+358405369809" style="color:#fff; text-decoration:none;">040 536 9809</a>
+        </p>
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="/" class="btn-white">Etusivulle</a>
+        <a href="/haakuvaus/" class="btn-ghost">Hääkuvaus</a>
+        <a href="/asunto-ja-kiinteistokuvaus/" class="btn-ghost">Kiinteistökuvaus</a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

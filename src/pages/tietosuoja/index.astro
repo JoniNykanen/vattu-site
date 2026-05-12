@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Tietosuojaseloste — Ruska Media"
+  description="Ruska Tuotanto Oy:n tietosuojaseloste. Henkilötietolain ja EU:n GDPR-asetuksen mukainen rekisteri- ja tietosuojaseloste."
+  canonical="https://ruskamedia.com/tietosuoja/"
+  noindex={true}
+>
+
+  <!-- HERO -->
+  <section style="background-color:#111; padding:100px 20px 60px; text-align:center; border-bottom:1px solid #1e1e1e;">
+    <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:32px; margin-bottom:12px;">Tietosuojaseloste</h1>
+    <p style="color:#666; font-size:13px; font-family:'Dosis',sans-serif; text-transform:uppercase; letter-spacing:0.15em;">Ruska Tuotanto Oy — päivitetty 01.05.2026</p>
+  </section>
+
+  <!-- SISÄLTÖ -->
+  <section style="background-color:#1a1a1a; padding:80px 20px;">
+    <div style="max-width:760px; margin:0 auto;">
+
+      <p style="color:#888; font-size:14px; line-height:1.8; margin-bottom:48px; font-family:'Dosis',sans-serif;">
+        Tämä on Yrityksen henkilötietolain (10 ja 24 §) ja EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 01.05.2026.
+      </p>
+
+      {[
+        {
+          otsikko: 'Rekisterinpitäjä',
+          teksti: 'Ruska Tuotanto Oy (Y-tunnus: 2979966-1)\nTiilitehtaantie 60 A15, 40270 Jyväskylä'
+        },
+        {
+          otsikko: 'Rekisteristä vastaava yhteyshenkilö',
+          teksti: 'Panu Porki\npanu@ruskamedia.com'
+        },
+        {
+          otsikko: 'Rekisterin nimi',
+          teksti: 'Ruska Tuotanto Oy:n asiakas- ja markkinointirekisteri'
+        },
+        {
+          otsikko: 'Oikeusperuste ja henkilötietojen käsittelyn tarkoitus',
+          teksti: 'EU:n yleisen tietosuoja-asetuksen mukainen oikeusperuste henkilötietojen käsittelylle on henkilön suostumus (dokumentoitu, vapaaehtoinen, yksilöity, tietoinen ja yksiselitteinen) tai sopimus, jossa rekisteröity on osapuolena.\n\nHenkilötietojen käsittelyn tarkoitus on yhteydenpito asiakkaisiin, asiakassuhteen ylläpito ja markkinointi. Tietoja ei käytetä automatisoituun päätöksentekoon tai profilointiin.'
+        },
+        {
+          otsikko: 'Rekisterin tietosisältö',
+          teksti: 'Rekisteriin tallennettavia tietoja ovat: henkilön nimi, asema, yritys/organisaatio, yhteystiedot (puhelinnumero, sähköpostiosoite, osoite), www-sivustojen osoitteet, verkkoyhteyden IP-osoite, tiedot tilatuista palveluista ja niiden muutoksista, laskutustiedot sekä muut asiakassuhteeseen ja tilattuihin palveluihin liittyvät tiedot.'
+        },
+        {
+          otsikko: 'Säännönmukaiset tietolähteet',
+          teksti: 'Rekisteriin tallennettavat tiedot saadaan asiakkaalta mm. www-lomakkeilla lähetetyistä viesteistä, sähköpostitse, puhelimitse, sosiaalisen median palvelujen kautta, sopimuksista, asiakastapaamisista ja muista tilanteista, joissa asiakas luovuttaa tietojaan.'
+        },
+        {
+          otsikko: 'Tietojen luovutus ja siirto EU:n tai ETA:n ulkopuolelle',
+          teksti: 'Tietoja ei luovuteta säännönmukaisesti muille tahoille. Tietoja voidaan julkaista siltä osin kuin niin on sovittu asiakkaan kanssa. Tietoja ei siirretä Euroopan Unionin ulkopuolelle, ellei se ole Ruska Tuotanto Oy:n tai sen yhteistyökumppanin teknisen toteutuksen varmistamiseksi tarpeellista.'
+        },
+        {
+          otsikko: 'Rekisterin suojauksen periaatteet',
+          teksti: 'Rekisterin käsittelyssä noudatetaan huolellisuutta ja tietojärjestelmien avulla käsiteltävät tiedot suojataan asianmukaisesti. Rekisterinpitäjä huolehtii siitä, että tallennettuja tietoja sekä palvelimien käyttöoikeuksia käsitellään luottamuksellisesti ja vain niiden työntekijöiden toimesta, joiden työnkuvaan se kuuluu.'
+        },
+        {
+          otsikko: 'Oikeus oman tiedon tarkistukseen',
+          teksti: 'Jokaisella rekisterissä olevalla henkilöllä on oikeus tarkistaa rekisteriin tallennetut tietonsa ja vaatia mahdollisen virheellisen tiedon korjaamista tai puutteellisen tiedon täydentämistä. Pyyntö tulee lähettää kirjallisesti rekisterinpitäjälle. Rekisterinpitäjä vastaa EU:n tietosuoja-asetuksessa säädetyssä ajassa (pääsääntöisesti kuukauden kuluessa).'
+        },
+        {
+          otsikko: 'Muut oikeudet omaan tietoon',
+          teksti: 'Rekisterissä olevalla henkilöllä on oikeus pyytää häntä koskevien henkilötietojen poistamiseen rekisteristä ("oikeus tulla unohdetuksi"). Rekisteröidyillä on myös muut EU:n yleisen tietosuoja-asetuksen mukaiset oikeudet, kuten henkilötietojen käsittelyn rajoittaminen tietyissä tilanteissa. Pyynnöt tulee lähettää kirjallisesti rekisterinpitäjälle.'
+        },
+      ].map(({ otsikko, teksti }) => (
+        <div style="margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid #2a2a2a;">
+          <h2 style="color:#fff; font-family:'Dosis',sans-serif; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:14px;">{otsikko}</h2>
+          {teksti.split('\n\n').map(kappale => (
+            <p style="color:#999; font-size:14px; line-height:1.9; margin-bottom:12px; white-space:pre-line;">{kappale}</p>
+          ))}
+        </div>
+      ))}
+
+      <div style="margin-top:16px; padding:20px 24px; background:#111; border-radius:4px; border-left:2px solid #fd8c03;">
+        <p style="color:#888; font-size:13px; font-family:'Dosis',sans-serif; line-height:1.7;">
+          Rekisterinpitäjä: <strong style="color:#ccc;">Ruska Tuotanto Oy</strong> —
+          <a href="mailto:panu@ruskamedia.com" style="color:#fd8c03; text-decoration:none;">panu@ruskamedia.com</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

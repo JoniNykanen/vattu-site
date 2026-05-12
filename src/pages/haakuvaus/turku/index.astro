@@ -1,0 +1,142 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://ruskamedia.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Hääkuvaus", "item": "https://ruskamedia.com/haakuvaus/" },
+    { "@type": "ListItem", "position": 3, "name": "Hääkuvaus Turku", "item": "https://ruskamedia.com/haakuvaus/turku/" }
+  ]
+};
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Hääkuvaus Turku",
+  "alternateName": "Ruska Wedding Frames",
+  "serviceType": "Hääkuvaus",
+  "description": "Hääkuvaus Turussa — Joel Nykänen kuvaa häät dokumentaarisesti. Turku, saaristo ja Varsinais-Suomi.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "City", "name": "Turku" },
+  "url": "https://ruskamedia.com/haakuvaus/turku/"
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Kauanko matka Turkuun kestää?", "acceptedAnswer": { "@type": "Answer", "text": "Jyväskylästä Turkuun on noin 2,5–3 tuntia. Matkakulut lasketaan tarjoukseen." }},
+    { "@type": "Question", "name": "Milloin hääkuvaaja kannattaa varata Turkuun?", "acceptedAnswer": { "@type": "Answer", "text": "12–18 kuukautta etukäteen. Turun saaristo ja historialliset kohteet ovat haluttuja — varaa hyvissä ajoin." }},
+    { "@type": "Question", "name": "Kuvaatko myös Turun saaristossa?", "acceptedAnswer": { "@type": "Answer", "text": "Kyllä. Saaristohäät ovat yksi suosikeistani — valo on siellä poikkeuksellisen hyvä. Venekyydit ja majoitukset sovitaan erikseen." }}
+  ]
+};
+const schema = [breadcrumbSchema, serviceSchema, faqSchema];
+---
+<Layout
+  title="Hääkuvaus Turku — Ruska Wedding Frames by Joel Nykänen"
+  description="Hääkuvaus Turussa — Joel Nykänen kuvaa häät dokumentaarisesti. Selkeät paketit, ei ennakkomaksuja. Varaa päiväsi."
+  canonical="https://ruskamedia.com/haakuvaus/turku/"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:500px; background-image:url('https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Turku.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.55;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Ruska Wedding Frames by Joel Nykänen</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:38px;">Hääkuvaus Turku</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbb; font-size:15px; line-height:1.9;">
+        Turussa on jotain erityistä — Aurajoki, linna, arkkipelago ja se merenläheinen tunnelma, jota ei muualta Suomesta löydy samanlaisena. Olen kuvannut Turussa häitä myös Porissa ja lähikunnissa. Matka on pitkä, noin 3 tuntia Jyväskylästä, joten kuvauspäivä suunnitellaan tarkkaan. Jos häät ovat sekä Tampereella että Turussa eri viikonloppuina, pystyy molemmat hoitamaan yhden matkan aikana. Matkakulut lisätään tarjoukseen rehellisesti.
+      </p>
+    </div>
+  </section>
+
+  <!-- SIJAINNIT -->
+  <section style="background-color:#111; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest" style="font-size:18px; text-align:center; margin-bottom:36px;">Turun upeat kuvausmaisemat</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        {[
+          ['Turun linna', 'Historiallinen miljöö ja dramaattinen tausta — linna antaa häille kerroksisuutta ja ajattomuutta.'],
+          ['Aurajoen rantabulevardit', 'Kaupungin sydän, romanttinen kävely veden äärellä. Toimii päivässä ja vielä paremmin illassa.'],
+          ['Ruissalo', 'Luontosaari aivan kaupungin vieressä — metsä, meri ja rauha. Tunnelma on täysin erilainen kuin kaupungissa.'],
+          ['Turun tuomiokirkko', 'Arvokas perinteinen tausta — klassinen valinta vihkimispaikaksi tai potrettien taustaksi.'],
+          ['Saaristo', 'Jos haluaa veneen ja avoimen meren — Turun saaristo on ainutlaatuinen. Järjestelyt sovitaan etukäteen.'],
+        ].map(([nimi, kuvaus]) => (
+          <div style="border-left:2px solid #fd8c03; padding-left:18px;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">{nimi}</h3>
+            <p style="color:#888; font-size:13px; line-height:1.7;">{kuvaus}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section style="background-color:#111; padding:0;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px;">
+      {[
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Turku.jpg', 'Hääkuvaus Turussa — Ruska Media'],
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Oulu.jpg', 'Hääkuvaus luonnossa — Joel Nykänen'],
+        ['https://ruskamedia.com/wp-content/uploads/2020/04/Valokuvaaja-haihin.jpg', 'Valokuvaaja häihin — Ruska Media'],
+      ].map(([src, alt]) => (
+        <div style="aspect-ratio:1; overflow:hidden;">
+          <img src={src} alt={alt} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PAKETIT -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:20px;">Hääkuvauspaketit</h2>
+      <p style="color:#999; font-size:14px; margin-bottom:32px;">Paketit 500 € – 2 500 €. Matkakulut Turkuun lisätään tarjoukseen.</p>
+      <a href="/haakuvaus/" class="btn-outline">Katso kaikki hääkuvauspaketit</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#111; padding:60px 20px;" class="faq">
+    <div style="max-width:700px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä — Turku</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Mitä hääkuvaus maksaa Turussa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Paketit pysyvät samoina riippumatta kaupungista — potrettikuvaus 500 €, koko päivä (12h) 2 000 €, häävideo 2 500 €. Matkakulut Turkuun lisätään päälle.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Milloin hääkuvaaja kannattaa varata Turkuun?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">12–18 kuukautta etukäteen. Turun saaristo ja historialliset kohteet ovat haluttuja — varaa hyvissä ajoin.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Kuvaatko myös Turun saaristossa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kyllä. Saaristohäät ovat yksi suosikeistani — valo on siellä poikkeuksellisen hyvä. Venekyydit ja majoitukset sovitaan erikseen.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color:#1a1a1a; padding:60px 20px; text-align:center;">
+    <div style="max-width:500px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:18px;">Varaa hääkuvaus Turussa</h2>
+      <a href="/varaa/haakuvaus/?kaupunki=Turku" class="btn-white">Varaa hääkuvaus</a>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section style="background-color:#111; padding:30px 20px; text-align:center;">
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; font-family:'Dosis',sans-serif; font-size:13px;">
+      <a href="/haakuvaus/" class="btn-ghost">Hääkuvaus koko Suomessa</a>
+      <a href="/haakuvaus/jyvaskyla/" class="btn-ghost">Hääkuvaus Jyväskylä</a>
+      <a href="/haakuvaus/tampere/" class="btn-ghost">Hääkuvaus Tampere</a>
+      <a href="/haakuvaus/helsinki/" class="btn-ghost">Hääkuvaus Helsinki</a>
+    </div>
+  </section>
+
+</Layout>

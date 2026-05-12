@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Pyydä tarjous — Valokuvaus yrityksille | Ruska Media"
+  description="Pyydä tarjous yrityskuvauksesta, henkilökuvauksesta tai markkinointikuvauksesta. Täytä lomake niin otamme yhteyttä."
+  canonical="https://ruskamedia.com/varaa/valokuvaus/"
+  noindex={true}
+>
+  <section style="background-color:#111; padding:100px 20px 60px; text-align:center; border-bottom:1px solid #1e1e1e;">
+    <p style="font-family:'Dosis',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; color:#666; margin-bottom:12px;">Ruska Media</p>
+    <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:32px; margin-bottom:16px; text-wrap:balance;">Pyydä tarjous — Valokuvaus</h1>
+    <p style="color:#888; font-size:14px; font-family:'Dosis',sans-serif; max-width:480px; margin:0 auto;">Kerro tarpeestasi ja saat tarjouksen 1–2 arkipäivässä.</p>
+  </section>
+
+  <section style="background-color:#111; padding:60px 0 80px;">
+    <div style="max-width:680px; margin:0 auto; padding:0 20px;">
+      <form method="POST" action="/api/varaus/valokuvaus">
+
+        <div style="margin-bottom:32px;">
+          <h3 style="font-family:'Dosis',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:#888; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #2a2a2a;">Yhteystiedot</h3>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px;">
+            <div>
+              <label for="vk-nimi" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Nimi <span style="color:#fd8c03;">*</span></label>
+              <input type="text" id="vk-nimi" name="nimi" required placeholder="Etunimi Sukunimi" autocomplete="name" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box;" />
+            </div>
+            <div>
+              <label for="vk-yritys" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Yritys</label>
+              <input type="text" id="vk-yritys" name="yritys" placeholder="Yrityksen nimi" autocomplete="organization" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box;" />
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div>
+              <label for="vk-email" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Sähköposti <span style="color:#fd8c03;">*</span></label>
+              <input type="email" id="vk-email" name="email" required placeholder="sinä@yritys.fi" autocomplete="email" spellcheck="false" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box;" />
+            </div>
+            <div>
+              <label for="vk-puhelin" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Puhelin</label>
+              <input type="tel" id="vk-puhelin" name="puhelin" placeholder="040 123 4567" autocomplete="tel" inputmode="tel" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box;" />
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+          <h3 style="font-family:'Dosis',sans-serif; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:#888; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #2a2a2a;">Kuvauksen tiedot</h3>
+
+          <div style="margin-bottom:18px;">
+            <label for="vk-tyyppi" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Kuvauksen tyyppi <span style="color:#fd8c03;">*</span></label>
+            <select id="vk-tyyppi" name="tyyppi" required autocomplete="off" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px;">
+              <option value="">Valitse...</option>
+              <option value="Henkilökuvaus (LinkedIn, verkkosivut)">Henkilökuvaus (LinkedIn, verkkosivut)</option>
+              <option value="Tiimikuvaus">Tiimikuvaus</option>
+              <option value="Yrityskuvaus (toimitilat, tuotteet)">Yrityskuvaus (toimitilat, tuotteet)</option>
+              <option value="Tapahtumakuvaus">Tapahtumakuvaus</option>
+              <option value="Markkinointikuvaus (some, kampanjat)">Markkinointikuvaus (some, kampanjat)</option>
+              <option value="Muu">Muu</option>
+            </select>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px;">
+            <div>
+              <label for="vk-paikkakunta" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Paikkakunta</label>
+              <input type="text" id="vk-paikkakunta" name="paikkakunta" placeholder="esim. Jyväskylä" autocomplete="off" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box;" />
+            </div>
+            <div>
+              <label for="vk-ajankohta" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Toivottu ajankohta</label>
+              <input type="text" id="vk-ajankohta" name="ajankohta" placeholder="esim. toukokuu 2026" autocomplete="off" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box;" />
+            </div>
+          </div>
+
+          <div>
+            <label for="vk-lisatiedot" style="display:block; font-family:'Dosis',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:#aaa; margin-bottom:7px;">Lisätiedot ja toiveet</label>
+            <textarea id="vk-lisatiedot" name="lisatiedot" rows="5" placeholder="Kerro tarkemmin: kuvattavien määrä, käyttötarkoitus, erityistoiveet…" autocomplete="off" style="width:100%; background:#1e1e1e; border:1px solid #2a2a2a; border-radius:4px; color:#fff; font-family:'Dosis',sans-serif; font-size:15px; padding:12px 16px; box-sizing:border-box; resize:vertical;"></textarea>
+          </div>
+        </div>
+
+                <div style="text-align:center; margin-top:48px;">
+
+          <!-- Nappi -->
+          <button type="submit" class="btn-submit" style="touch-action:manipulation;">
+            Lähetä tarjouspyyntö
+          </button>
+
+          <!-- Yhteystiedot -->
+          <div style="margin-top:32px; padding:24px 28px; background:#1a1a1a; border:1px solid #2a2a2a; border-radius:4px; max-width:480px; margin-left:auto; margin-right:auto; margin-top:32px;">
+            <p style="font-family:'Dosis',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; color:#555; margin-bottom:14px;">Herääkö kysymyksiä?</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <a href="mailto:joel@ruskamedia.com" style="font-family:'Dosis',sans-serif; font-size:14px; color:#ccc; text-decoration:none; display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#888;">Joel Nykänen</span>
+                <span>joel@ruskamedia.com</span>
+              </a>
+              <a href="mailto:oskari@ruskamedia.com" style="font-family:'Dosis',sans-serif; font-size:14px; color:#ccc; text-decoration:none; display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#888;">Oskari Vattu</span>
+                <span>oskari@ruskamedia.com</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </section>
+</Layout>

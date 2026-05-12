@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Valokuvaus yrityksille",
+  "serviceType": "Yrityskuvaus",
+  "description": "Yrityskuvaus, henkilökuvaus ja markkinointikuvaus Jyväskylässä ja koko Suomessa.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "Country", "name": "Finland" },
+  "url": "https://ruskamedia.com/valokuvaus/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Paljonko yrityskuvaus maksaa?", "acceptedAnswer": { "@type": "Answer", "text": "Henkilökuvaus alkaen 300 €. Laajempi yrityskuvaus (tiimikuvat, tilat) alkaen 600 €. Lopullinen hinta riippuu kuvausajasta ja kuvamäärästä — pyydä tarjous." }},
+    { "@type": "Question", "name": "Kuinka kauan kuvaus kestää?", "acceptedAnswer": { "@type": "Answer", "text": "Henkilökuvaus 1–2 tuntia. Laajempi yrityskuvaus puolesta päivästä koko päivään riippuen kohteesta." }},
+    { "@type": "Question", "name": "Missä kuvaatte?", "acceptedAnswer": { "@type": "Answer", "text": "Jyväskylässä, Keski-Suomessa ja koko Suomessa tarvittaessa." }},
+    { "@type": "Question", "name": "Toimitetaanko kuvat editoituina?", "acceptedAnswer": { "@type": "Answer", "text": "Kyllä — kaikki kuvat editoidaan ja toimitetaan sovitussa formaatissa (web + print)." }}
+  ]
+};
+---
+<Layout
+  title="Henkilökuvaus ja yrityskuvaus — Jyväskylä ja koko Suomi | Ruska Media"
+  description="Ammattitaitoinen henkilökuvaus ja yrityskuvaus Jyväskylässä ja koko Suomessa. Tiimikuvat, LinkedIn-kuvat, markkinointikuvat — Ruska Media."
+  canonical="https://ruskamedia.com/valokuvaus/"
+  schema={[serviceSchema, faqSchema]}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:600px; background-image:url('https://ruskamedia.com/wp-content/uploads/2025/08/Ruska-Media-Valokuvaus.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.6;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Jyväskylä ja koko Suomi</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:40px;">Henkilökuvaus ja yrityskuvaus</h1>
+      <p class="text-gray-300 mt-4" style="font-size:17px; font-weight:100; max-width:560px;">Henkilökuvaus, yrityskuvaus ja markkinointikuvaus — brändiviestinnän perusta.</p>
+      <a href="/tiimi-yhteystiedot" class="btn-white" style="margin-top:32px; align-self:center;">
+        Pyydä tarjous
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbb; font-size:15px; line-height:1.9;">
+        Laadukkaat kuvat ovat brändiviestinnän perusta. Kuvaamme yrityksenne ihmiset, tilat, tuotteet ja tarinan — materiaaliksi verkkosivuille, someen, esitteisiin ja mediaan. Joel Nykänen vastaa kuvausten visuaalisesta laadusta. Kuvaamme Jyväskylässä ja koko Suomessa.
+      </p>
+    </div>
+  </section>
+
+  <!-- MITÄ KUVAAMME -->
+  <section style="background-color:#2c2c2c; padding:60px 20px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Mitä kuvaamme</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          ['Henkilökuvaus', 'LinkedIn-kuvat, tiimikuvat, verkkosivujen henkilöesittelyt ja lehdistömateriaali.'],
+          ['Yrityskuvaus', 'Toimitilat, tuotteet, prosessit ja yritysilme — ammattilaisen otteella.'],
+          ['Tapahtumakuvaus', 'Seminaarit, lanseeraukset, yritystapahtumat ja juhlat.'],
+          ['Markkinointikuvaus', 'Kampanjakuvat, brändikuvat ja some-kuvat — visuaalinen tarina yrityksestä.'],
+        ].map(([otsikko, teksti]) => (
+          <a href="/varaa/valokuvaus" aria-label={`Varaa ${otsikko}`} class="pricing-card" style="background-color:#383838; border-radius:4px; padding:28px; gap:10px;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">{otsikko}</h3>
+            <p style="color:#999; font-size:14px; line-height:1.7;">{teksti}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TIIMI -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+      <div>
+        <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:20px;">Miten toimimme</h2>
+        <p style="color:#bbb; font-size:14px; line-height:1.9; margin-bottom:20px;">
+          Joel Nykänen vastaa kuvausten visuaalisesta laadusta. Oskari Vattu huolehtii tuotannon sujuvuudesta. Yhdessä varmistamme, että kuvauspäivä sujuu jouhevasti ja lopputulos vastaa brändinne tavoitteita.
+        </p>
+        <a href="/tiimi-yhteystiedot" class="btn-ghost">Tutustu tiimiin</a>
+      </div>
+      <div>
+        <img src="https://ruskamedia.com/wp-content/uploads/2025/04/Joel-Nykanen-Ruska-Media-Event-yhteystiedot-675x900.jpg"
+          alt="Joel Nykänen — Ruska Media valokuvaaja Jyväskylässä"
+          style="width:100%; border-radius:2px; display:block;"
+          loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#111; padding:60px 20px;" class="faq">
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Paljonko yrityskuvaus maksaa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Henkilökuvaus alkaa 300 eurosta, laajempi yrityskuvaus tiimeineen ja tiloineen 600 eurosta. Hinta tarkentuu kuvausajan ja tarpeen mukaan — pyydä tarjous niin käydään läpi.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Kuinka kauan kuvaus kestää?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Henkilökuvaus kestää yleensä 1–2 tuntia. Laajempi yrityskuvaus puolipäivästä koko päivään riippuen siitä, mitä kuvataan.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Missä kuvaatte?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Jyväskylässä ja Keski-Suomessa pääsääntöisesti — mutta tarvittaessa koko Suomessa.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Mitä yrityskuvaus käytännössä sisältää?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kuvaus, editointi ja toimitus web- ja printtiresoluutiossa. Kaikki kuvat käydään läpi — värikorjaus, valojen säätö, tarvittaessa retusointi. Et saa raakakuvia ellei niin erikseen sovita.</p>
+      </details>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="/tiimi-yhteystiedot" class="btn-white">Pyydä tarjous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

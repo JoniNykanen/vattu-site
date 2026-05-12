@@ -1,0 +1,142 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://ruskamedia.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Hääkuvaus", "item": "https://ruskamedia.com/haakuvaus/" },
+    { "@type": "ListItem", "position": 3, "name": "Hääkuvaus Oulu", "item": "https://ruskamedia.com/haakuvaus/oulu/" }
+  ]
+};
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Hääkuvaus Oulu",
+  "alternateName": "Ruska Wedding Frames",
+  "serviceType": "Hääkuvaus",
+  "description": "Hääkuvaus Oulussa — Joel Nykänen kuvaa häät dokumentaarisesti. Pohjois-Suomi ja Oulu.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "City", "name": "Oulu" },
+  "url": "https://ruskamedia.com/haakuvaus/oulu/"
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Kauanko matka Ouluun kestää?", "acceptedAnswer": { "@type": "Answer", "text": "Jyväskylästä Ouluun on noin 3,5–4 tuntia. Kuvauspäivä suunnitellaan niin, että matka ei vaikuta kuvausaikaan. Matkakulut (0,45 €/km) lisätään tarjoukseen." }},
+    { "@type": "Question", "name": "Milloin hääkuvaaja kannattaa varata Ouluun?", "acceptedAnswer": { "@type": "Answer", "text": "12–18 kuukautta etukäteen. Oulun lyhyt mutta intensiivinen hääsesonki tarkoittaa, että viikonloput täyttyvät nopeasti." }},
+    { "@type": "Question", "name": "Onko yöpyminen tarpeen pitkissä paketeissa?", "acceptedAnswer": { "@type": "Answer", "text": "Pitkissä kuvauksissa (12h) yöpyminen on järkevää. Sovitaan tapauskohtaisesti — majoituskulut lisätään tarjoukseen." }}
+  ]
+};
+const schema = [breadcrumbSchema, serviceSchema, faqSchema];
+---
+<Layout
+  title="Hääkuvaus Oulu — hinnat ja matkakulut | Ruska Media"
+  description="Hääkuvaus Oulussa — Joel Nykänen kuvaa häät dokumentaarisesti. Selkeät paketit, ei ennakkomaksuja. Varaa päiväsi."
+  canonical="https://ruskamedia.com/haakuvaus/oulu/"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:500px; background-image:url('https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Oulu.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.55;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Ruska Wedding Frames by Joel Nykänen</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:38px;">Hääkuvaus Oulu</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbb; font-size:15px; line-height:1.9;">
+        Oulu on pisin matkani säännöllisistä kohteista — noin 370 kilometriä. Mutta on yksi asia mikä tekee Oulusta erityisen: yöttömän yön valo. Kesäkuussa ja heinäkuussa aurinko ei laske kunnolla, ja se kultainen valo joka muualla kestää tunnin, kestää Oulussa koko yön. Se on hääkuvaajan kannalta jotain sellaista, mitä ei muualta saa. Matka suunnitellaan aina etukäteen niin, ettei siirtyminen syö kuvausaikaa. Matkakulut lasketaan avoimesti tarjoukseen.
+      </p>
+    </div>
+  </section>
+
+  <!-- SIJAINNIT -->
+  <section style="background-color:#111; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest" style="font-size:18px; text-align:center; margin-bottom:36px;">Oulun parhaat kuvausmaisemat</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        {[
+          ['Hupisaaret ja jokivarsi', 'Oulujoki ja sen saaret tarjoavat upean luontoympäristön aivan kaupungin ytimessä — kuvapaikka joka toimii vuoden jokaisena aikana.'],
+          ['Nallikari ja merenranta', 'Oulun merenranta kesällä on erityinen — avara, valoisa, ja yöttömän yön kultainen valo tekee kuvista muistettavia.'],
+          ['Tuomiokirkko ja tori', 'Kaupungin sydän historiallisin rakennuksin — klassinen tausta häpotreteille ja vihkimisen dokumentointiin.'],
+          ['Hailuoto', 'Saarelle pääsee lautalla — ainutlaatuinen saarimaisema, luonto ja rauha. Vaatii etukäteissuunnittelua, mutta palkitsee.'],
+        ].map(([nimi, kuvaus]) => (
+          <div style="border-left:2px solid #fd8c03; padding-left:18px;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">{nimi}</h3>
+            <p style="color:#888; font-size:13px; line-height:1.7;">{kuvaus}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section style="background-color:#111; padding:0;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px;">
+      {[
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Hääkuvaus-Oulu.jpg', 'Hääkuvaus Oulussa — Ruska Media'],
+        ['https://ruskamedia.com/wp-content/uploads/2020/04/Haapotrettien-valokuvaus.jpg', 'Hääkuvaus luonnossa'],
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Häävalokuvaaja.jpg', 'Häävalokuvaaja — Joel Nykänen'],
+      ].map(([src, alt]) => (
+        <div style="aspect-ratio:1; overflow:hidden;">
+          <img src={src} alt={alt} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PAKETIT -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:20px;">Hääkuvauspaketit</h2>
+      <p style="color:#999; font-size:14px; margin-bottom:32px;">Paketit 500 € – 2 500 €. Matkakulut Ouluun lisätään tarjoukseen.</p>
+      <a href="/haakuvaus/" class="btn-outline">Katso kaikki hääkuvauspaketit</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#111; padding:60px 20px;" class="faq">
+    <div style="max-width:700px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä — Oulu</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Mitä hääkuvaus maksaa Oulussa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Paketit ovat samat — potrettikuvaus 500 €, koko päivä (12h) 2 000 €, häävideo 2 500 €. Matkakulut Ouluun (0,45 €/km) lisätään tarjoukseen. Kuvauspäivä suunnitellaan niin, että matka ei vie kuvausaikaa.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Milloin hääkuvaaja kannattaa varata Ouluun?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">12–18 kuukautta etukäteen. Oulun lyhyt mutta intensiivinen hääsesonki tarkoittaa, että viikonloput täyttyvät nopeasti.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Onko yöpyminen tarpeen pitkissä paketeissa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Pitkissä kuvauksissa (12h) yöpyminen on järkevää. Sovitaan tapauskohtaisesti — majoituskulut lisätään tarjoukseen.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color:#1a1a1a; padding:60px 20px; text-align:center;">
+    <div style="max-width:500px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:18px;">Varaa hääkuvaus Oulussa</h2>
+      <a href="/varaa/haakuvaus/?kaupunki=Oulu" class="btn-white">Varaa hääkuvaus</a>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section style="background-color:#111; padding:30px 20px; text-align:center;">
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; font-family:'Dosis',sans-serif; font-size:13px;">
+      <a href="/haakuvaus/" class="btn-ghost">Hääkuvaus koko Suomessa</a>
+      <a href="/haakuvaus/jyvaskyla/" class="btn-ghost">Hääkuvaus Jyväskylä</a>
+      <a href="/haakuvaus/tampere/" class="btn-ghost">Hääkuvaus Tampere</a>
+      <a href="/haakuvaus/helsinki/" class="btn-ghost">Hääkuvaus Helsinki</a>
+      <a href="/haakuvaus/turku/" class="btn-ghost">Hääkuvaus Turku</a>
+    </div>
+  </section>
+
+</Layout>

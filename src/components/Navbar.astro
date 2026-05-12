@@ -1,0 +1,35 @@
+---
+const currentPath = Astro.url.pathname;
+---
+<header id="site-nav" class="sticky top-0 z-50 bg-cream border-b border-[#1A1A1A]/8 transition-all duration-300">
+  <nav class="max-w-[1200px] mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+    <a href="/" class="font-heading text-forest text-sm leading-tight">
+      LVI-insinööritoimisto Vattu Oy
+    </a>
+    <div class="flex items-center gap-8">
+      <a
+        href="/"
+        class={`font-body text-[11px] tracking-[0.12em] uppercase transition-colors ${currentPath === '/' ? 'text-forest' : 'text-[#1A1A1A]/35 hover:text-forest'}`}
+      >
+        Etusivu
+      </a>
+      <a
+        href="/ota-yhteytta"
+        class={`font-body text-[11px] tracking-[0.12em] uppercase border px-5 py-2 transition-colors ${currentPath === '/ota-yhteytta' ? 'border-forest text-forest' : 'border-[#1A1A1A]/20 text-[#1A1A1A]/40 hover:border-forest hover:text-forest'}`}
+      >
+        Ota yhteyttä
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      nav?.classList.add('shadow-sm', 'shadow-black/8');
+    } else {
+      nav?.classList.remove('shadow-sm', 'shadow-black/8');
+    }
+  }, { passive: true });
+</script>

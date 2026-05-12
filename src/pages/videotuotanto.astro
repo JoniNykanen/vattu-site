@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Videotuotanto yrityksille",
+  "serviceType": "Videotuotanto",
+  "description": "Yritysvideot, brändivideot ja rekrytointivideot markkinointiin ja myyntiin.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "Country", "name": "Finland" },
+  "url": "https://ruskamedia.com/videotuotanto/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Paljonko yritysvideo maksaa?", "acceptedAnswer": { "@type": "Answer", "text": "Yksinkertainen yritysvideo alkaen 1 500 €. Laajempi kampanja tai brändivideo 3 000–8 000 €. Hinta riippuu kuvausajasta, käsikirjoituksesta ja jälkituotannosta — pyydä tarjous." }},
+    { "@type": "Question", "name": "Kuinka kauan tuotanto kestää?", "acceptedAnswer": { "@type": "Answer", "text": "Yksinkertainen yritysvideo 1–2 viikkoa. Laajempi kampanjakokonaisuus 3–6 viikkoa riippuen laajuudesta." }},
+    { "@type": "Question", "name": "Mihin kaupunkeihin videotuotanto onnistuu?", "acceptedAnswer": { "@type": "Answer", "text": "Toimimme koko Suomessa — Jyväskylä, Tampere, Helsinki, Turku, Oulu ja muut. Matkakulut lasketaan etäisyyden mukaan." }},
+    { "@type": "Question", "name": "Mitä formaatteja toimitetaan?", "acceptedAnswer": { "@type": "Answer", "text": "MP4 (H.264) web-käyttöön, sekä some-formaatit (1:1, 9:16, 16:9) tarvittaessa." }},
+    { "@type": "Question", "name": "Saako videon käsikirjoituksen ennen kuvauksia?", "acceptedAnswer": { "@type": "Answer", "text": "Kyllä — käsikirjoitus ja kuvaussuunnitelma hyväksytetään aina ennen kuvauksia." }}
+  ]
+};
+---
+<Layout
+  title="Videotuotanto yrityksille — Yritysvideot & brändivideot | Jyväskylä ja koko Suomi"
+  description="Yritysvideot, brändivideot ja rekrytointivideot markkinointiin, myyntiin ja työnantajamielikuvaan. Ruska Media, Jyväskylä — videotuotanto koko Suomeen."
+  canonical="https://ruskamedia.com/videotuotanto/"
+  schema={[serviceSchema, faqSchema]}
+>
+
+  <!-- HERO — video background -->
+  <section class="relative w-full overflow-hidden" style="height: 600px;">
+    <video autoplay muted loop playsinline aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" style="z-index:0;">
+      <source src="https://ruskamedia.com/wp-content/uploads/2022/11/Ruska-Media-Hero-video.mp4" type="video/mp4" />
+      <img src="https://ruskamedia.com/wp-content/uploads/revslider/video-media/Ruska-Media-Hero-video_94.jpeg" alt="Videomarkkinointi yrityksille — Ruska Media" />
+    </video>
+    <div class="absolute inset-0 bg-black" style="opacity:0.6; z-index:1;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:2; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Jyväskylä · koko Suomi</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:40px;">
+        Herätä huomio videolla
+      </h1>
+      <p class="text-gray-300 mt-4" style="font-size:18px; font-weight:100; max-width:560px;">
+        Yritysvideot, brändivideot ja rekrytointivideot — ideasta valmiiseen sisältöön.
+      </p>
+      <a href="/tiimi-yhteystiedot" class="btn-white" style="margin-top:32px; align-self:center;">
+        Pyydä tarjous
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbbbbb; font-size:15px; line-height:1.9;">
+        Videokuvaa katsotaan — tekstiä ohitetaan. Laadukas yritysvideo rakentaa luottamusta ennen ensimmäistäkään myyntikeskustelua: se kertoo kuka olet, miten toimit ja miksi juuri sinut kannattaa valita. Toteutamme yritysvideot, brändivideot ja rekrytointivideot ideasta valmiiseen sisältöön — Jyväskylässä ja koko Suomessa.
+      </p>
+    </div>
+  </section>
+
+  <!-- BENEFITS — 3 image cards -->
+  <section style="background-color:#1e1e1e; padding:0 20px 60px;">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <div class="flex flex-col items-center text-center">
+        <img src="https://ruskamedia.com/wp-content/uploads/2024/10/Luottamus-ja-uskollisuus-kasvavat-videoiden-ansiosta.png"
+          alt="Luottamus kasvaa videoiden ansiosta — Ruska Media"
+          class="w-full object-contain mb-4" style="max-height:200px;" loading="lazy" />
+        <p class="text-gray-300" style="font-size:14px; padding:0 10px;">
+          Asiakas näkee kasvot ja kuulee äänen — luottamus syntyy nopeammin kuin tekstillä
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center text-center">
+        <img src="https://ruskamedia.com/wp-content/uploads/2024/10/Muistettavuus-paranee-videoiden-avulla.png"
+          alt="Muistettavuus paranee videoiden avulla — Ruska Media"
+          class="w-full object-contain mb-4" style="max-height:200px;" loading="lazy" />
+        <p class="text-gray-300" style="font-size:14px; padding:0 10px;">
+          Video jää mieleen — erotut kilpailijoista jotka luottavat pelkkään tekstiin
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center text-center">
+        <img src="https://ruskamedia.com/wp-content/uploads/2024/10/Videot-lisaavat-nakyvyytta-brandille.png"
+          alt="Videot lisäävät näkyvyyttä brändille — Ruska Media"
+          class="w-full object-contain mb-4" style="max-height:200px;" loading="lazy" />
+        <p class="text-gray-300" style="font-size:14px; padding:0 10px;">
+          Yksi video toimii verkkosivuilla, somessa, mainonnassa ja myyntimateriaalina
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MITÄ TUOTAMME -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-10" style="font-size:22px; text-align:center;">Mitä tuotamme</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div style="border-left:2px solid #444; padding-left:24px;">
+          <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">Yritysvideot ja brändivideot</h3>
+          <p style="color:#999; font-size:14px; line-height:1.8;">Verkkosivuille, someen tai mainoskampanjaan. Yritysvideoita jotka kertovat kuka olet ja miksi sinuun kannattaa luottaa — ilman ylikuormitettua markkinointijargonia.</p>
+        </div>
+
+        <div style="border-left:2px solid #444; padding-left:24px;">
+          <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">Rekrytointivideot</h3>
+          <p style="color:#999; font-size:14px; line-height:1.8;">Parhaat hakijat valitsevat työpaikkansa tarkemmin kuin koskaan. Rekrytointivideo näyttää rehellisesti millainen teidän arki oikeasti on — kulttuuri, ihmiset ja tekemisen meininki.</p>
+        </div>
+
+        <div style="border-left:2px solid #444; padding-left:24px;">
+          <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">Tapahtumavideot</h3>
+          <p style="color:#999; font-size:14px; line-height:1.8;">Seminaarit, lanseeraukset, yritysjuhlat. Tallennamme tunnelman, puheenvuorot ja hetket — valmis videopaketti toimitettuna tilaisuuden jälkeen.</p>
+        </div>
+
+        <div style="border-left:2px solid #444; padding-left:24px;">
+          <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px;">Mainokset ja some-videot</h3>
+          <p style="color:#999; font-size:14px; line-height:1.8;">Meta Ads, Google Ads, LinkedIn tai orgaaninen some. Lyhyet videomainokset jotka pysäyttävät scrollauksen — oikeaan kanavaan ja formaattiin räätälöitynä.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MIHIN KÄYTETÄÄN -->
+  <section style="background-color:#2c2c2c; padding:60px 20px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:22px; text-align:center;">Mihin yritysvideoita käytetään</h2>
+      <ul role="list" style="columns:2; column-gap:40px; color:#bbb; font-size:14px; line-height:2.2; list-style:none; padding:0; max-width:700px; margin:0 auto;">
+        <li>Verkkosivujen hero- tai esittelyvideo</li>
+        <li>LinkedIn ja muut some-kanavat</li>
+        <li>YouTube-kanava</li>
+        <li>Maksettu mainonta (Meta Ads, Google Ads)</li>
+        <li>Myyntitiimin käyttöön</li>
+        <li>Rekrytointi-ilmoitusten liite</li>
+        <li>Messut ja tapahtumat</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROSESSI -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-10" style="font-size:22px;">Tuotantoprosessi</h2>
+      <div style="display:flex; flex-direction:column; gap:24px; text-align:left;">
+        {[
+          ['1. Brief ja suunnittelu', 'Tavoite, kohderyhmä, viesti, tyyli — käydään läpi yhdessä.'],
+          ['2. Käsikirjoitus', 'Käsikirjoitus ja kuvaussuunnitelma hyväksytetään ennen kuvauksia.'],
+          ['3. Kuvaukset', 'Toteutus Jyväskylässä tai haluamassanne sijainnissa.'],
+          ['4. Editointi', 'Värimäärittely, ääni, tekstitykset ja grafiikat.'],
+          ['5. Toimitus', 'Valmis video sovituissa formaateissa — web, some, 4K.'],
+        ].map(([otsikko, teksti]) => (
+          <div style="display:flex; gap:24px; align-items:flex-start;">
+            <div style="min-width:200px; color:#fff; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px;">{otsikko}</div>
+            <div style="color:#999; font-size:14px; line-height:1.8;">{teksti}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENSSI -->
+  <section style="background-color:#111; padding:60px 20px; text-align:center;">
+    <div style="max-width:600px; margin:0 auto;">
+      <p style="color:#fd8c03; font-size:32px; line-height:1; margin-bottom:16px; font-family:'Georgia',serif;">"</p>
+      <p style="color:#bbb; font-size:16px; line-height:1.9; font-style:italic;">Toteutimme yritysvideosarjan markkinointikampanjaan. Lopputulos ylitti odotukset — yhteistyö sujui mutkattomasti alusta loppuun.</p>
+      <p style="color:#666; font-size:13px; margin-top:16px; font-family:'Dosis',sans-serif; text-transform:uppercase; letter-spacing:0.1em;">Studio Maikki Hevari</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;" class="faq">
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Paljonko yritysvideo maksaa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Yksinkertainen yritysvideo alkaa 1 500 eurosta. Laajempi kampanja tai brändivideo maksaa yleensä 3 000–8 000 €. Hinta muodostuu kuvausajasta, käsikirjoituksesta ja jälkituotannosta — avoimempi hinnasto löytyy blogistamme.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Kuinka kauan tuotanto kestää?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Yksinkertainen yritysvideo on yleensä valmis 1–2 viikossa. Laajempi kampanja vie 3–6 viikkoa riippuen projektin laajuudesta.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Mihin kaupunkeihin videotuotanto onnistuu?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Koko Suomessa. Jyväskylä on kotikaupunki, mutta kuvaamme säännöllisesti Helsingissä, Tampereella, Turussa ja Oulussa. Matkakulut lasketaan etäisyyden mukaan.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">Miten videotuotanto etenee käytännössä?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Brief ja käsikirjoitus ensin — en mene kuvauksiin ilman hyväksyttyä suunnitelmaa. Kuvaukset sovitussa aikataulussa, editointi sen jälkeen. Valmis video toimitetaan latauslinkin kautta MP4-formaatissa, some-versiot (1:1, 9:16, 16:9) erikseen tarvittaessa.</p>
+      </details>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="/tiimi-yhteystiedot" class="btn-white">Ota yhteyttä</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAUPUNKISIVUT -->
+  <section style="background-color:#111; padding:30px 20px; text-align:center;">
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center;">
+      <a href="/videotuotanto/jyvaskyla/" class="btn-ghost">Videotuotanto Jyväskylä</a>
+      <a href="/videotuotanto/tampere/" class="btn-ghost">Videotuotanto Tampere</a>
+      <a href="/videotuotanto/helsinki/" class="btn-ghost">Videotuotanto Helsinki</a>
+    </div>
+  </section>
+
+</Layout>

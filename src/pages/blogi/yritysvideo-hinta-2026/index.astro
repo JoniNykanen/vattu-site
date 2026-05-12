@@ -1,0 +1,119 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Yritysvideo hinta 2026 — videotuotannon hinnasto yrityksille",
+  "author": { "@type": "Person", "name": "Joel Nykänen" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ruska Media",
+    "logo": { "@type": "ImageObject", "url": "https://ruskamedia.com/wp-content/uploads/2019/05/RUSKA-MEDIA-MUSTA.png" }
+  },
+  "datePublished": "2026-05-10",
+  "dateModified": "2026-05-10",
+  "image": "https://ruskamedia.com/wp-content/uploads/2022/11/Ruska-Media-Videomarkkinointi.jpg",
+  "url": "https://ruskamedia.com/blogi/yritysvideo-hinta-2026/"
+};
+---
+<Layout
+  title="Yritysvideo hinta 2026 — videotuotannon hinnasto yrityksille"
+  description="Paljonko yritysvideo maksaa 2026? Avoin hinnasto — yritysvideosta brändivideoon ja rekrytointivideoon. Joel Nykänen, Ruska Media."
+  canonical="https://ruskamedia.com/blogi/yritysvideo-hinta-2026/"
+  ogImage="https://ruskamedia.com/wp-content/uploads/2022/11/Ruska-Media-Videomarkkinointi.jpg"
+  schema={articleSchema}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:440px; background-image:url('https://ruskamedia.com/wp-content/uploads/2022/11/Ruska-Media-Videomarkkinointi.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.65;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Joel Nykänen · Ruska Media · 2026</p>
+      <h1 class="font-heading text-white font-normal anim-fade-up" style="font-size:32px; max-width:720px; line-height:1.3;">Yritysvideo hinta 2026 — videotuotannon hinnasto yrityksille</h1>
+    </div>
+  </section>
+
+  <!-- ARTIKKELI -->
+  <article style="background-color:#1a1a1a; padding:80px 20px;">
+    <div style="max-width:760px; margin:0 auto; color:#ccc; font-size:15px; line-height:1.9;">
+
+      <p style="margin-bottom:32px;">
+        Yritysvideon hinta on asia, josta ei alalla puhuta kovin avoimesti. Useimmat toimistot vastaavat "pyydä tarjous" ja siinä se. Ymmärrän miksi — jokainen projekti on erilainen. Mutta se ei tarkoita, etteikö suuntaa-antavia lukuja voisi kertoa. Tässä kerron miten hinta muodostuu ja mitä eri videotyypeistä yleensä maksetaan. Ruska Median hinnoittelu mukaan lukien.
+      </p>
+
+      <h2 style="color:#fff; font-family:'Oswald',sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.05em; margin:40px 0 16px;">Mihin videota käytetään — se ratkaisee hinnan</h2>
+      <p style="margin-bottom:28px;">
+        Yksinkertaisin tapa ajatella asiaa: mitä laajempi käyttötarkoitus, sitä enemmän työtä. Yksittäinen LinkedIn-video on täysin eri tuotanto kuin brändivideo, jota käytetään verkkosivuilla, somessa, mainonnassa ja messuilla samanaikaisesti. Kun asiakas sanoo "halutaan yritysvideo", ensimmäinen kysymys on aina — mihin?
+      </p>
+
+      <h2 style="color:#fff; font-family:'Oswald',sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.05em; margin:40px 0 20px;">Videotuotannon hinnasto 2026 — suuntaa-antavat hinnat</h2>
+
+      <div style="background:#222; border-radius:4px; overflow:hidden; margin-bottom:12px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid #2a2a2a; padding:12px 20px; background:#2a2a2a;">
+          <span style="color:#fff; font-family:'Dosis',sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Videotyyppi</span>
+          <span style="color:#fff; font-family:'Dosis',sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Kesto</span>
+          <span style="color:#fff; font-family:'Dosis',sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Hinta-arvio</span>
+        </div>
+        {[
+          ['Some-video / lyhytvideo', '15–60 s', 'alkaen 890 €/kk'],
+          ['Yritysvideo / esittelyvideo', '1–3 min', 'alkaen 1 500 €'],
+          ['Rekrytointivideo', '1–2 min', 'alkaen 1 500 €'],
+          ['Brändivideo / kampanja', '2–5 min', '3 000–8 000 €'],
+          ['Tapahtumavideo', 'Päivä + editointi', 'pyydä tarjous'],
+        ].map(([tyyppi, kesto, hinta]) => (
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; padding:14px 20px; border-bottom:1px solid #2a2a2a;">
+            <span style="color:#bbb; font-size:14px;">{tyyppi}</span>
+            <span style="color:#888; font-size:14px; font-family:'Dosis',sans-serif;">{kesto}</span>
+            <span style="color:#fd8c03; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700;">{hinta}</span>
+          </div>
+        ))}
+      </div>
+      <p style="color:#888; font-size:13px; margin-bottom:32px; font-family:'Dosis',sans-serif;">
+        Hinta muodostuu kuvausajasta, kuvauslokaatioiden määrästä, jälkituotannosta ja toimitettavien formaattien laajuudesta. Pyydä tarjous — vastaamme 1–2 arkipäivässä.
+      </p>
+
+      <h2 style="color:#fff; font-family:'Oswald',sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.05em; margin:40px 0 16px;">Mistä yritysvideon hinta muodostuu?</h2>
+      <p style="margin-bottom:16px;">
+        <strong style="color:#fff;">Ennakkotuotanto</strong> — Brief, käsikirjoitus ja kuvaussuunnitelma. Tämä vaihe on tärkeä: huonosti suunniteltu video maksaa enemmän kuin hyvin suunniteltu.
+      </p>
+      <p style="margin-bottom:16px;">
+        <strong style="color:#fff;">Kuvaukset</strong> — Kuvauspäivien määrä, lokaatioiden etäisyys ja kaluston tarve. Jyväskylässä ei matkakuluja, muualle km-korvaus.
+      </p>
+      <p style="margin-bottom:32px;">
+        <strong style="color:#fff;">Jälkituotanto</strong> — Editointi, värimäärittely, ääni, tekstitykset, grafiikat ja some-formaatit. Tähän menee usein enemmän aikaa kuin itse kuvauksiin.
+      </p>
+
+      <h2 style="color:#fff; font-family:'Oswald',sans-serif; font-size:22px; text-transform:uppercase; letter-spacing:0.05em; margin:40px 0 16px;">Milloin yritysvideo kannattaa tilata?</h2>
+      <p style="margin-bottom:28px;">
+        Paras ajankohta on ennen kuin "tarvitaan heti". Hyvä yritysvideo vaatii suunnittelua — briefin, käsikirjoituksen ja kuvaussuunnitelman. Kun asiakas tulee ja sanoo, että video pitäisi saada valmiiksi ensi viikolla, se tarkoittaa käytännössä että suunnittelulle ei jää aikaa. Kiireessä tehdyt videot näyttävät kiireessä tehdyiltä. Olen sen nähnyt tarpeeksi monta kertaa.
+      </p>
+      <p style="margin-bottom:28px;">
+        Verkkosivujen hero-video tai rekrytointivideo voi olla käytössä 3–5 vuotta. Se on yksi syy miksi video on järkevä investointi — se ei ole kertaluonteinen kuluerä vaan materiaali joka tekee töitä pitkään. Kampanjavideo on eri juttu, mutta perusvideo yhtiöstä ei vanhene nopeasti jos se on tehty oikein.
+      </p>
+
+      <!-- CTA -->
+      <div style="background-color:#2c2c2c; border-radius:4px; padding:32px; text-align:center; margin-top:48px;">
+        <h3 style="color:#fff; font-family:'Oswald',sans-serif; font-size:20px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px;">Pyydä tarjous videotuotannosta</h3>
+        <p style="color:#999; font-size:14px; margin-bottom:24px;">Kerro projektistasi ja saat tarjouksen 1–2 arkipäivässä.</p>
+        <a href="/varaa/videomarkkinointi/" class="btn-white">Pyydä tarjous</a>
+      </div>
+
+      <!-- META -->
+      <div style="margin-top:48px; padding-top:24px; border-top:1px solid #2a2a2a; color:#555; font-size:13px;">
+        <p>Kirjoittanut: <strong style="color:#888;">Joel Nykänen</strong> — Ruska Media | 2026</p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- INTERNAL LINKS -->
+  <section style="background-color:#111; padding:30px 20px; text-align:center;">
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center;">
+      <a href="/videotuotanto/" class="btn-ghost">Videotuotanto yrityksille</a>
+      <a href="/lyhytvideo/" class="btn-ghost">Lyhytvideo yrityksille</a>
+      <a href="/blogi/asuntokuvauksen-hinta-2026/" class="btn-ghost">Asuntokuvauksen hinta 2026</a>
+    </div>
+  </section>
+
+</Layout>

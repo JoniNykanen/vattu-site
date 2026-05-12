@@ -1,0 +1,429 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Varaa hääkuvaus — Ruska Wedding Frames by Joel Nykänen"
+  description="Varaa hääkuvaus tai häävideo Joel Nykäseltä. Selkeät paketit, ei ennakkomaksuja. Täytä varauslomake niin otamme yhteyttä."
+  canonical="https://ruskamedia.com/varaa/haakuvaus/"
+  noindex={true}
+>
+
+<style>
+  .form-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  .form-section {
+    margin-bottom: 40px;
+  }
+  .form-section h2 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #888;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .field {
+    margin-bottom: 18px;
+  }
+  label {
+    display: block;
+    font-family: 'Dosis', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #aaa;
+    margin-bottom: 7px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 15px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+  input:focus-visible, select:focus-visible, textarea:focus-visible {
+    border-color: #fd8c03;
+    outline: 2px solid rgba(253, 140, 3, 0.7);
+    outline-offset: 0;
+  }
+  textarea { resize: vertical; min-height: 100px; }
+  select { cursor: pointer; }
+  select option { background-color: #1e1e1e; }
+
+  /* Package radio cards */
+  .package-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .pkg-card {
+    position: relative;
+  }
+  .pkg-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+  }
+  .pkg-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+  .pkg-card input:checked + .pkg-label {
+    border-color: #fff;
+    background-color: #2a2a2a;
+  }
+  .pkg-label:hover { border-color: #444; }
+  .pkg-label:focus-within {
+    outline: 2px solid #fd8c03;
+    outline-offset: 2px;
+  }
+  .pkg-name {
+    font-family: 'Dosis', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pkg-desc {
+    font-family: 'Dosis', sans-serif;
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+  }
+  .pkg-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    white-space: nowrap;
+    margin-left: 20px;
+  }
+
+  /* Price summary */
+  .price-box {
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-top: 24px;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Dosis', sans-serif;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .price-row.total {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border-top: 1px solid #333;
+    padding-top: 12px;
+    margin-top: 8px;
+  }
+  .price-row span:last-child { color: #fff; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .required { color: #fd8c03; }
+
+  .submit-row {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .notice {
+    font-family: 'Dosis', sans-serif;
+    font-size: 12px;
+    color: #555;
+    margin-top: 16px;
+    text-align: center;
+  }
+</style>
+
+  <!-- HERO -->
+  <section style="background-color:#111; padding:100px 20px 60px; text-align:center; border-bottom:1px solid #1e1e1e;">
+    <p style="font-family:'Dosis',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; color:#666; margin-bottom:12px;">Ruska Wedding Frames by Joel Nykänen</p>
+    <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:32px; margin-bottom:16px; text-wrap:balance;">Varaa hääkuvaus</h1>
+    <p style="color:#888; font-size:14px; font-family:'Dosis',sans-serif; max-width:480px; margin:0 auto;">Täytä lomake niin Joel ottaa sinuun yhteyttä 1–2 arkipäivän sisällä. Ei sitovia sopimuksia ennen yhteydenottoa.</p>
+  </section>
+
+  <section style="background-color:#111; padding:60px 0;">
+    <div class="form-wrap">
+      <form id="varauslomake" method="POST" action="/api/varaus/haakuvaus">
+
+        <!-- PAKETTI -->
+        <div class="form-section">
+          <h2>1. Valitse paketti</h2>
+          <div class="package-grid">
+
+            <div class="pkg-card">
+              <input type="radio" name="paketti" id="pkg1" value="Hääpotretit — 500€" data-price="500" data-nopea="150" data-lisatunnit="false" required />
+              <label class="pkg-label" for="pkg1">
+                <div>
+                  <div class="pkg-name">Hääpotretit</div>
+                  <div class="pkg-desc">1–2 tuntia · noin 30 kuvaa · toimitus 2–3 viikkoa</div>
+                </div>
+                <div class="pkg-price">500€</div>
+              </label>
+            </div>
+
+            <div class="pkg-card">
+              <input type="radio" name="paketti" id="pkg2" value="Potretit + vihkitilaisuus — 700€" data-price="700" data-nopea="150" data-lisatunnit="false" />
+              <label class="pkg-label" for="pkg2">
+                <div>
+                  <div class="pkg-name">Potretit + vihkitilaisuus</div>
+                  <div class="pkg-desc">1–2h potretit + vihki · noin 80 kuvaa · toimitus 2–3 viikkoa</div>
+                </div>
+                <div class="pkg-price">700€</div>
+              </label>
+            </div>
+
+            <div class="pkg-card">
+              <input type="radio" name="paketti" id="pkg3" value="Potretit + vihki + juhla (8h) — 1600€" data-price="1600" data-nopea="200" data-lisatunnit="true" />
+              <label class="pkg-label" for="pkg3">
+                <div>
+                  <div class="pkg-name">Potretit + vihki + juhla (8h)</div>
+                  <div class="pkg-desc">Max 8 tuntia · noin 300 kuvaa · lisätunnit 200€/h</div>
+                </div>
+                <div class="pkg-price">1 600€</div>
+              </label>
+            </div>
+
+            <div class="pkg-card">
+              <input type="radio" name="paketti" id="pkg4" value="Koko päivä (12h) — 2000€" data-price="2000" data-nopea="400" data-lisatunnit="true" />
+              <label class="pkg-label" for="pkg4">
+                <div>
+                  <div class="pkg-name">Koko päivä dokumentaarinen (12h)</div>
+                  <div class="pkg-desc">Max 12 tuntia · 500–600 kuvaa · lisätunnit 200€/h</div>
+                </div>
+                <div class="pkg-price">2 000€</div>
+              </label>
+            </div>
+
+            <div class="pkg-card">
+              <input type="radio" name="paketti" id="pkg5" value="Häävideo — 2500€" data-price="2500" data-nopea="0" data-lisatunnit="false" />
+              <label class="pkg-label" for="pkg5">
+                <div>
+                  <div class="pkg-name">Häävideo</div>
+                  <div class="pkg-desc">Elokuvamainen kooste noin 5 min · koko hääpäivä</div>
+                </div>
+                <div class="pkg-price">2 500€</div>
+              </label>
+            </div>
+
+          </div>
+
+          <!-- Lisävalinnat -->
+          <div id="lisatunnit-wrap" style="margin-top:16px; display:none;">
+            <div class="field">
+              <label for="lisatunnit">Lisätunnit (200€/h)</label>
+              <select name="lisatunnit" id="lisatunnit">
+                <option value="0">Ei lisätunteja</option>
+                <option value="1">+ 1 tunti (200€)</option>
+                <option value="2">+ 2 tuntia (400€)</option>
+                <option value="3">+ 3 tuntia (600€)</option>
+                <option value="4">+ 4 tuntia (800€)</option>
+                <option value="5">+ 5 tuntia (1 000€)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="nopea-wrap" style="margin-top:12px; display:none;">
+            <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:13px; color:#aaa;">
+              <input type="checkbox" name="nopea_toimitus" id="nopea_toimitus" style="width:auto;" />
+              <span id="nopea-label">Nopea toimitus (+150€)</span>
+            </label>
+          </div>
+
+          <!-- Hintayhteenveto -->
+          <div class="price-box" id="price-box" style="display:none;">
+            <div class="price-row"><span>Paketti</span><span id="sum-paketti">—</span></div>
+            <div class="price-row" id="sum-lisatunnit-row" style="display:none;"><span>Lisätunnit</span><span id="sum-lisatunnit">—</span></div>
+            <div class="price-row" id="sum-nopea-row" style="display:none;"><span>Nopea toimitus</span><span id="sum-nopea">—</span></div>
+            <div class="price-row total"><span>Yhteensä sis. alv 25,5%</span><span id="sum-total">—</span></div>
+          </div>
+        </div>
+
+        <!-- TAPAHTUMA -->
+        <div class="form-section">
+          <h2>2. Häätiedot</h2>
+          <div class="two-col">
+            <div class="field">
+              <label for="paiva">Hääpäivä <span class="required">*</span></label>
+              <input type="date" name="paiva" id="paiva" required />
+            </div>
+            <div class="field">
+              <label for="kaupunki">Tapahtumapaikkakunnat <span class="required">*</span></label>
+              <input type="text" name="kaupunki" id="kaupunki" placeholder="esim. Tampere" autocomplete="off" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="juhlapaikka">Juhlapaikan osoite</label>
+            <input type="text" name="juhlapaikka" id="juhlapaikka" placeholder="Ravintola / Kartano / Kirkko…" autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- ASIAKASTIEDOT -->
+        <div class="form-section">
+          <h2>3. Yhteystiedot</h2>
+          <div class="two-col">
+            <div class="field">
+              <label for="nimi">Nimi <span class="required">*</span></label>
+              <input type="text" name="nimi" id="nimi" placeholder="Etunimi Sukunimi" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="puhelin">Puhelinnumero <span class="required">*</span></label>
+              <input type="tel" name="puhelin" id="puhelin" placeholder="040 123 4567" autocomplete="tel" inputmode="tel" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Sähköposti <span class="required">*</span></label>
+            <input type="email" name="email" id="email" placeholder="sinä@email.fi" autocomplete="email" spellcheck="false" required />
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label for="osoite">Kotiosoite</label>
+              <input type="text" name="osoite" id="osoite" placeholder="Katuosoite" autocomplete="street-address" />
+            </div>
+            <div class="field">
+              <label for="postinumero">Postinumero</label>
+              <input type="text" name="postinumero" id="postinumero" placeholder="00100" autocomplete="postal-code" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="kotipaikka">Kotikunta</label>
+            <input type="text" name="kotipaikka" id="kotipaikka" placeholder="Kaupunki" autocomplete="address-level2" />
+          </div>
+        </div>
+
+        <!-- LISÄTIEDOT -->
+        <div class="form-section">
+          <h2>4. Lisätiedot</h2>
+          <div class="field">
+            <label for="lisatiedot">Toiveet ja muuta kerrottavaa</label>
+            <textarea name="lisatiedot" id="lisatiedot" placeholder="Kerro vapaasti häistäsi, toiveistasi tai kysymyksistäsi…" autocomplete="off"></textarea>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div style="text-align:center; margin-top:48px;">
+
+          <!-- Nappi -->
+          <button type="submit" class="btn-submit" style="touch-action:manipulation;">
+            Lähetä varauskyselylomake
+          </button>
+
+          <!-- Yhteystiedot -->
+          <div style="margin-top:32px; padding:24px 28px; background:#1a1a1a; border:1px solid #2a2a2a; border-radius:4px; max-width:480px; margin-left:auto; margin-right:auto; margin-top:32px;">
+            <p style="font-family:'Dosis',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; color:#555; margin-bottom:14px;">Herääkö kysymyksiä?</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <a href="mailto:joel@ruskamedia.com" style="font-family:'Dosis',sans-serif; font-size:14px; color:#ccc; text-decoration:none; display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#888;">Joel Nykänen</span>
+                <span>joel@ruskamedia.com</span>
+              </a>
+              <a href="mailto:oskari@ruskamedia.com" style="font-family:'Dosis',sans-serif; font-size:14px; color:#ccc; text-decoration:none; display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#888;">Oskari Vattu</span>
+                <span>oskari@ruskamedia.com</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  // Esitäytä kaupunki URL-parametrista
+  const params = new URLSearchParams(window.location.search);
+  const kaupunkiParam = params.get('kaupunki');
+  if (kaupunkiParam) {
+    const kentta = document.getElementById('kaupunki') as HTMLInputElement;
+    if (kentta) kentta.value = kaupunkiParam;
+  }
+
+  const radios = document.querySelectorAll('input[name="paketti"]');
+  const lisatunnitWrap = document.getElementById('lisatunnit-wrap');
+  const nopeaWrap = document.getElementById('nopea-wrap');
+  const nopeaLabel = document.getElementById('nopea-label');
+  const nopeaCb = document.getElementById('nopea_toimitus') as HTMLInputElement;
+  const lisatunnitSel = document.getElementById('lisatunnit') as HTMLSelectElement;
+  const priceBox = document.getElementById('price-box');
+
+  function formatEur(n: number) {
+    return n.toLocaleString('fi-FI') + '€';
+  }
+
+  function updatePrice() {
+    const selected = document.querySelector('input[name="paketti"]:checked') as HTMLInputElement;
+    if (!selected) return;
+
+    const base = parseInt(selected.dataset.price || '0');
+    const nopeaAmt = parseInt(selected.dataset.nopea || '0');
+    const hasLisa = selected.dataset.lisatunnit === 'true';
+
+    lisatunnitWrap!.style.display = hasLisa ? 'block' : 'none';
+    if (!hasLisa) lisatunnitSel.value = '0';
+
+    const hasNopea = nopeaAmt > 0;
+    nopeaWrap!.style.display = hasNopea ? 'block' : 'none';
+    if (hasNopea) nopeaLabel!.textContent = `Nopea toimitus (+${formatEur(nopeaAmt)})`;
+
+    const lisaH = parseInt(lisatunnitSel.value || '0');
+    const lisaAmt = lisaH * 200;
+    const nopeaTotal = (nopeaCb.checked && hasNopea) ? nopeaAmt : 0;
+    const total = base + lisaAmt + nopeaTotal;
+
+    document.getElementById('sum-paketti')!.textContent = formatEur(base);
+
+    const lisaRow = document.getElementById('sum-lisatunnit-row')!;
+    lisaRow.style.display = lisaAmt > 0 ? 'flex' : 'none';
+    document.getElementById('sum-lisatunnit')!.textContent = formatEur(lisaAmt);
+
+    const nopeaRow = document.getElementById('sum-nopea-row')!;
+    nopeaRow.style.display = nopeaTotal > 0 ? 'flex' : 'none';
+    document.getElementById('sum-nopea')!.textContent = formatEur(nopeaTotal);
+
+    document.getElementById('sum-total')!.textContent = formatEur(total);
+    priceBox!.style.display = 'block';
+  }
+
+  radios.forEach(r => r.addEventListener('change', updatePrice));
+  lisatunnitSel.addEventListener('change', updatePrice);
+  nopeaCb.addEventListener('change', updatePrice);
+</script>

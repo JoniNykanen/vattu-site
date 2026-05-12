@@ -1,0 +1,133 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://ruskamedia.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Videotuotanto", "item": "https://ruskamedia.com/videotuotanto/" },
+    { "@type": "ListItem", "position": 3, "name": "Videotuotanto Jyväskylä", "item": "https://ruskamedia.com/videotuotanto/jyvaskyla/" }
+  ]
+};
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Videotuotanto Jyväskylä",
+  "serviceType": "Videotuotanto",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "City", "name": "Jyväskylä" },
+  "url": "https://ruskamedia.com/videotuotanto/jyvaskyla/"
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Tuleeko matkakuluja Jyväskylän alueella?", "acceptedAnswer": { "@type": "Answer", "text": "Ei. Jyväskylä on kotikaupunkimme — kuvaukset täällä eivät sisällä matkakuluja." }},
+    { "@type": "Question", "name": "Kuinka nopeasti projekti voidaan aloittaa?", "acceptedAnswer": { "@type": "Answer", "text": "Jyväskylässä yleensä 1–2 viikon sisällä. Kiireelliset projektit sovitaan tapauskohtaisesti." }},
+    { "@type": "Question", "name": "Kuvaatteko myös Keski-Suomen alueella?", "acceptedAnswer": { "@type": "Answer", "text": "Kyllä. Koko Keski-Suomi onnistuu. Matkakulut lasketaan tarjoukseen Jyväskylän ulkopuolelle." }}
+  ]
+};
+---
+<Layout
+  title="Videotuotanto Jyväskylä — Yritysvideot & brändivideot | Ruska Media"
+  description="Videotuotanto Jyväskylässä — yritysvideot, brändivideot ja rekrytointivideot. Ruska Media on Jyväskylän kotitiimi. Ei matkakuluja, nopein saatavuus."
+  canonical="https://ruskamedia.com/videotuotanto/jyvaskyla/"
+  schema={[breadcrumbSchema, serviceSchema, faqSchema]}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:500px; background-image:url('https://ruskamedia.com/wp-content/uploads/2025/08/Ruska-Media-Videotuotanto.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.6;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Ruska Media</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:38px;">Videotuotanto Jyväskylä</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbb; font-size:15px; line-height:1.9;">
+        Jyväskylä on Ruska Median kotikaupunki — videotuotanto onnistuu nopeasti, ilman matkakuluja ja tutun tiimin kanssa. Olemme kuvanneet satoja yrityksille Jyväskylässä ja Keski-Suomessa. Joel Nykänen johtaa tuotannot ideasta valmiiseen videoon.
+      </p>
+    </div>
+  </section>
+
+  <!-- PAIKALLINEN KONTEKSTI -->
+  <section style="background-color:#111; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest" style="font-size:18px; text-align:center; margin-bottom:36px;">Miksi Ruska Media Jyväskylässä?</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        {[
+          ['Kotimarkkina', 'Tunnemme Jyväskylän yritykset, tapahtumat ja kuvauspaikat. Ei turhaa säätöä — päästään suoraan asiaan.'],
+          ['Ei matkakuluja', 'Jyväskylän sisällä kaikki kuvaukset ilman km-korvausta. Yksi hinta, ei yllätyksiä.'],
+          ['Nopein saatavuus', 'Pystymme usein aloittamaan projektin lyhyellä varoitusajalla — ei viikkoja odottelua.'],
+          ['Jyväskylän kasvava markkina', 'Videotuotanto Jyväskylässä kasvaa voimakkaasti. Paikalliset yritykset investoivat sisältöön enemmän kuin koskaan.'],
+        ].map(([nimi, kuvaus]) => (
+          <div style="border-left:2px solid #fd8c03; padding-left:18px;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">{nimi}</h3>
+            <p style="color:#888; font-size:13px; line-height:1.7;">{kuvaus}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PALVELUT -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:18px;">Mitä tuotamme Jyväskylässä</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; text-align:left;">
+        {[
+          ['Yritysvideot ja brändivideot', 'Yrityksen tarina, arvot ja palvelut elokuvamaisen laadun kautta.'],
+          ['Rekrytointivideot', 'Näytä hakijoille millainen on teidän kulttuuri — ennen kuin he hakevat.'],
+          ['Tapahtumavideot', 'Seminaarit, lanseeraukset, tilaisuudet — koko tapahtuma tallennettuna.'],
+          ['Some-videot', 'LinkedIn, Instagram, YouTube — lyhyet ja iskevät videot jotka toimivat algoritmissa.'],
+        ].map(([otsikko, teksti]) => (
+          <a href="/varaa/videomarkkinointi" class="pricing-card" style="background:#222; border-radius:4px; padding:20px; gap:10px;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">{otsikko}</h3>
+            <p style="color:#888; font-size:13px; line-height:1.7;">{teksti}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#111; padding:60px 20px;" class="faq">
+    <div style="max-width:700px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:18px; text-align:center;">Usein kysyttyä — Jyväskylä</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer;">Tuleeko matkakuluja Jyväskylän alueella?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Ei. Jyväskylä on kotikaupunkimme — kuvaukset täällä eivät sisällä matkakuluja.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer;">Kuinka nopeasti projekti voidaan aloittaa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Jyväskylässä yleensä 1–2 viikon sisällä. Kiireelliset projektit sovitaan tapauskohtaisesti.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer;">Kuvaatteko myös Keski-Suomen alueella?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Kyllä. Koko Keski-Suomi onnistuu. Matkakulut lasketaan tarjoukseen Jyväskylän ulkopuolelle.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color:#1a1a1a; padding:60px 20px; text-align:center;">
+    <div style="max-width:500px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:18px;">Pyydä tarjous — Jyväskylä</h2>
+      <a href="/varaa/videomarkkinointi/?kaupunki=Jyv%C3%A4skyl%C3%A4" class="btn-white">Pyydä tarjous</a>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section style="background-color:#111; padding:30px 20px; text-align:center;">
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center;">
+      <a href="/videotuotanto/" class="btn-ghost">Videotuotanto koko Suomessa</a>
+      <a href="/videotuotanto/tampere/" class="btn-ghost">Videotuotanto Tampere</a>
+      <a href="/videotuotanto/helsinki/" class="btn-ghost">Videotuotanto Helsinki</a>
+    </div>
+  </section>
+
+</Layout>

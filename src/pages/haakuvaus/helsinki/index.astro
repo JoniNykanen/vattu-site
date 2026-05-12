@@ -1,0 +1,142 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://ruskamedia.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Hääkuvaus", "item": "https://ruskamedia.com/haakuvaus/" },
+    { "@type": "ListItem", "position": 3, "name": "Hääkuvaus Helsinki", "item": "https://ruskamedia.com/haakuvaus/helsinki/" }
+  ]
+};
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Hääkuvaus Helsinki",
+  "alternateName": "Ruska Wedding Frames",
+  "serviceType": "Hääkuvaus",
+  "description": "Hääkuvaus Helsingissä — Joel Nykänen kuvaa häät dokumentaarisesti. Selkeät paketit, ei ennakkomaksuja.",
+  "provider": { "@type": "LocalBusiness", "name": "Ruska Media", "url": "https://ruskamedia.com" },
+  "areaServed": { "@type": "City", "name": "Helsinki" },
+  "url": "https://ruskamedia.com/haakuvaus/helsinki/"
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Kauanko matka Helsinkiin kestää?", "acceptedAnswer": { "@type": "Answer", "text": "Jyväskylästä Helsinkiin on noin 2,5–3 tuntia. Matkakulut lasketaan tarjoukseen — ne eivät yllätä." }},
+    { "@type": "Question", "name": "Milloin hääkuvaaja kannattaa varata Helsinkiin?", "acceptedAnswer": { "@type": "Answer", "text": "12–18 kuukautta etukäteen on minimi. Helsinki on vilkas hääkaupunki — suosituimmat tilat täyttyvät jopa kaksi vuotta etukäteen." }},
+    { "@type": "Question", "name": "Onko Helsingissä yöpyminen tarpeen pitkissä kuvauksissa?", "acceptedAnswer": { "@type": "Answer", "text": "Pitkissä kuvauksissa (12h) yöpyminen on järkevää. Sovitaan tapauskohtaisesti — majoituskulut lisätään tarjoukseen." }}
+  ]
+};
+const schema = [breadcrumbSchema, serviceSchema, faqSchema];
+---
+<Layout
+  title="Hääkuvaus Helsinki — Ruska Wedding Frames by Joel Nykänen"
+  description="Hääkuvaus Helsingissä — Joel Nykänen kuvaa häät dokumentaarisesti. Selkeät paketit, ei ennakkomaksuja. Varaa päiväsi."
+  canonical="https://ruskamedia.com/haakuvaus/helsinki/"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden" style="height:500px; background-image:url('https://ruskamedia.com/wp-content/uploads/2022/11/Häiden-valokuvaus-Helsinki.jpg'); background-size:cover; background-position:center;">
+    <div class="absolute inset-0 bg-black" style="opacity:0.55;"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6" style="z-index:1; margin-top:70px;">
+      <p style="color:#aaa; font-size:13px; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px;">Ruska Wedding Frames by Joel Nykänen</p>
+      <h1 class="font-heading text-white uppercase tracking-widest font-normal anim-fade-up" style="font-size:38px;">Hääkuvaus Helsinki</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="background-color:#1e1e1e; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <p style="color:#bbb; font-size:15px; line-height:1.9;">
+        Helsinki on pitkä matka Jyväskylästä — noin 270 kilometriä — mutta se ei tarkoita ettei sinne kannata mennä. Kaupungissa on kuvauspaikkoja, joita ei löydy muualta: Suomenlinna, merenranta, Tähtitorninmäki ja arkkitehtuuri, joka toimii häissä sekä kesällä että talvella. Kun lähden Helsinkiin, suunnittelen päivän niin, että siirryt minimoidaan ja kuvausaikaa on maksimissaan. Matkakulut ja mahdollinen majoitus lisätään tarjoukseen avoimesti.
+      </p>
+    </div>
+  </section>
+
+  <!-- SIJAINNIT -->
+  <section style="background-color:#111; padding:60px 20px;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest" style="font-size:18px; text-align:center; margin-bottom:36px;">Helsingissä suosimat kuvauskohteet</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        {[
+          ['Suomenlinna', 'Saarimaisema, historiallinen tunnelma, ainutlaatuinen tausta — ei löydy muualta Suomesta.'],
+          ['Kauppatori ja Eteläsatama', 'Meri, kaupunki ja ikoninen Helsinki yhdessä kuvassa. Toimii erityisesti kesällä ja iltavalon aikaan.'],
+          ['Tähtitorninmäki', 'Näköala koko kaupunkiin ja romanttinen valaistus illalla. Paikka jossa Helsinki näyttää parhaalta.'],
+          ['Esplanadi ja Kaivopuisto', 'Klassinen helsinkiläinen puistomaisema — rauhallinen, arvokas, sopii kaiken tyylisiin häihin.'],
+          ['Arabianranta', 'Moderni kaupunkiympäristö veden äärellä — hyvä valinta pareille jotka haluavat jotain erilaista.'],
+        ].map(([nimi, kuvaus]) => (
+          <div style="border-left:2px solid #fd8c03; padding-left:18px;">
+            <h3 style="color:#fff; font-family:'Dosis',sans-serif; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">{nimi}</h3>
+            <p style="color:#888; font-size:13px; line-height:1.7;">{kuvaus}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section style="background-color:#111; padding:0;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px;">
+      {[
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Häiden-valokuvaus-Helsinki.jpg', 'Hääkuvaus Helsinki — Joel Nykänen'],
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Häävalokuvausta-koko-Suomessa-Ruska-Media.jpg', 'Häävalokuvausta Suomessa'],
+        ['https://ruskamedia.com/wp-content/uploads/2022/11/Häävalokuvaaja.jpg', 'Häävalokuvaaja — Ruska Media'],
+      ].map(([src, alt]) => (
+        <div style="aspect-ratio:1; overflow:hidden;">
+          <img src={src} alt={alt} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PAKETIT -->
+  <section style="background-color:#1a1a1a; padding:60px 20px;">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:20px;">Hääkuvauspaketit</h2>
+      <p style="color:#999; font-size:14px; margin-bottom:32px;">Paketit 500 € – 2 500 €. Matkakulut Helsinkiin lisätään tarjoukseen.</p>
+      <a href="/haakuvaus/" class="btn-outline">Katso kaikki hääkuvauspaketit</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#111; padding:60px 20px;" class="faq">
+    <div style="max-width:700px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-8" style="font-size:20px; text-align:center;">Usein kysyttyä — Helsinki</h2>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Mitä hääkuvaus maksaa Helsingissä?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Paketit ovat samat kuin muuallakin — potrettikuvaus 500 €, koko päivä (12h) 2 000 €, häävideo 2 500 €. Matkakulut Helsinkiin lisätään päälle. Kaupunki ei siis nosta pakettihintaa.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Milloin hääkuvaaja kannattaa varata Helsinkiin?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">12–18 kuukautta etukäteen on minimi. Helsinki on vilkas hääkaupunki — suosituimmat tilat täyttyvät jopa kaksi vuotta etukäteen.</p>
+      </details>
+      <details style="border-bottom:1px solid #2a2a2a; padding:16px 0;">
+        <summary style="color:#fff; font-family:'Dosis',sans-serif; font-size:15px; font-weight:600; cursor:pointer; list-style:none;">Onko Helsingissä yöpyminen tarpeen pitkissä kuvauksissa?</summary>
+        <p style="color:#999; font-size:14px; line-height:1.8; margin-top:12px;">Pitkissä kuvauksissa (12h) yöpyminen on järkevää. Sovitaan tapauskohtaisesti — majoituskulut lisätään tarjoukseen.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color:#1a1a1a; padding:60px 20px; text-align:center;">
+    <div style="max-width:500px; margin:0 auto;">
+      <h2 class="font-heading text-white uppercase tracking-widest mb-6" style="font-size:18px;">Varaa hääkuvaus Helsingissä</h2>
+      <a href="/varaa/haakuvaus/?kaupunki=Helsinki" class="btn-white">Varaa hääkuvaus</a>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section style="background-color:#111; padding:30px 20px; text-align:center;">
+    <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; font-family:'Dosis',sans-serif; font-size:13px;">
+      <a href="/haakuvaus/" class="btn-ghost">Hääkuvaus koko Suomessa</a>
+      <a href="/haakuvaus/jyvaskyla/" class="btn-ghost">Hääkuvaus Jyväskylä</a>
+      <a href="/haakuvaus/tampere/" class="btn-ghost">Hääkuvaus Tampere</a>
+      <a href="/haakuvaus/turku/" class="btn-ghost">Hääkuvaus Turku</a>
+    </div>
+  </section>
+
+</Layout>
