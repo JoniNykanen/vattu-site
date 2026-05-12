@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Ota yhteyttä — LVI-insinööritoimisto Vattu Oy"
+  description="Ota yhteyttä LVI-insinööritoimisto Vattu Oy:hyn. Pyydä tarjous tai varaa ilmainen etäpalaveri."
+>
+  <!-- Page hero -->
+  <div class="bg-forest py-16 lg:py-20">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/25 mb-5">Vattu Oy</p>
+      <h1 class="font-heading text-white leading-tight" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+        Ota yhteyttä
+      </h1>
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="bg-forest overflow-hidden leading-none -mt-px">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-14 lg:h-20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
+    </svg>
+  </div>
+
+  <main class="bg-cream min-h-screen">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+        <!-- Left: Contact info -->
+        <div class="reveal">
+          <p class="font-body text-base text-[#1A1A1A]/65 leading-relaxed mb-14">
+            Pyydä tarjous tai varaa maksuton etäpalaveri. Vastaan yhteydenottoihin arkisin ja pyrin vastaamaan 1–2 arkipäivän sisällä.
+          </p>
+          <div class="space-y-8">
+            <div class="border-t border-[#1A1A1A]/10 pt-6">
+              <p class="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/25 mb-3">Sähköposti</p>
+              <a href="mailto:oskari@vattu.fi" class="font-heading text-xl text-forest hover:text-forest/60 transition-colors">
+                oskari@vattu.fi
+              </a>
+            </div>
+            <div class="border-t border-[#1A1A1A]/10 pt-6">
+              <p class="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/25 mb-3">Puhelin</p>
+              <a href="tel:+358407656096" class="font-heading text-xl text-forest hover:text-forest/60 transition-colors">
+                040 7656 096
+              </a>
+            </div>
+            <div class="border-t border-[#1A1A1A]/10 pt-6">
+              <p class="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/25 mb-3">Y-tunnus</p>
+              <p class="font-body text-base text-[#1A1A1A]/65">3562689-8</p>
+            </div>
+            <div class="border-t border-[#1A1A1A]/10 pt-6">
+              <p class="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/25 mb-3">Toimialue</p>
+              <p class="font-body text-base text-[#1A1A1A]/65">Uusimaa, Pirkanmaa, Keski-Suomi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Calendar + Form -->
+        <div class="reveal space-y-16">
+
+          <!-- Google Calendar -->
+          <div>
+            <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/25 mb-4">Varaa etäpalaveri</p>
+            <h2 class="font-heading text-[#1A1A1A] text-xl mb-2">Valitse sopiva aika</h2>
+            <p class="font-body text-sm text-[#1A1A1A]/50 mb-6">Ilmainen 30 min etäpalaveri — Google Meet -linkki tulee sähköpostiisi automaattisesti.</p>
+            <div class="border border-[#1A1A1A]/8 overflow-hidden shadow-sm">
+              <div class="bg-forest/5 border-b border-[#1A1A1A]/8 px-5 py-3 flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest/40"></div>
+                <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">LVI-insinööritoimisto Vattu Oy</span>
+              </div>
+              <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true"
+                style="border: 0; display: block;"
+                width="100%"
+                height="580"
+                frameborder="0"
+                title="Varaa etäpalaveri — LVI-insinööritoimisto Vattu Oy"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="flex items-center gap-6">
+            <div class="flex-1 h-px bg-[#1A1A1A]/10"></div>
+            <span class="font-body text-[11px] tracking-[0.18em] uppercase text-[#1A1A1A]/30">tai</span>
+            <div class="flex-1 h-px bg-[#1A1A1A]/10"></div>
+          </div>
+
+          <!-- Contact form -->
+          <div>
+            <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/25 mb-4">Lähetä viesti</p>
+            <h2 class="font-heading text-[#1A1A1A] text-xl mb-8">Kerro projektistasi</h2>
+            <form action="mailto:oskari@vattu.fi" method="post" enctype="text/plain" class="space-y-8">
+              <div>
+                <label for="nimi" class="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/30 mb-3">
+                  Nimi
+                </label>
+                <input
+                  type="text"
+                  id="nimi"
+                  name="nimi"
+                  required
+                  class="w-full border-b border-[#1A1A1A]/15 bg-transparent py-3 font-body text-base text-[#1A1A1A] focus:outline-none focus:border-forest transition-colors"
+                />
+              </div>
+              <div>
+                <label for="sahkoposti" class="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/30 mb-3">
+                  Sähköposti
+                </label>
+                <input
+                  type="email"
+                  id="sahkoposti"
+                  name="sahkoposti"
+                  required
+                  class="w-full border-b border-[#1A1A1A]/15 bg-transparent py-3 font-body text-base text-[#1A1A1A] focus:outline-none focus:border-forest transition-colors"
+                />
+              </div>
+              <div>
+                <label for="viesti" class="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/30 mb-3">
+                  Viesti
+                </label>
+                <textarea
+                  id="viesti"
+                  name="viesti"
+                  rows="5"
+                  required
+                  class="w-full border-b border-[#1A1A1A]/15 bg-transparent py-3 font-body text-base text-[#1A1A1A] focus:outline-none focus:border-forest transition-colors resize-none"
+                ></textarea>
+              </div>
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="font-body text-[11px] tracking-[0.18em] uppercase bg-forest text-white px-10 py-4 hover:bg-forest/80 transition-colors"
+                >
+                  Lähetä viesti
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  reveals.forEach((el) => observer.observe(el));
+</script>

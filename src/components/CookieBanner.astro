@@ -1,0 +1,468 @@
+---
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
+---
+<style>
+  /* ── Banner (ensimmäinen käynti) ── */
+  #cookie-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 9998;
+    background: #141414;
+    border-top: 1px solid #2a2a2a;
+    padding: 18px 32px calc(18px + env(safe-area-inset-bottom));
+    font-family: 'Dosis', sans-serif;
+    display: none;
+  }
+  #cookie-bar.visible { display: block; }
+
+  .bar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .bar-text { color: #777; font-size: 12px; line-height: 1.6; flex: 1; min-width: 200px; }
+  .bar-text a { color: #fd8c03; text-decoration: none; }
+  .bar-actions { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
+
+  /* ── Modal ── */
+  #cookie-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  #cookie-modal.visible { display: flex; }
+
+  .modal-panel {
+    background: #fff;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    font-family: 'Dosis', sans-serif;
+  }
+
+  .modal-dark-header {
+    background: #111;
+    padding: 28px 48px 24px;
+    border-top: 3px solid #fd8c03;
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    gap: 16px;
+  }
+  .modal-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .modal-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 26px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: color 0.2s;
+    touch-action: manipulation;
+  }
+  .modal-close:hover { color: #fff; }
+  .modal-desc {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+  .modal-desc a { color: #fd8c03; text-decoration: none; }
+
+  .modal-body {
+    padding: 28px 48px 32px;
+  }
+
+  /* Kategoria */
+  .cookie-category {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #f7f7f7;
+    gap: 16px;
+  }
+  .category-info { flex: 1; }
+  .category-name {
+    color: #111;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 3px;
+  }
+  .category-desc { color: #888; font-size: 12px; line-height: 1.5; }
+
+  /* Toggle */
+  .toggle-wrap { flex-shrink: 0; }
+  .toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    display: block;
+    cursor: pointer;
+  }
+  .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .toggle-track {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 24px;
+    transition: background 0.2s;
+  }
+  .toggle input:checked + .toggle-track { background: #fd8c03; }
+  .toggle-thumb {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 18px; height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .toggle input:checked ~ .toggle-thumb { transform: translateX(20px); }
+  .toggle-required {
+    font-size: 11px;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  /* Cookiet-lista */
+  .cookie-list {
+    padding: 10px 20px 14px;
+    border-top: 1px solid #eee;
+    background: #fff;
+  }
+  .cookie-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 6px 16px;
+    font-size: 12px;
+    color: #999;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .cookie-item:last-child { border-bottom: none; }
+  .cookie-item strong { color: #fd8c03; font-weight: 600; }
+
+  /* Buttons */
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .btn-save {
+    background: transparent;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    touch-action: manipulation;
+  }
+  .btn-save:hover { color: #111; border-color: #999; }
+  .btn-accept-all {
+    background: #111;
+    color: #fff;
+    border: 1px solid #111;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    touch-action: manipulation;
+  }
+  .btn-accept-all:hover { background: #333; }
+  .btn-necessary {
+    background: transparent;
+    color: #aaa;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    touch-action: manipulation;
+  }
+  .btn-necessary:hover { color: #555; border-color: #bbb; }
+
+  /* Simple bar buttons */
+  .btn-bar-all {
+    background: #fff; color: #111; border: 1px solid #fff;
+    border-radius: 30px; padding: 10px 22px;
+    font-family: 'Dosis', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s, color 0.2s;
+    touch-action: manipulation; white-space: nowrap;
+  }
+  .btn-bar-all:hover { background: transparent; color: #fff; }
+  .btn-bar-settings {
+    background: transparent; color: #555; border: 1px solid #333;
+    border-radius: 30px; padding: 10px 22px;
+    font-family: 'Dosis', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: color 0.2s, border-color 0.2s;
+    touch-action: manipulation; white-space: nowrap;
+  }
+  .btn-bar-settings:hover { color: #fff; border-color: #555; }
+
+  /* Floating button */
+  #cookie-float {
+    position: fixed; bottom: 20px; left: 20px;
+    z-index: 9997; width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    touch-action: manipulation;
+  }
+  #cookie-float:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+
+  @media (max-width: 600px) {
+    .modal-dark-header { padding: 20px 20px 18px; }
+    .modal-body { padding: 20px 20px 24px; }
+    .modal-buttons { flex-direction: column; }
+    .btn-save, .btn-accept-all, .btn-necessary { text-align: center; }
+    .bar-actions { width: 100%; }
+    .btn-bar-all, .btn-bar-settings { flex: 1; text-align: center; }
+    .cookie-item { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Yksinkertainen palkki ensimmäiselle käynnille -->
+<div id="cookie-bar" role="dialog" aria-modal="true" aria-label="Evästeilmoitus">
+  <div class="bar-inner">
+    <p class="bar-text">
+      Käytämme analytiikkaevästeitä sivuston kehittämiseen.
+      <a href="/tietosuoja/">Tietosuoja</a>
+    </p>
+    <div class="bar-actions">
+      <button class="btn-bar-all" id="bar-accept-all">Hyväksy kaikki</button>
+      <button class="btn-bar-settings" id="bar-open-settings">Muokkaa asetuksia</button>
+    </div>
+  </div>
+</div>
+
+<!-- Asetusmodal -->
+<div id="cookie-modal" role="dialog" aria-modal="true" aria-label="Evästeasetukset">
+  <div class="modal-panel">
+    <div class="modal-dark-header">
+      <div class="modal-header">
+        <h2 class="modal-title">Evästeasetukset</h2>
+        <button class="modal-close" id="modal-close" aria-label="Sulje">×</button>
+      </div>
+      <p class="modal-desc">
+        Täällä voit muuttaa evästeasetuksiasi. Välttämättömät evästeet ovat aina käytössä.
+        Lisätietoja <a href="/tietosuoja/">tietosuojaselosteessa</a>.
+      </p>
+    </div>
+    <div class="modal-body">
+
+    <!-- Kategoria 1: Välttämättömät -->
+    <div class="cookie-category">
+      <div class="category-header">
+        <div class="category-info">
+          <div class="category-name">Välttämättömät</div>
+          <div class="category-desc">Sivuston perustoiminnallisuus. Evästeasetustesi tallennus.</div>
+        </div>
+        <div class="toggle-wrap">
+          <span class="toggle-required">Aina päällä</span>
+        </div>
+      </div>
+      <div class="cookie-list">
+        <div class="cookie-item">
+          <strong>ruska-cookie-consent</strong>
+          <span>Tallentaa evästeasetuksesi. Vanhenee 365 päivässä.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kategoria 2: Analytiikka -->
+    <div class="cookie-category">
+      <div class="category-header">
+        <div class="category-info">
+          <div class="category-name">Analytiikka</div>
+          <div class="category-desc">Auttavat ymmärtämään miten sivustoa käytetään (GTM, GA4, Clarity).</div>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle" aria-label="Analytiikka-evästeet">
+            <input type="checkbox" id="toggle-analytics" />
+            <div class="toggle-track"></div>
+            <div class="toggle-thumb"></div>
+          </label>
+        </div>
+      </div>
+      <div class="cookie-list">
+        <div class="cookie-item">
+          <strong>_ga, _ga_*</strong>
+          <span>Google Analytics 4 — sivustokävijöiden seuranta. 2 vuotta.</span>
+        </div>
+        <div class="cookie-item">
+          <strong>_cs_id, _cs_s</strong>
+          <span>Microsoft Clarity — käyttäytymisanalytiikka. 1 vuosi.</span>
+        </div>
+        <div class="cookie-item">
+          <strong>_gtm_*</strong>
+          <span>Google Tag Manager — tagien hallinta. Istunto.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-buttons">
+      <button class="btn-accept-all" id="modal-accept-all">Hyväksy kaikki</button>
+      <button class="btn-save" id="modal-save">Tallenna valinta</button>
+      <button class="btn-necessary" id="modal-necessary">Hyväksy välttämättömät</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating nappi -->
+<button id="cookie-float" title="Evästeasetukset" aria-label="Muokkaa evästeasetuksia">🍪</button>
+
+<script define:vars={{ gtmId }}>
+  const KEY = 'ruska-cookie-consent';
+  const bar = document.getElementById('cookie-bar');
+  const modal = document.getElementById('cookie-modal');
+  const toggle = document.getElementById('toggle-analytics');
+
+  function loadGTM(id) {
+    if (!id || window.__gtmLoaded) return;
+    window.__gtmLoaded = true;
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',id);
+  }
+
+  function clearCookies() {
+    const parts = window.location.hostname.split('.');
+    const base = parts.slice(-2).join('.');
+    ['_ga','_gid','_gat','_cs_id','_cs_s','_cs_c'].forEach(n => {
+      document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${base}`;
+      document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${base}`;
+    });
+    document.cookie.split(';').forEach(c => {
+      const n = c.trim().split('=')[0];
+      if (n.startsWith('_ga_')) {
+        document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${base}`;
+      }
+    });
+  }
+
+  function save(analytics) {
+    const prev = localStorage.getItem(KEY);
+    localStorage.setItem(KEY, analytics ? 'granted' : 'denied');
+    bar.classList.remove('visible');
+    modal.classList.remove('visible');
+    if (analytics) {
+      loadGTM(gtmId);
+    } else {
+      clearCookies();
+      if (prev === 'granted') window.location.reload();
+    }
+  }
+
+  // Focus trap: pysy modalin sisällä Tab-näppäimellä
+  const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  modal?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || !modal.classList.contains('visible')) return;
+    const focusable = Array.from(modal.querySelectorAll(focusableSelectors));
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last?.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first?.focus(); }
+    }
+  });
+
+  function openModal() {
+    const saved = localStorage.getItem(KEY);
+    if (toggle) toggle.checked = (saved === 'granted');
+    bar.classList.remove('visible');
+    modal.classList.add('visible');
+    // Siirrä fokus modalin ensimmäiseen elementtiin
+    const firstFocusable = modal?.querySelector(focusableSelectors);
+    setTimeout(() => firstFocusable?.focus(), 50);
+  }
+
+  function closeModal() {
+    modal.classList.remove('visible');
+    if (!localStorage.getItem(KEY)) bar.classList.add('visible');
+  }
+
+  // Init
+  const saved = localStorage.getItem(KEY);
+  if (!saved) {
+    bar.classList.add('visible');
+  } else if (saved === 'granted') {
+    loadGTM(gtmId);
+  }
+
+  // Bar
+  document.getElementById('bar-accept-all')?.addEventListener('click', () => save(true));
+  document.getElementById('bar-open-settings')?.addEventListener('click', openModal);
+
+  // Modal
+  document.getElementById('modal-accept-all')?.addEventListener('click', () => save(true));
+  document.getElementById('modal-necessary')?.addEventListener('click', () => save(false));
+  document.getElementById('modal-save')?.addEventListener('click', () => save(toggle?.checked ?? false));
+  document.getElementById('modal-close')?.addEventListener('click', closeModal);
+
+  // Sulje klikkaamalla taustaa
+  modal?.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  // Floating nappi + footer-nappi + custom event
+  function openSettings() { openModal(); }
+  document.getElementById('cookie-float')?.addEventListener('click', openSettings);
+  window.addEventListener('cookie-reset', openSettings);
+</script>
