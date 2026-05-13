@@ -1,35 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import img0217 from '../assets/images/IMG_0217.jpg';
+import img0223 from '../assets/images/IMG_0223.jpg';
 ---
 
 <Layout
-  title="LVI-insinööritoimisto Vattu Oy"
-  description="LVI-suunnittelua asuin- ja toimitilakohteisiin sekä energiatodistukset ja -selvitykset. Uusimaa, Pirkanmaa, Keski-Suomi."
+  title="LVI-suunnittelu Helsinki, Tampere, Jyväskylä | Vattu Oy"
+  description="LVI-suunnittelija Uudellamaalla, Pirkanmaalla ja Keski-Suomessa. KVV, IV ja FISE-pätevyydet. Energiatodistukset ja -selvitykset. Pyydä ilmainen tarjous."
 >
 
   <!-- ── HERO ── -->
-  <section id="top" class="bg-forest">
-
-    <!-- Mobiili: kuva ylhäällä -->
-    <div class="lg:hidden px-3 pt-20">
-      <div class="relative w-full aspect-[3/2] rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
-        <img
-          src="/images/IMG_0217.jpg"
-          alt="Oskari Vattu LVI-insinööri"
-          class="w-full h-full object-cover object-[center_60%]"
-        />
-        <div class="absolute inset-0 bg-forest/20"></div>
-      </div>
-    </div>
+  <section id="top" class="bg-forest relative">
 
     <!-- Mobiili + desktop: teksti + desktop-kuva -->
-    <div class="relative w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[100dvh]">
-
-      <!-- Hiukkasanimaatio taustalla -->
-      <canvas id="flow-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-20" aria-hidden="true"></canvas>
+    <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[100dvh]">
 
       <!-- Teksti -->
-      <div class="relative flex flex-col justify-center px-8 lg:px-14 xl:px-20 pt-28 pb-12 lg:py-0">
+      <div class="relative flex flex-col justify-center px-8 lg:px-14 xl:px-20 pt-28 pb-8 lg:py-0">
 
         <!-- Eyebrow badge -->
         <div class="hero-label inline-flex items-center gap-2 mb-8 w-max">
@@ -44,56 +32,78 @@ import Layout from '../layouts/Layout.astro';
         </h1>
 
         <!-- Typewriter -->
-        <p class="hero-title font-body text-[11px] tracking-[0.2em] uppercase text-white/30 mb-10 h-4">
+        <p class="hero-title font-body text-[13px] tracking-[0.18em] uppercase text-white/55 mb-10 h-5">
           <span id="typewriter"></span><span class="typewriter-cursor">|</span>
         </p>
 
         <div class="hero-cta flex flex-col sm:flex-row gap-3">
-          <a href="#yhteydenotto" class="group inline-flex items-center justify-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-white text-forest rounded-full px-6 py-3.5 hover:bg-white/90 transition-all duration-300 active:scale-[0.97] shadow-[0_2px_20px_rgba(255,255,255,0.15)]">
+          <a href="#yhteydenotto" class="group inline-flex items-center justify-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-accent text-white rounded-full px-6 py-3.5 hover:bg-accent/90 transition-colors duration-300 active:scale-[0.97] shadow-[0_2px_20px_rgba(196,136,58,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-forest">
             Varaa etäpalaveri
             <span class="w-6 h-6 rounded-full bg-forest/10 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
             </span>
           </a>
-          <a href="#palvelut" class="inline-flex items-center justify-center font-body text-[11px] tracking-[0.16em] uppercase text-white/45 rounded-full px-6 py-3.5 ring-1 ring-white/15 hover:text-white hover:ring-white/30 transition-all duration-300">
+          <a href="#palvelut" class="inline-flex items-center justify-center font-body text-[11px] tracking-[0.16em] uppercase text-white/45 rounded-full px-6 py-3.5 ring-1 ring-white/15 hover:text-white hover:ring-white/30 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest">
             Katso palvelut
           </a>
         </div>
       </div>
 
-      <!-- Desktop-kuva -->
-      <div class="hidden lg:block relative group">
-        <img
-          src="/images/IMG_0217.jpg"
-          alt="Oskari Vattu LVI-insinööri"
-          class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-        />
-        <!-- Perusoverlay -->
-        <div class="absolute inset-0 bg-forest/15 transition-opacity duration-500 group-hover:opacity-0"></div>
-        <!-- Hover-overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
-          <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/40 mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">LVI-suunnittelija</p>
-          <h3 class="font-heading text-white text-2xl mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Oskari Vattu</h3>
-          <div class="mb-4"></div>
-          <p class="font-body text-sm text-white/65 leading-relaxed max-w-[320px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-[175ms]">
-            Yli 5 vuoden kokemus LVI-suunnittelusta. Aiemmin Heatco Finland Oy ja AirExet Oy. LUT-yliopiston energiatekniikan DI-opiskelija. AutoCAD & MagiCAD.
-          </p>
-          <div class="mt-5 flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200">
-            <a href="https://www.linkedin.com/in/oskari-vattu-517936280/" target="_blank" rel="noopener noreferrer" class="font-body text-[10px] tracking-[0.14em] uppercase text-white/40 hover:text-white border border-white/15 px-3 py-1.5 transition-colors duration-200">
-              LinkedIn
-            </a>
-            <a href="mailto:oskari@vattu.fi" class="font-body text-[10px] tracking-[0.14em] uppercase text-white/40 hover:text-white border border-white/15 px-3 py-1.5 transition-colors duration-200">
-              oskari@vattu.fi
-            </a>
-          </div>
-        </div>
-      </div>
+      <!-- Desktop-kuva placeholder -->
+      <div class="hidden lg:block" aria-hidden="true"></div>
 
     </div>
+
+    <!-- Desktop-kuva (section-relative, ei leikkaudu grid-itemistä) -->
+    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden group">
+      <Image
+        src={img0217}
+        alt="Oskari Vattu LVI-insinööri"
+        fetchpriority="high"
+        loading="eager"
+        class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+      />
+      <!-- Perusoverlay -->
+      <div class="absolute inset-0 bg-forest/15 transition-opacity duration-500 group-hover:opacity-0"></div>
+      <!-- Alareuna-fade (aina näkyvissä, ei poistu hover:ssa) -->
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-forest to-transparent"></div>
+      <!-- Hover-overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
+        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/40 mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">LVI-suunnittelija</p>
+        <h3 class="font-heading text-white text-2xl mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Oskari Vattu</h3>
+        <div class="mb-4"></div>
+        <p class="font-body text-sm text-white/65 leading-relaxed max-w-[320px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-[175ms]">
+          Yli 5 vuoden kokemus LVI-suunnittelusta. Aiemmin Heatco Finland Oy ja AirExet Oy. LUT-yliopiston energiatekniikan DI-opiskelija. AutoCAD & MagiCAD.
+        </p>
+        <div class="mt-5 flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200">
+          <a href="https://www.linkedin.com/in/oskari-vattu-517936280/" target="_blank" rel="noopener noreferrer" class="font-body text-[10px] tracking-[0.14em] uppercase text-white/40 hover:text-white border border-white/15 px-3 py-1.5 transition-colors duration-200">
+            LinkedIn
+          </a>
+          <a href="mailto:oskari@vattu.fi" class="font-body text-[10px] tracking-[0.14em] uppercase text-white/40 hover:text-white border border-white/15 px-3 py-1.5 transition-colors duration-200">
+            oskari@vattu.fi
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobiili: kuva tekstin alla -->
+    <div class="lg:hidden px-3 pb-8">
+      <div class="relative w-full aspect-[3/2] rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
+        <Image
+          src={img0217}
+          alt="Oskari Vattu LVI-insinööri"
+          fetchpriority="high"
+          loading="eager"
+          class="w-full h-full object-cover object-[center_40%]"
+        />
+        <div class="absolute inset-0 bg-forest/20"></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- Wave -->
-  <div class="bg-forest overflow-hidden leading-none -mt-px">
+  <div class="bg-forest overflow-hidden leading-none -mt-px -mb-px">
     <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
     </svg>
@@ -142,33 +152,29 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ── PÄTEVYYDET ── -->
-  <section class="bg-cream py-12 lg:py-20">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
-      <span class="reveal inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-10">Pätevyydet</span>
-      <div class="reveal-group grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-        <!-- Double-bezel card -->
-        <div class="reveal p-1.5 bg-forest/5 ring-1 ring-forest/8 rounded-[1.25rem]">
-          <div class="bg-cream rounded-[calc(1.25rem-6px)] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] h-full">
-            <span class="inline-block rounded-full px-2.5 py-0.5 text-[9px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/50 mb-4">KVV</span>
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
-              Kiinteistön vesi- ja viemärilaitteiston suunnittelija, tavanomainen
-            </p>
+  <section class="bg-cream py-10 lg:py-16">
+    <div class="max-w-[760px] mx-auto px-6 lg:px-12">
+      <span class="reveal inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-8">Pätevyydet</span>
+      <div class="reveal-group divide-y divide-[#1A1A1A]/8">
+        <div class="reveal flex items-start gap-8 lg:gap-12 py-6 first:pt-0">
+          <span class="font-body text-[10px] tracking-[0.22em] uppercase text-forest/35 w-10 shrink-0 pt-1">KVV</span>
+          <div>
+            <p class="font-heading text-[#1A1A1A] text-sm mb-1.5">Kiinteistön vesi- ja viemärilaitteiston suunnittelija</p>
+            <p class="font-body text-sm text-[#1A1A1A]/55 leading-relaxed">Tavanomainen taso. Kattaa pientalot, rivitalot ja taloyhtiöt. Pätevyys myönnetty FISE Oy:n toimesta.</p>
           </div>
         </div>
-        <div class="reveal p-1.5 bg-forest/5 ring-1 ring-forest/8 rounded-[1.25rem]">
-          <div class="bg-cream rounded-[calc(1.25rem-6px)] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] h-full">
-            <span class="inline-block rounded-full px-2.5 py-0.5 text-[9px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/50 mb-4">IV</span>
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
-              Ilmanvaihdon suunnittelija, tavanomainen
-            </p>
+        <div class="reveal flex items-start gap-8 lg:gap-12 py-6">
+          <span class="font-body text-[10px] tracking-[0.22em] uppercase text-forest/35 w-10 shrink-0 pt-1">IV</span>
+          <div>
+            <p class="font-heading text-[#1A1A1A] text-sm mb-1.5">Ilmanvaihdon suunnittelija</p>
+            <p class="font-body text-sm text-[#1A1A1A]/55 leading-relaxed">Tavanomainen taso. Ilmanvaihtojärjestelmien suunnittelu uudis- ja saneerauskohteisiin. Pätevyys myönnetty FISE Oy:n toimesta.</p>
           </div>
         </div>
-        <div class="reveal p-1.5 bg-forest/5 ring-1 ring-forest/8 rounded-[1.25rem]">
-          <div class="bg-cream rounded-[calc(1.25rem-6px)] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] h-full">
-            <span class="inline-block rounded-full px-2.5 py-0.5 text-[9px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/50 mb-4">FISE</span>
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
-              Energiatodistuksen laatija, ylempi taso
-            </p>
+        <div class="reveal flex items-start gap-8 lg:gap-12 py-6">
+          <span class="font-body text-[10px] tracking-[0.22em] uppercase text-forest/35 w-10 shrink-0 pt-1">FISE</span>
+          <div>
+            <p class="font-heading text-[#1A1A1A] text-sm mb-1.5">Energiatodistuksen laatija, ylempi taso</p>
+            <p class="font-body text-sm text-[#1A1A1A]/55 leading-relaxed">Korkein saatavilla oleva pätevyysluokka. Kattaa asuinrakennukset ja vaativat toimitilakohteet. Todistukset rekisteröidään Varken energiatodistusrekisteriin.</p>
           </div>
         </div>
       </div>
@@ -184,55 +190,62 @@ import Layout from '../layouts/Layout.astro';
         <div class="reveal">
           <div class="accordion divide-y divide-[#1A1A1A]/20">
             <div class="accordion-item" data-open="true">
-              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="true">
+              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="true" aria-controls="panel-asuinrakennukset">
                 <span class="text-base">Asuinrakennukset & toimitilat</span>
-                <span class="accordion-icon text-xl leading-none select-none">−</span>
+                <span class="accordion-icon text-xl leading-none select-none" aria-hidden="true">−</span>
               </button>
-              <div class="accordion-panel overflow-hidden transition-all duration-300">
-                <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-5">
+              <div id="panel-asuinrakennukset" class="accordion-panel overflow-hidden transition-all duration-300">
+                <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-3">
                   LVI-suunnittelua uusiin ja saneerattaviin asuin- ja toimitilakohteisiin. Suunnittelussa huomioidaan toimivuus, viihtyvyys ja energiatehokkuus kohteen tarpeiden mukaan. Tekniikasta on saatavissa myös BIM-tietomallit 3D-suunnitteluun. Palvelen muun muassa rakennuttajia, isännöitsijöitä ja yksityishenkilöitä. Toteutan suunnittelua myös alihankintana.
                 </p>
+                <a href="/lvi-suunnittelu-hinta" class="inline-block font-body text-[10px] tracking-[0.16em] uppercase text-accent hover:text-accent/70 transition-colors pb-5">Katso hinnat</a>
               </div>
             </div>
             <div class="accordion-item" data-open="false">
-              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false" aria-controls="panel-moduuli">
                 <span class="text-base">Moduulirakentaminen</span>
-                <span class="accordion-icon text-xl leading-none select-none">+</span>
+                <span class="accordion-icon text-xl leading-none select-none" aria-hidden="true">+</span>
               </button>
-              <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
+              <div id="panel-moduuli" class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
                 <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-5">
                   LVI-suunnittelua moduulirakentamisen projekteihin, jossa vaaditaan tarkkuutta ja tiivistä yhteistyötä muiden suunnittelijoiden kanssa.
                 </p>
               </div>
             </div>
             <div class="accordion-item" data-open="false">
-              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false" aria-controls="panel-patteri">
                 <span class="text-base">Patteriverkoston tasapainotus</span>
-                <span class="accordion-icon text-xl leading-none select-none">+</span>
+                <span class="sr-only"> (lämmitysverkoston tasapainotus)</span>
+                <span class="accordion-icon text-xl leading-none select-none" aria-hidden="true">+</span>
               </button>
-              <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
-                <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-5">
-                  Patteriverkoston tasapainotuksella varmistetaan lämmön tasainen jakautuminen kiinteistössä, parannetaan energiatehokkuutta ja vähennetään käyttökustannuksia.
+              <div id="panel-patteri" class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-3">
+                  Patteriverkoston eli lämmitysverkoston tasapainotuksella varmistetaan lämmön tasainen jakautuminen kiinteistössä. Tulos: energiatehokkuus paranee, kylmät huoneet lämpenevät ja lämmityskustannukset laskevat.
                 </p>
+                <a href="/patteriverkoston-tasapainotus" class="inline-block font-body text-[10px] tracking-[0.16em] uppercase text-accent hover:text-accent/70 transition-colors pb-5">Lue lisää</a>
               </div>
             </div>
             <div class="accordion-item" data-open="false">
-              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false" aria-controls="panel-energia">
                 <span class="text-base">Energiatodistukset & Energiaselvitykset</span>
-                <span class="accordion-icon text-xl leading-none select-none">+</span>
+                <span class="accordion-icon text-xl leading-none select-none" aria-hidden="true">+</span>
               </button>
-              <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
-                <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-5">
-                  Energiatodistusten ja -selvitysten laadinta asuinrakennuksille ja toimitiloille. Ylempi energiatodistuksen laatijapätevyys varmistaa laadukkaan ja luotettavan työn.
+              <div id="panel-energia" class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-3">
+                  Laadin energiatodistukset ja -selvitykset asuinrakennuksille ja toimitiloille. Minulla on ylempi FISE-pätevyys — korkein saatavilla oleva taso.
                 </p>
+                <div class="flex gap-4 pb-5">
+                  <a href="/energiaselvitys" class="font-body text-[10px] tracking-[0.16em] uppercase text-accent hover:text-accent/70 transition-colors">Energiaselvitys</a>
+                  <a href="/energiatodistus-hinta" class="font-body text-[10px] tracking-[0.16em] uppercase text-accent hover:text-accent/70 transition-colors">Energiatodistus</a>
+                </div>
               </div>
             </div>
             <div class="accordion-item" data-open="false">
-              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+              <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false" aria-controls="panel-simulointi">
                 <span class="text-base">Olosuhde- ja energiasimulointi</span>
-                <span class="accordion-icon text-xl leading-none select-none">+</span>
+                <span class="accordion-icon text-xl leading-none select-none" aria-hidden="true">+</span>
               </button>
-              <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
+              <div id="panel-simulointi" class="accordion-panel overflow-hidden transition-all duration-300" style="max-height: 0;">
                 <p class="font-body text-sm text-[#1A1A1A]/80 leading-relaxed pb-5">
                   Olosuhde- ja energiasimuloinnilla varmistetaan hyvät sisäolosuhteet ja optimoidaan energiankulutus jo suunnitteluvaiheessa ennen rakentamista.
                 </p>
@@ -247,9 +260,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="hidden lg:block reveal">
           <div class="sticky top-24">
-            <img
-              src="/images/IMG_0223.jpg"
+            <Image
+              src={img0223}
               alt="Suomalainen metsämaisema"
+              loading="lazy"
               class="w-full aspect-[3/4] object-cover object-center"
             />
           </div>
@@ -299,7 +313,7 @@ import Layout from '../layouts/Layout.astro';
             <div>
               <h3 class="font-heading text-white text-base mb-2">Aloitetaan</h3>
               <p class="font-body text-sm text-white/50 leading-relaxed">
-                Suunnittelu käynnistyy sovitussa aikataulussa. Pidät sinut ajan tasalla.
+                Suunnittelu käynnistyy sovitussa aikataulussa. Pidän sinut ajan tasalla.
               </p>
             </div>
           </div>
@@ -332,7 +346,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm">
           <div class="bg-forest/5 border-b border-[#1A1A1A]/8 px-5 py-3 flex items-center gap-3">
             <div class="w-2 h-2 rounded-full bg-forest/40"></div>
-            <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">LVI-insinööritoimisto Vattu Oy — Ilmainen etäpalaveri 30 min</span>
+            <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">LVI-insinööritoimisto Vattu Oy — Ilmainen etäpalaveri 60 min</span>
           </div>
           <iframe
             src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true"
@@ -353,7 +367,7 @@ import Layout from '../layouts/Layout.astro';
             class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform"
           >
             <div>
-              <p class="font-body text-[10px] tracking-[0.18em] uppercase text-white/50 mb-1">Ilmainen · 30 min · Google Meet</p>
+              <p class="font-body text-[10px] tracking-[0.18em] uppercase text-white/50 mb-1">Ilmainen · 60 min · Google Meet</p>
               <p class="font-heading text-lg">Varaa etäpalaveri</p>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -382,35 +396,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ── MOBIILINAVIGAATIO ── -->
-  <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-forest/95 backdrop-blur-sm border-t border-white/10">
-    <div class="grid grid-cols-4">
-      <a href="#top" class="mobile-nav-btn flex flex-col items-center gap-1 py-3 px-2 text-white/40 hover:text-white transition-colors duration-200 active:scale-95">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955a1.5 1.5 0 012.092 0L22.25 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-        </svg>
-        <span class="font-body text-[9px] tracking-[0.12em] uppercase">Koti</span>
-      </a>
-      <a href="#palvelut" class="mobile-nav-btn flex flex-col items-center gap-1 py-3 px-2 text-white/40 hover:text-white transition-colors duration-200 active:scale-95">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-        </svg>
-        <span class="font-body text-[9px] tracking-[0.12em] uppercase">Palvelut</span>
-      </a>
-      <a href="#prosessi" class="mobile-nav-btn flex flex-col items-center gap-1 py-3 px-2 text-white/40 hover:text-white transition-colors duration-200 active:scale-95">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-        </svg>
-        <span class="font-body text-[9px] tracking-[0.12em] uppercase">Prosessi</span>
-      </a>
-      <a href="#yhteydenotto" class="mobile-nav-btn flex flex-col items-center gap-1 py-3 px-2 text-white/40 hover:text-white transition-colors duration-200 active:scale-95">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3h10.5A2.25 2.25 0 0119.5 5.25v13.5A2.25 2.25 0 0117.25 21H6.75A2.25 2.25 0 014.5 18.75V5.25A2.25 2.25 0 016.75 3zM9 7.5h6M9 12h6m-6 4.5h3" />
-        </svg>
-        <span class="font-body text-[9px] tracking-[0.12em] uppercase">Yhteys</span>
-      </a>
-    </div>
-  </nav>
 
 </Layout>
 
@@ -452,6 +437,12 @@ import Layout from '../layouts/Layout.astro';
   }
   @keyframes blink { 50% { opacity: 0; } }
 
+  @media (prefers-reduced-motion: reduce) {
+    .hero-label, .hero-title, .hero-cta { animation: none; opacity: 1; }
+    .reveal { transition: none; opacity: 1; transform: none; filter: none; }
+    .typewriter-cursor { animation: none; }
+  }
+
   /* Button directional fill */
   .btn-primary {
     position: relative;
@@ -476,52 +467,6 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script>
-  // ── Hiukkasanimaatio (ilmavirtaus) ──
-  const canvas = document.getElementById('flow-canvas') as HTMLCanvasElement;
-  if (canvas) {
-    const ctx = canvas.getContext('2d')!;
-    let W = 0, H = 0;
-    const particles: { x: number; y: number; vx: number; vy: number; r: number; a: number }[] = [];
-
-    const resize = () => {
-      W = canvas.offsetWidth;
-      H = canvas.offsetHeight;
-      canvas.width = W;
-      canvas.height = H;
-    };
-    resize();
-    window.addEventListener('resize', resize, { passive: true });
-
-    for (let i = 0; i < 55; i++) {
-      particles.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.3) * 0.4,
-        vy: (Math.random() - 0.7) * 0.3,
-        r: Math.random() * 1.8 + 0.4,
-        a: Math.random() * 0.6 + 0.2,
-      });
-    }
-
-    const draw = () => {
-      ctx.clearRect(0, 0, W, H);
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < -4) p.x = W + 4;
-        if (p.x > W + 4) p.x = -4;
-        if (p.y < -4) p.y = H + 4;
-        if (p.y > H + 4) p.y = -4;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.a})`;
-        ctx.fill();
-      }
-      requestAnimationFrame(draw);
-    };
-    draw();
-  }
-
   // ── Typewriter ──
   const typeEl = document.getElementById('typewriter');
   if (typeEl) {
@@ -605,30 +550,4 @@ import Layout from '../layouts/Layout.astro';
       : nav?.classList.remove('shadow-sm', 'shadow-black/8');
   }, { passive: true });
 
-  // Bottom nav active state
-  const sections = ['top', 'palvelut', 'prosessi', 'yhteydenotto'];
-  const navBtns = document.querySelectorAll('.mobile-nav-btn');
-
-  const setActive = (id: string) => {
-    navBtns.forEach((btn) => {
-      const href = btn.getAttribute('href');
-      const isActive = href === `#${id}`;
-      btn.classList.toggle('text-white', isActive);
-      btn.classList.toggle('text-white/40', !isActive);
-    });
-  };
-
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  sections.forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) sectionObserver.observe(el);
-  });
 </script>

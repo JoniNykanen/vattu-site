@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/images/IMG_0223.jpg';
+---
+
+<Layout
+  title="Patteriverkoston tasapainotus — LVI-insinööri Vattu Oy"
+  description="Patteriverkoston tasapainotus taloyhtiöille, isännöitsijöille ja rakennuttajille. Lämpövalitukset loppuvat, energiakulut laskevat. Dokumentoitu raportti. Uusimaa, Pirkanmaa, Keski-Suomi."
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Patteriverkoston tasapainotus",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "LVI-insinööritoimisto Vattu Oy",
+      "url": "https://vattu.fi",
+      "email": "oskari@vattu.fi",
+      "telephone": "+358407656096"
+    },
+    "areaServed": ["Uusimaa","Pirkanmaa","Keski-Suomi"],
+    "description": "Patteriverkoston tasapainotus taloyhtiöille, isännöitsijöille ja rakennuttajille."
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-forest relative">
+    <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[60dvh]">
+      <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-0">
+        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/30 mb-5">Palvelu · Lämmitys</p>
+        <h1 class="font-heading text-white leading-[1.05] mb-5" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
+          Patteriverkoston<br />tasapainotus
+        </h1>
+        <div class="w-6 h-px bg-white/15 mb-6"></div>
+        <p class="font-body text-sm text-white/55 leading-relaxed mb-8 max-w-[420px]">
+          Taloyhtiöille ja isännöitsijöille tuttu ongelma: asukkaat valittavat kylmistä huoneista, mutta laitevika ei ole syy. Tasapainotus ratkaisee ongelman kerralla — laskennallinen prosessi, dokumentoitu raportti, ei uusintakäyntejä.
+        </p>
+        <a href="#yhteydenotto" class="inline-block w-max font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98]">
+          Varaa etäpalaveri
+        </a>
+      </div>
+      <div class="hidden lg:block" aria-hidden="true"></div>
+    </div>
+    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
+      <Image src={heroImg} alt="LVI-insinööri Oskari Vattu" loading="eager" class="absolute inset-0 w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 bg-forest/25"></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-forest to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="bg-forest overflow-hidden leading-none -mt-px -mb-px">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
+    </svg>
+  </div>
+
+  <!-- Osio 1: Mitä on tasapainotus -->
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Mitä on tasapainotus</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-6">Miksi patteriverkoston tasapainotus kannattaa teettää ammattilaisella</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4 max-w-[700px]">
+        Vesikiertoisessa lämmitysjärjestelmässä kuuma vesi kiertää kattilalta tai lämpöpumpulta pattereille. Ongelma syntyy, kun lähellä lämmönlähdettä olevat patterit saavat liikaa virtausta ja kaukana olevat liian vähän. Tulos: osa huoneista on liian lämpimiä, osa kylmiä — ja lämmitysjärjestelmä käy tarpeettoman kovaa.
+      </p>
+      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed max-w-[700px]">
+        Tasapainotuksessa jokaisen patterin venttiili säädetään niin, että virtaama vastaa huoneen todellista lämmöntarvetta. Lopputulos on tasainen sisälämpötila koko kiinteistössä ja merkittävästi pienempi lämmitysenergian kulutus.
+      </p>
+    </div>
+  </section>
+
+  <!-- Osio 2: Tunnistusmerkit -->
+  <section class="bg-forest py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-6">Tunnistusmerkit</span>
+      <h2 class="font-heading text-white text-2xl lg:text-3xl mb-10">Milloin verkosto kaipaa tasapainotusta</h2>
+      <p class="font-body text-sm text-white/50 leading-relaxed mb-8">Nämä oireet viittaavat epätasapainoiseen patteriverkkoon:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          {
+            title: 'Kylmät tai hitaasti lämpiävät patterit',
+            body: 'Verkostossa kaukaiset patterit jäävät kylmiksi, vaikka lämmitys on päällä. Kyse ei yleensä ole patterin viasta vaan liian pienestä virtaamasta.',
+          },
+          {
+            title: 'Epätasainen huonelämpötila',
+            body: 'Jotkut huoneet ylikuumenevat ja ikkunat on pidettävä auki talvellakin, kun toisaalla palataan paksuissa sukkashousuissa. Klassinen merkki epätasapainoisesta verkostosta.',
+          },
+          {
+            title: 'Korkea lämmityslasku',
+            body: 'Järjestelmä kompensoi epätasapainoa ajamalla korkeampaa menovesilämpötilaa. Se syö enemmän energiaa kuin tasapainotettu verkosto tarvitsisi.',
+          },
+          {
+            title: 'Poreilu tai kohina putkistossa',
+            body: 'Kurinä tai vesiäänet pattereissa ja putkistoissa kertovat usein virtausongelmasta tai liian epätasaisesta paineesta verkostossa.',
+          },
+          {
+            title: 'Lämpöpumppu tai kattila käy jatkuvasti',
+            body: 'Laite ei saavuta haluttua lämpötilaa, koska verkosto ei jaa lämpöä tehokkaasti. Laite kuluu ennenaikaisesti ja sähkölasku nousee.',
+          },
+        ].map(item => (
+          <div class="p-1.5 bg-white/5 ring-1 ring-white/10 rounded-[1.25rem]">
+            <div class="bg-forest rounded-[calc(1.25rem-6px)] p-5 h-full">
+              <h3 class="font-heading text-white text-sm mb-2">{item.title}</h3>
+              <p class="font-body text-sm text-white/50 leading-relaxed">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Osio 3: Työn sisältö -->
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Työn sisältö</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Mitä patteriverkoston tasapainotus sisältää</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-10">
+        Tasapainotus ei ole pelkkä venttiilien kääntely — se on laskennallinen prosessi, jossa jokainen patteri saa oikean virtaaman kohteen mitoituksen perusteella.
+      </p>
+      <div class="space-y-0 divide-y divide-[#1A1A1A]/8">
+        {[
+          {
+            num: '01',
+            title: 'Lähtötilanteen kartoitus',
+            body: 'Käydään läpi kiinteistön lämmitysjärjestelmä, patterikoot ja nykyiset venttiiliasetukset. Selvitetään, missä ongelmat sijaitsevat ja mikä niitä aiheuttaa.',
+          },
+          {
+            num: '02',
+            title: 'Virtaama- ja painelaskelmat',
+            body: 'Lasketaan jokaiselle patterille tarvittava virtaama huoneen pinta-alan ja lämmöntarpeen perusteella. Tällä varmistetaan, että säädöt perustuvat faktoihin eikä arvauksiin.',
+          },
+          {
+            num: '03',
+            title: 'Venttiilien säätö',
+            body: 'Jokaisen patterin esisäätöventtiili asetetaan laskennalliseen arvoon. Tämä ohjaa oikean vesimäärän kullekin patterille riippumatta sen sijainnista verkostossa.',
+          },
+          {
+            num: '04',
+            title: 'Mittaus ja tarkistus',
+            body: 'Säätöjen jälkeen tarkistetaan, että virtaamat ja painesuhteet ovat kohdallaan koko verkostossa. Poikkeamat korjataan paikan päällä.',
+          },
+          {
+            num: '05',
+            title: 'Dokumentointi',
+            body: 'Tasapainotuksesta toimitetaan kirjallinen raportti venttiiliasetuksineen. Tiedot ovat käyttökelpoisia tulevissa huoltotöissä ja mahdollisessa remontoinnissa.',
+          },
+        ].map(step => (
+          <div class="grid grid-cols-[2.5rem_1fr] gap-6 py-7">
+            <p class="font-heading text-[#1A1A1A]/15 text-2xl leading-none">{step.num}</p>
+            <div>
+              <h3 class="font-heading text-[#1A1A1A] text-base mb-2">{step.title}</h3>
+              <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed">{step.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Osio 4: Hyödyt -->
+  <section class="bg-forest py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-6">Hyödyt</span>
+      <h2 class="font-heading text-white text-2xl lg:text-3xl mb-8">Tasapainotuksen konkreettiset hyödyt</h2>
+      <p class="font-body text-sm text-white/50 leading-relaxed mb-8 max-w-[600px]">
+        Tasapainotettu verkosto ei pelkästään paranna asumisviihtyvyyttä — se vaikuttaa suoraan energialaskuun ja laitteiston käyttöikään.
+      </p>
+      <ul class="space-y-4">
+        {[
+          'Tasainen sisälämpötila kaikissa huoneissa ilman jatkuvaa termostaatin säätämistä',
+          'Lämmitysenergian kulutus laskee — tasapainotettu verkosto toimii matalammalla menovesilämpötilalla',
+          'Lämpöpumppu tai kattila ei kuormitu turhaan, käyttöikä pitenee',
+          'Kylmistä huoneista johtuvat valitukset taloyhtiöissä loppuvat',
+          'Investointi maksaa itsensä tyypillisesti takaisin muutamassa lämmityskaudessa',
+        ].map(item => (
+          <li class="flex items-start gap-3 font-body text-sm text-white/65">
+            <span class="mt-0.5 text-white/40 font-heading text-base leading-none">✓</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Osio 5: Kenelle -->
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Kenelle</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Kenelle patteriverkoston tasapainotus sopii</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">
+        Tasapainotus on hyödyllinen kaiken kokoisiin kohteisiin, joissa on vesikiertoinen patterilämmitys.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        {[
+          { title: 'Omakotitalot ja paritalot', body: 'Etenkin jos on tehty lämpöpumppuremontti tai lämmitysjärjestelmän uusinta.' },
+          { title: 'Taloyhtiöt', body: 'Asukkailta tulevat lämpövalitukset saadaan ratkaistua kerralla.' },
+          { title: 'Rivitalot', body: 'Rakennuksen eri osat saavat tasaisen lämpötilan.' },
+          { title: 'Saneerauskohteet', body: 'Vanhan verkoston toimivuus tarkistetaan ennen kuin uusi tekniikka asennetaan.' },
+        ].map(item => (
+          <div class="border-l-2 border-forest/25 pl-5 py-1">
+            <h3 class="font-heading text-[#1A1A1A] text-sm mb-1">{item.title}</h3>
+            <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed max-w-[680px]">
+        Tasapainotus kannattaa tehdä myös silloin, kun rakennukseen on lisätty tai poistettu pattereita, tai kun lämmitysjärjestelmä on uusittu. Uusi lämpöpumppu ei korjaa epätasapainoa verkostossa — se tarvitsee oman säätönsä toimiakseen optimaalisesti.
+      </p>
+    </div>
+  </section>
+
+  <!-- Palvelualue -->
+  <section class="bg-forest py-10 lg:py-14">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-5">Palvelualue</span>
+      <p class="font-body text-sm text-white/65 leading-relaxed max-w-[600px]">
+        Toteutan patteriverkoston tasapainotuksia <strong class="text-white font-medium">Uudellamaalla</strong> (Helsinki, Espoo, Vantaa ja ympäristökunnat), <strong class="text-white font-medium">Pirkanmaalla</strong> (Tampere ja lähikunnat) sekä <strong class="text-white font-medium">Keski-Suomessa</strong> (Jyväskylä ja ympäristö).
+      </p>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="bg-forest overflow-hidden leading-none -mb-px">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C240,0 480,72 720,36 C960,0 1200,72 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
+    </svg>
+  </div>
+
+  <!-- Yhteydenotto -->
+  <section id="yhteydenotto" class="bg-cream pt-10 pb-24 lg:py-20">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-3">Yhteydenotto</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-3">Pyydä tarjous patteriverkoston tasapainotuksesta</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/50 mb-8">Varaa ilmainen etäpalaveri tai lähetä viesti. Vastaan arkisin 1–2 päivän sisällä.</p>
+
+      <!-- Desktop kalenteri -->
+      <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8">
+        <div class="bg-forest/5 border-b border-[#1A1A1A]/8 px-5 py-3 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-forest/40"></div>
+          <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">Ilmainen etäpalaveri 30 min</span>
+        </div>
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" style="border:0;display:block;" width="100%" height="550" frameborder="0" title="Varaa etäpalaveri"></iframe>
+      </div>
+      <div class="lg:hidden mb-6">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform">
+          <div>
+            <p class="font-body text-[10px] tracking-[0.18em] uppercase text-white/50 mb-1">Ilmainen · 30 min · Google Meet</p>
+            <p class="font-heading text-lg">Varaa etäpalaveri</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
+        </a>
+      </div>
+
+      <p class="font-body text-base text-[#1A1A1A]/55 leading-relaxed mb-6">Soita tai lähetä viestiä, jos kysymyksiä herää!</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="tel:+358407656096" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">040 7656 096</a>
+        <a href="mailto:oskari@vattu.fi" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase text-forest rounded-full px-6 py-3.5 ring-1 ring-forest/25 hover:ring-forest/50 transition-colors">oskari@vattu.fi</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

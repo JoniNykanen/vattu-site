@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://vattu-site.vercel.app',
+  site: 'https://vattu.fi',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

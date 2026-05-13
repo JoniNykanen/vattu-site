@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
+---
+
+<Layout
+  title="Energiaselvityksen hinta 2026 — rakennuslupa | Vattu Oy"
+  description="Energiaselvityksen hinta uudisrakentamiseen. Omakotitalo, rivitalo, kerrostalo. FISE-pätevä LVI-insinööri. Uusimaa, Pirkanmaa, Keski-Suomi."
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Paljonko energiaselvitys maksaa omakotitaloon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Omakotitalon tai pientalon energiaselvityksen hinta on tyypillisesti 650–1 200 euroa. Hintaan vaikuttavat rakennuksen koko, talotekniikan monimutkaisuus ja lähtötietojen kattavuus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mikä ero on energiaselvityksellä ja energiatodistuksella?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Energiaselvitys on rakennuslupaa varten laadittu laajempi asiakirjakokonaisuus, joka sisältää energiatodistuksen, lämpöhäviöiden tasauslaskelman ja E-lukulaskelman. Energiatodistus yksinään laaditaan olemassa olevan rakennuksen myyntiä tai vuokrausta varten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Milloin energiaselvitys tarvitaan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Energiaselvitys on pakollinen liite kaikkiin uudisrakentamisen rakennuslupahakemuksiin. Se osoittaa, että rakennus täyttää ympäristöministeriön energiatehokkuusvaatimukset."
+        }
+      }
+    ]
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-forest relative">
+    <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[60dvh]">
+      <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-0">
+        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/30 mb-5">Palvelu · Energiaselvitys</p>
+        <h1 class="font-heading text-white leading-[1.05] mb-5" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
+          Energiaselvitys<br />— hinta ja sisältö
+        </h1>
+        <div class="w-6 h-px bg-white/15 mb-6"></div>
+        <p class="font-body text-sm text-white/55 leading-relaxed mb-8 max-w-[400px]">
+          Rakennuslupaan vaadittava asiakirjakokonaisuus. Varmistan, että kaikki laskelmavaatimukset täyttyvät ensimmäisellä kerralla.
+        </p>
+        <a href="#yhteydenotto" class="inline-block w-max font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98]">
+          Varaa etäpalaveri
+        </a>
+      </div>
+      <div class="hidden lg:block" aria-hidden="true"></div>
+    </div>
+    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
+      <Image src={heroImg} alt="Energiaselvitys — LVI-insinööritoimisto Vattu Oy" loading="eager" class="absolute inset-0 w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 bg-forest/35"></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-forest to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="bg-forest overflow-hidden leading-none -mt-px -mb-px">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
+    </svg>
+  </div>
+
+  <!-- Osio 1: Hintataulukko -->
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Hinnasto 2026</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Energiaselvityksen hinta rakennustyypeittäin</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">
+        Hinnat sisältävät E-lukulaskelman, lämpöhäviöiden tasauslaskelman, energiatodistuksen ja tarvittaessa kesäajan huonelämpötilatarkastelun.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b border-[#1A1A1A]/10">
+              <th class="text-left font-body text-[10px] tracking-[0.18em] uppercase text-[#1A1A1A]/35 py-3 pr-6">Rakennustyyppi</th>
+              <th class="text-right font-body text-[10px] tracking-[0.18em] uppercase text-[#1A1A1A]/35 py-3">Hinta-arvio</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#1A1A1A]/8">
+            {[
+              ['Omakotitalo / pientalo', '650–1 200 €'],
+              ['Rivitalo', '1 200–2 500 €'],
+              ['Pienkerrostalo (alle 10 asuntoa)', '2 500–4 500 €'],
+              ['Toimisto / liiketila', '2 000–4 000 €'],
+            ].map(([type, price]) => (
+              <tr>
+                <td class="font-body text-sm text-[#1A1A1A]/70 py-4 pr-6 leading-snug">{type}</td>
+                <td class="font-heading text-[#1A1A1A] text-sm py-4 text-right whitespace-nowrap">{price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="font-body text-sm text-[#1A1A1A]/50 leading-relaxed mt-6">
+        Pyydä tarkka tarjous kohteellesi — <a href="#yhteydenotto" class="underline underline-offset-2 hover:text-forest transition-colors">varaa ilmainen etäpalaveri</a> tai lähetä sähköpostia.
+      </p>
+    </div>
+  </section>
+
+  <!-- Osio 2: Mikä vaikuttaa hintaan -->
+  <section class="bg-forest py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-6">Hinnanmuodostus</span>
+      <h2 class="font-heading text-white text-2xl lg:text-3xl mb-10">Mikä vaikuttaa energiaselvityksen hintaan</h2>
+      <div class="divide-y divide-white/10">
+        {[
+          {
+            num: '01',
+            title: 'Rakennuksen koko ja kerrosala',
+            body: 'Suuremmassa rakennuksessa on enemmän rakennetyyppejä, järjestelmäosia ja laskettavia pinta-aloja. Kerrostalon energiaselvitys vie moninkertaisesti enemmän työtä kuin omakotitalon.',
+          },
+          {
+            num: '02',
+            title: 'Talotekniikan monimutkaisuus',
+            body: 'Tavanomainen öljy- tai kaukolämpökohde on suoraviivaisempi laskettava kuin hybridilämmitysjärjestelmä, johon kuuluu maalämpöpumppu, aurinkopaneelit ja poistoilmalämpöpumppu. Jokainen aktiivinen energiajärjestelmä lisää laskenta-aikaa.',
+          },
+          {
+            num: '03',
+            title: 'Lähtötietojen kattavuus',
+            body: 'Mitä valmiimmat piirustukset ja rakennetyypit ovat, sitä nopeammin laskenta etenee. Jos lähtötiedot puuttuvat tai ovat epäselvät, joudutaan käyttämään oletusarvoja — tulos on usein heikompi ja työmäärä kasvaa.',
+          },
+        ].map(item => (
+          <div class="flex items-start gap-6 lg:gap-10 py-7 first:pt-0 last:pb-0">
+            <span class="font-body text-[10px] tracking-[0.22em] text-white/20 shrink-0 pt-0.5 w-6">{item.num}</span>
+            <div>
+              <h3 class="font-heading text-white text-base mb-2">{item.title}</h3>
+              <p class="font-body text-sm text-white/55 leading-relaxed">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Osio 3: Mitä sisältää -->
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Sisältö</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Mitä energiaselvitys sisältää</h2>
+      <ul class="space-y-4 mb-8">
+        {[
+          { title: 'E-lukulaskelma', desc: 'Rakennuksen ostoenergiankulutus vakioidulla käyttöprofiililla. E-luku on energiaselvityksen ydin — sillä osoitetaan, että rakennus täyttää ympäristöministeriön vaatimukset.' },
+          { title: 'Lämpöhäviöiden tasauslaskelma', desc: 'Osoittaa, että rakennuksen vaippa ja ilmanvaihto täyttävät energiatehokkuusvaatimukset kokonaisuutena, vaikka yksittäinen rakenneosa poikkeaisi perusratkaisusta.' },
+          { title: 'Energiatodistus (A–G)', desc: 'Sisältyy aina energiaselvitykseen. Tarvitaan rakennusluvan lisäksi myöhemmin myynti- tai vuokrausilmoituksessa.' },
+          { title: 'Kesäajan huonelämpötilatarkastelu', desc: 'Vaaditaan yleensä muissa kuin pienissä asuinrakennuksissa. Varmistaa, ettei rakennus ylikuumene kesällä ilman jäähdytystä.' },
+        ].map(({ title, desc }) => (
+          <li class="flex items-start gap-4 p-5 bg-forest/4 rounded-xl ring-1 ring-forest/8">
+            <span class="mt-1 w-1.5 h-1.5 rounded-full bg-forest/50 shrink-0"></span>
+            <div>
+              <p class="font-body text-sm font-semibold text-[#1A1A1A] mb-1">{title}</p>
+              <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed">{desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p class="font-body text-sm text-[#1A1A1A]/50 leading-relaxed">
+        Tarvitaanko pelkkä energiatodistus olemassa olevalle rakennukselle? Katso <a href="/energiatodistus-hinta" class="text-forest underline underline-offset-2 hover:no-underline">energiatodistuksen hinnasto</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Osio 4: Milloin tarvitaan -->
+  <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Vaatimukset</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Milloin energiaselvitys vaaditaan</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">Energiaselvitys on pakollinen liite rakennuslupahakemukseen kaikille uudisrakennuksille.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {[
+          { title: 'Uusi asuinrakennus', body: 'Omakotitalot, rivitalot ja kerrostalot. Laaditaan ennen rakennuslupahakemusta — ilman energiaselvitystä lupaa ei myönnetä.' },
+          { title: 'Uusi toimitilarakennus', body: 'Toimistot, liiketilat, teollisuusrakennukset. Sama velvoite kuin asuinrakennuksilla. Laajuus ja vaatimukset vaihtelevat käyttötarkoituksen mukaan.' },
+          { title: 'Laajamittainen korjausrakentaminen', body: 'Tietyissä laajamittaisissa saneerauksissa edellytetään energiaselvitys tai osittainen energiatarkastelu. Rakennusvalvonta ohjeistaa tapauskohtaisesti.' },
+        ].map(item => (
+          <div class="border-l-2 border-forest/25 pl-5">
+            <h3 class="font-heading text-[#1A1A1A] text-base mb-2">{item.title}</h3>
+            <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Osio 5: FAQ -->
+  <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Usein kysyttyä</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Usein kysyttyä energiaselvityksen hinnasta</h2>
+      <div class="divide-y divide-[#1A1A1A]/12">
+        {[
+          {
+            q: 'Onko energiaselvitys sama asia kuin energiatodistus?',
+            a: 'Ei. Energiatodistus on asiakirja myyntiä ja vuokrausta varten. Energiaselvitys on laajempi kokonaisuus rakennuslupaa varten — se sisältää energiatodistuksen, lämpöhäviöiden tasauslaskelman, E-lukulaskelman ja kesäajan huonelämpötilatarkastelun. Uudisrakentamisessa laaditaan aina energiaselvitys, johon energiatodistus sisältyy.',
+          },
+          {
+            q: 'Kauanko energiaselvityksen laadinta kestää?',
+            a: 'Pientalokohteessa noin 1–2 viikkoa lähtötietojen vastaanottamisesta. Suuremmissa kohteissa 2–4 viikkoa. Kiireellisistä aikatauluista voidaan sopia erikseen — mainitse tarpeen kiireellisyys yhteydenottovaiheessa.',
+          },
+          {
+            q: 'Voiko energiaselvityksen tehdä itse?',
+            a: 'Ei. Energiaselvityksen ja siihen sisältyvän energiatodistuksen voi laatia vain pätevöitynyt, Varken rekisteriin merkitty ammattilainen. Itse laadittu selvitys ei kelpaa rakennusvalvonnalle.',
+          },
+          {
+            q: 'Mitä tapahtuu, jos energiaselvitys puuttuu rakennusluvasta?',
+            a: 'Rakennuslupahakemus palautetaan täydennettäväksi tai hylätään. Energiaselvitys on pakollinen liite — ilman sitä lupakäsittely ei etene. Viivästyminen voi siirtää rakennusluvan myöntämistä viikkojen tai jopa kuukausien verran.',
+          },
+          {
+            q: 'Mitä tietoja tarvitaan energiaselvityksen tekemiseen?',
+            a: 'Tyypillisesti: arkkitehtipiirustukset, rakennetyypit (seinä, yläpohja, alapohja), lämmitysjärjestelmän tiedot, ilmanvaihtokoneen tiedot ja ikkunatiedot. Tarkka lista käydään läpi etäpalaverissa ennen työn aloitusta.',
+          },
+        ].map((item, i) => (
+          <div class="faq-item" data-open={i === 0 ? 'true' : 'false'}>
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded={i === 0 ? 'true' : 'false'}>
+              <span class="text-sm pr-6">{item.q}</span>
+              <span class="faq-icon text-xl leading-none select-none shrink-0">{i === 0 ? '−' : '+'}</span>
+            </button>
+            <div class="faq-panel overflow-hidden transition-all duration-300" style={i === 0 ? '' : 'max-height:0'}>
+              <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">{item.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Osio 6: Palvelualue -->
+  <section class="bg-forest py-10 lg:py-14">
+    <div class="max-w-[900px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-5">Palvelualue</span>
+      <p class="font-body text-sm text-white/65 leading-relaxed max-w-[600px]">
+        Laadin energiaselvityksiä <strong class="text-white font-medium">Uudellamaalla</strong> (Helsinki, Espoo, Vantaa ja ympäristökunnat), <strong class="text-white font-medium">Pirkanmaalla</strong> (Tampere ja lähikunnat) sekä <strong class="text-white font-medium">Keski-Suomessa</strong> (Jyväskylä ja ympäristö). Etätyönä myös muualla Suomessa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="bg-forest overflow-hidden leading-none -mb-px">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C240,0 480,72 720,36 C960,0 1200,72 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
+    </svg>
+  </div>
+
+  <!-- Yhteydenotto -->
+  <section id="yhteydenotto" class="bg-cream pt-10 pb-24 lg:py-20">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
+      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-3">Yhteydenotto</span>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-3">Pyydä tarjous energiaselvityksestä</h2>
+      <p class="font-body text-sm text-[#1A1A1A]/50 mb-8">Varaa ilmainen etäpalaveri tai lähetä viesti. Vastaan arkisin 1–2 päivän sisällä.</p>
+
+      <!-- Desktop kalenteri -->
+      <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8">
+        <div class="bg-forest/5 border-b border-[#1A1A1A]/8 px-5 py-3 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-forest/40"></div>
+          <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">Ilmainen etäpalaveri 60 min</span>
+        </div>
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" style="border:0;display:block;" width="100%" height="550" frameborder="0" title="Varaa etäpalaveri"></iframe>
+      </div>
+      <div class="lg:hidden mb-6">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform">
+          <div>
+            <p class="font-body text-[10px] tracking-[0.18em] uppercase text-white/50 mb-1">Ilmainen · 60 min · Google Meet</p>
+            <p class="font-heading text-lg">Varaa etäpalaveri</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
+        </a>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="tel:+358407656096" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">040 7656 096</a>
+        <a href="mailto:oskari@vattu.fi" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase text-forest rounded-full px-6 py-3.5 ring-1 ring-forest/25 hover:ring-forest/50 transition-colors">oskari@vattu.fi</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const trigger = item.querySelector('.faq-trigger') as HTMLButtonElement;
+    const panel   = item.querySelector('.faq-panel') as HTMLElement;
+    const icon    = item.querySelector('.faq-icon') as HTMLElement;
+
+    if (item.getAttribute('data-open') === 'true') {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.getAttribute('data-open') === 'true';
+      if (isOpen) {
+        panel.style.maxHeight = '0';
+        icon.textContent = '+';
+        item.setAttribute('data-open', 'false');
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        icon.textContent = '−';
+        item.setAttribute('data-open', 'true');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

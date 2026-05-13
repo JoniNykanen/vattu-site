@@ -3,8 +3,9 @@
 @theme {
   --color-forest: #1C2B1C;
   --color-cream:  #F4F0E8;
+  --color-accent: #C4883A;
   --color-muted:  #6B7280;
-  --font-heading: '"Libre Baskerville"', serif;
+  --font-heading: '"Plus Jakarta Sans"', sans-serif;
   --font-body:    'Anuphan', sans-serif;
 }
 
