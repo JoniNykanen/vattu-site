@@ -2,7 +2,7 @@
 const currentPath = Astro.url.pathname.replace(/\/$/, '');
 ---
 
-<header id="site-nav" class="hidden lg:flex fixed top-5 left-0 right-0 z-50 justify-center px-4 pointer-events-none">
+<header id="site-nav" class="hidden lg:block fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
   <nav class="pointer-events-auto flex items-center gap-6 bg-[#1C2B1C] rounded-full px-5 py-2.5 ring-1 ring-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.12)] transition-[background-color,box-shadow] duration-500">
 
     <a href="/" class="font-heading text-white text-[13px] leading-tight mr-2 opacity-90 hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded-sm">
