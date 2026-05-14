@@ -17,9 +17,7 @@ import heroImg from '../assets/images/MagiCAD-Cloud.jpg';
     "email": "oskari@vattu.fi",
     "telephone": "+358407656096",
     "address": { "@type": "PostalAddress", "addressRegion": "Pirkanmaa", "addressCountry": "FI" },
-    "areaServed": [
-      "Tampere","Nokia","Ylöjärvi","Kangasala","Lempäälä","Pirkkala","Hämeenkyrö","Valkeakoski","Akaa"
-    ],
+    "areaServed": ["Tampere","Nokia","Ylöjärvi","Kangasala","Lempäälä","Pirkkala","Hämeenkyrö","Valkeakoski","Akaa"],
     "serviceType": ["LVI-suunnittelu","Energiatodistus","Energiaselvitys"]
   })} />
 
@@ -27,7 +25,7 @@ import heroImg from '../assets/images/MagiCAD-Cloud.jpg';
   <section class="bg-forest relative">
     <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[70dvh]">
       <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-0">
-        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/30 mb-5">LVI-suunnittelu · Pirkanmaa</p>
+        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/55 mb-5">LVI-suunnittelu · Pirkanmaa</p>
         <h1 class="font-heading text-white leading-[1.1] mb-5" style="font-size: clamp(1.75rem, 3vw, 2.75rem);">
           LVI-suunnittelu<br />Tampere & Pirkanmaa
         </h1>
@@ -55,161 +53,180 @@ import heroImg from '../assets/images/MagiCAD-Cloud.jpg';
     </svg>
   </div>
 
-  <!-- Intro -->
+  <!-- ── PÄÄSISÄLTÖ + SIVUPALKKI ── -->
   <section class="bg-cream py-12 lg:py-20">
-    <div class="max-w-[720px] mx-auto px-6 lg:px-12">
-      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/25 mb-4">Palvelualue</p>
-      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-6">Pirkanmaa</h2>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-        Toteutan LVI-suunnittelua asuin- ja toimitilakohteisiin sekä moduulirakentamisen projekteihin Pirkanmaalla. Suunnittelussa huomioidaan toimivuus, energiatehokkuus ja kohteen erityistarpeet.
-      </p>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
-        Toimin aktiivisesti Tampereella, Nokialla, Ylöjärvellä, Kangasalalla, Lempäälässä, Pirkkalassa, Hämeenkyrössä, Valkeakoskella ja Akaassa.
-      </p>
-    </div>
-  </section>
+    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-start">
 
-  <!-- Paikallistieto -->
-  <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
-    <div class="max-w-[720px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Alueesta</span>
-      <h3 class="font-heading text-[#1A1A1A] text-xl lg:text-2xl mb-6">LVI-suunnittelu Tampereella — Suomen nopeimmin kasvavan kaupungin erityispiirteet</h3>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-        Tampere on Suomen nopeimmin kasvava kaupunki. Väestökasvu näkyy suoraan rakentamisen volyymissa: uusia asuinalueita nousee Hiedanrantaan, Lentävänniemeen ja Niemenrannan ympäristöön, ja kaupungin tiivistyminen tuo lisää saneerauskohteita kantakaupunkiin. LVI-suunnittelijalle tämä tarkoittaa jatkuvaa töidenvirtaa sekä uudisrakentamisessa että korjausrakentamisessa.
-      </p>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-        Tampereen rakennusvalvonta on kasvun myötä ruuhkautunut ajoittain, joten lupahakemusten oikeellisuus ensimmäisellä kerralla on erityisen tärkeää. Puutteellinen energiaselvitys tai virheellinen KVV-suunnitelma palauttaa hakemuksen takaisin ja viivästyttää projektia viikkoja. Tunnen Pirkanmaan rakennusvalvonnan käytännöt — se näkyy suoraan aikatauluissa.
-      </p>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-        Pirkanmaalla yleinen lämmitysjärjestelmä on kaukolämpö Tampereen kantakaupungissa. Ympäristökunnissa — Nokialla, Ylöjärvellä, Kangasalalla — maalämpö ja ilma-vesilämpöpumput ovat yleistyneet nopeasti, ja patteriverkoston tasapainotus on erityisen ajankohtainen kysymys vanhoissa taloissa lämpöpumppuun siirtymisen jälkeen.
-      </p>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-6">
-        Suunnittelutyö Pirkanmaalla tehdään pääosin etätyönä digitaalisten piirustusaineistojen pohjalta. Kohdekäynnit sovitaan tarvittaessa erikseen — välimatkat eivät ole este.
-      </p>
-      <p class="font-body text-[10px] tracking-[0.18em] uppercase text-[#1A1A1A]/30 mb-3">Tärkeimmät rakennusvalvontavirastot</p>
-      <ul class="space-y-2">
-        {[
-          { label: 'Tampere',  url: 'https://www.tampere.fi/rakennusvalvonta', text: 'tampere.fi — rakennusvalvonta' },
-          { label: 'Nokia',    url: 'https://www.nokia.fi/rakennusvalvonta', text: 'nokia.fi — rakennusvalvonta' },
-          { label: 'Ylöjärvi', url: 'https://www.ylojarvi.fi/rakennusvalvonta/', text: 'ylojarvi.fi — rakennusvalvonta' },
-        ].map(r => (
-          <li class="flex items-start gap-2 font-body text-sm text-[#1A1A1A]/65">
-            <span class="mt-1.5 w-1 h-1 rounded-full bg-forest/40 shrink-0"></span>
-            <span>{r.label}: <a href={r.url} target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-forest transition-colors">{r.text}</a></span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
+        <!-- ── VASEN: pääsisältö ── -->
+        <div>
 
-  <!-- Pätevyydet + CTA -->
-  <section class="bg-forest py-12 lg:py-16">
-    <div class="max-w-[720px] mx-auto px-6 lg:px-12">
-      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/30 mb-6">Pätevyydet</p>
-      <div class="divide-y divide-white/10 mb-10">
-        {[
-          'Kiinteistön vesi- ja viemärilaitteiston (KVV) suunnittelija, tavanomainen',
-          'Ilmanvaihdon (IV) suunnittelija, tavanomainen',
-          'Energiatodistuksen laatija, ylempi taso (FISE)',
-        ].map(p => (
-          <div class="py-4">
-            <p class="font-body text-sm text-white/60 leading-relaxed">{p}</p>
+          <!-- Intro -->
+          <div class="mb-12 lg:mb-16">
+            <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/50 mb-4">Palvelualue</p>
+            <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-6">Pirkanmaa</h2>
+            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+              Toteutan LVI-suunnittelua asuin- ja toimitilakohteisiin sekä moduulirakentamisen projekteihin Pirkanmaalla. Suunnittelussa huomioidaan toimivuus, energiatehokkuus ja kohteen erityistarpeet.
+            </p>
+            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
+              Toimin aktiivisesti Tampereella, Nokialla, Ylöjärvellä, Kangasalalla, Lempäälässä, Pirkkalassa, Hämeenkyrössä, Valkeakoskella ja Akaassa.
+            </p>
           </div>
-        ))}
-      </div>
-      <p class="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-[440px]">
-        Haluatko tietää lisää tai saada tarjouksen kohteellesi? Varaa maksuton etäpalaveri.
-      </p>
-      <a href="#yhteydenotto" class="self-start inline-block font-body text-[11px] tracking-[0.18em] uppercase bg-white text-forest px-8 py-4 hover:bg-white/90 transition-colors active:scale-[0.98]">
-        Varaa etäpalaveri
-      </a>
-    </div>
-  </section>
 
-  <!-- Palvelut -->
-  <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
-    <div class="max-w-[720px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-4">Palvelut</span>
-      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Mitä teen</h2>
-      <div class="accordion divide-y divide-[#1A1A1A]/20">
-        <div class="accordion-item" data-open="true">
-          <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="true">
-            <span class="text-base">Asuinrakennukset &amp; toimitilat</span>
-            <span class="accordion-icon text-xl leading-none select-none">−</span>
-          </button>
-          <div class="accordion-panel overflow-hidden transition-all duration-300">
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua uusiin ja saneerattaviin asuin- ja toimitilakohteisiin. Suunnittelussa huomioidaan toimivuus, viihtyvyys ja energiatehokkuus kohteen tarpeiden mukaan. Tekniikasta on saatavissa myös BIM-tietomallit 3D-suunnitteluun.</p>
-          </div>
-        </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
-            <span class="text-base">Moduulirakentaminen</span>
-            <span class="accordion-icon text-xl leading-none select-none">+</span>
-          </button>
-          <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua moduulirakentamisen projekteihin, jossa vaaditaan tarkkuutta ja tiivistä yhteistyötä muiden suunnittelijoiden kanssa.</p>
-          </div>
-        </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
-            <span class="text-base">Patteriverkoston tasapainotus</span>
-            <span class="accordion-icon text-xl leading-none select-none">+</span>
-          </button>
-          <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Patteriverkoston tasapainotuksella varmistetaan lämmön tasainen jakautuminen kiinteistössä. Tulos: energiatehokkuus paranee, kylmät huoneet lämpenevät ja lämmityskustannukset laskevat.</p>
-          </div>
-        </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
-            <span class="text-base">Energiatodistukset &amp; Energiaselvitykset</span>
-            <span class="accordion-icon text-xl leading-none select-none">+</span>
-          </button>
-          <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Laadin energiatodistukset ja -selvitykset asuinrakennuksille ja toimitiloille. Minulla on ylempi FISE-pätevyys — korkein saatavilla oleva taso.</p>
-          </div>
-        </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
-            <span class="text-base">Olosuhde- ja energiasimulointi</span>
-            <span class="accordion-icon text-xl leading-none select-none">+</span>
-          </button>
-          <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
-            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Olosuhde- ja energiasimuloinnilla varmistetaan hyvät sisäolosuhteet ja optimoidaan energiankulutus jo suunnitteluvaiheessa ennen rakentamista.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <!-- Paikallistieto -->
+          <div class="mb-12 lg:mb-16 pt-12 lg:pt-16 border-t border-[#1A1A1A]/8">
+            <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Alueesta</span>
+            <h3 class="font-heading text-[#1A1A1A] text-xl lg:text-2xl mb-6">LVI-suunnittelu Tampereella — Suomen nopeimmin kasvavan kaupungin erityispiirteet</h3>
+            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+              Tampere on Suomen nopeimmin kasvava kaupunki. Väestökasvu näkyy suoraan rakentamisen volyymissa: uusia asuinalueita nousee Hiedanrantaan, Lentävänniemeen ja Niemenrannan ympäristöön, ja kaupungin tiivistyminen tuo lisää saneerauskohteita kantakaupunkiin. LVI-suunnittelijalle tämä tarkoittaa jatkuvaa töidenvirtaa sekä uudisrakentamisessa että korjausrakentamisessa.
+            </p>
+            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+              Tampereen rakennusvalvonta on kasvun myötä ruuhkautunut ajoittain, joten lupahakemusten oikeellisuus ensimmäisellä kerralla on erityisen tärkeää. Puutteellinen energiaselvitys tai virheellinen KVV-suunnitelma palauttaa hakemuksen takaisin ja viivästyttää projektia viikkoja. Tunnen Pirkanmaan rakennusvalvonnan käytännöt — se näkyy suoraan aikatauluissa.
+            </p>
+            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+              Pirkanmaalla yleinen lämmitysjärjestelmä on kaukolämpö Tampereen kantakaupungissa. Ympäristökunnissa — Nokialla, Ylöjärvellä, Kangasalalla — maalämpö ja ilma-vesilämpöpumput ovat yleistyneet nopeasti, ja patteriverkoston tasapainotus on erityisen ajankohtainen kysymys vanhoissa taloissa lämpöpumppuun siirtymisen jälkeen.
+            </p>
+            <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-8">
+              Suunnittelutyö Pirkanmaalla tehdään pääosin etätyönä digitaalisten piirustusaineistojen pohjalta. Kohdekäynnit sovitaan tarvittaessa erikseen — välimatkat eivät ole este.
+            </p>
 
-  <!-- Katso myös -->
-  <section class="bg-cream border-t border-[#1A1A1A]/8 py-10 lg:py-12">
-    <div class="max-w-[720px] mx-auto px-6 lg:px-12">
-      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/25 mb-5">Katso myös</p>
-      <div class="flex flex-wrap gap-3">
-        <a href="/lvi-suunnittelu-hinta" class="inline-flex items-center gap-2 font-body text-[11px] tracking-[0.14em] uppercase border border-[#1A1A1A]/15 px-5 py-3 text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:border-[#1A1A1A]/30 transition-colors">
-          LVI-suunnittelun hinta
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
-        </a>
-        <a href="/energiaselvitys" class="inline-flex items-center gap-2 font-body text-[11px] tracking-[0.14em] uppercase border border-[#1A1A1A]/15 px-5 py-3 text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:border-[#1A1A1A]/30 transition-colors">
-          Energiaselvitys
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
-        </a>
-        <a href="/patteriverkoston-tasapainotus" class="inline-flex items-center gap-2 font-body text-[11px] tracking-[0.14em] uppercase border border-[#1A1A1A]/15 px-5 py-3 text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:border-[#1A1A1A]/30 transition-colors">
-          Patteriverkoston tasapainotus
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
-        </a>
+            <p class="font-body text-[10px] tracking-[0.18em] uppercase text-[#1A1A1A]/30 mb-4">Tärkeimmät rakennusvalvontavirastot</p>
+            <ul class="space-y-2">
+              {[
+                { label: 'Tampere',  url: 'https://www.tampere.fi/rakennusvalvonta', text: 'tampere.fi — rakennusvalvonta' },
+                { label: 'Nokia',    url: 'https://www.nokia.fi/rakennusvalvonta', text: 'nokia.fi — rakennusvalvonta' },
+                { label: 'Ylöjärvi', url: 'https://www.ylojarvi.fi/rakennusvalvonta/', text: 'ylojarvi.fi — rakennusvalvonta' },
+              ].map(r => (
+                <li class="flex items-start gap-2 font-body text-sm text-[#1A1A1A]/65">
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-forest/40 shrink-0"></span>
+                  <span>{r.label}: <a href={r.url} target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-forest transition-colors">{r.text}</a></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Palvelut accordion -->
+          <div class="pt-12 lg:pt-16 border-t border-[#1A1A1A]/8">
+            <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-4">Palvelut</span>
+            <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Mitä teen</h2>
+            <div class="accordion divide-y divide-[#1A1A1A]/20">
+              <div class="accordion-item" data-open="true">
+                <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="true">
+                  <span class="text-base">Asuinrakennukset &amp; toimitilat</span>
+                  <span class="accordion-icon text-xl leading-none select-none">−</span>
+                </button>
+                <div class="accordion-panel overflow-hidden transition-all duration-300">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua uusiin ja saneerattaviin asuin- ja toimitilakohteisiin. Suunnittelussa huomioidaan toimivuus, viihtyvyys ja energiatehokkuus kohteen tarpeiden mukaan. Tekniikasta on saatavissa myös BIM-tietomallit 3D-suunnitteluun.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-open="false">
+                <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+                  <span class="text-base">Moduulirakentaminen</span>
+                  <span class="accordion-icon text-xl leading-none select-none">+</span>
+                </button>
+                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua moduulirakentamisen projekteihin, jossa vaaditaan tarkkuutta ja tiivistä yhteistyötä muiden suunnittelijoiden kanssa.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-open="false">
+                <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+                  <span class="text-base">Patteriverkoston tasapainotus</span>
+                  <span class="accordion-icon text-xl leading-none select-none">+</span>
+                </button>
+                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Patteriverkoston tasapainotuksella varmistetaan lämmön tasainen jakautuminen kiinteistössä. Tulos: energiatehokkuus paranee, kylmät huoneet lämpenevät ja lämmityskustannukset laskevat.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-open="false">
+                <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+                  <span class="text-base">Energiatodistukset &amp; Energiaselvitykset</span>
+                  <span class="accordion-icon text-xl leading-none select-none">+</span>
+                </button>
+                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Laadin energiatodistukset ja -selvitykset asuinrakennuksille ja toimitiloille. Minulla on ylempi FISE-pätevyys — korkein saatavilla oleva taso.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-open="false">
+                <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="false">
+                  <span class="text-base">Olosuhde- ja energiasimulointi</span>
+                  <span class="accordion-icon text-xl leading-none select-none">+</span>
+                </button>
+                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Olosuhde- ja energiasimuloinnilla varmistetaan hyvät sisäolosuhteet ja optimoidaan energiankulutus jo suunnitteluvaiheessa ennen rakentamista.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── OIKEA: sivupalkki ── -->
+        <aside class="lg:sticky lg:top-28 h-fit space-y-6">
+
+          <div class="bg-forest text-white p-6">
+            <p class="font-body text-[10px] tracking-[0.16em] uppercase text-white/55 mb-5">Pätevyydet</p>
+            <div class="space-y-4">
+              {[
+                { abbr: 'KVV', name: 'Vesi- ja viemärilaitteiston suunnittelija' },
+                { abbr: 'IV',  name: 'Ilmanvaihdon suunnittelija' },
+                { abbr: 'FISE', name: 'Energiatodistuksen laatija, ylempi taso' },
+              ].map(p => (
+                <div class="flex items-start gap-3">
+                  <span class="font-body text-[11px] tracking-[0.1em] uppercase text-accent w-10 shrink-0 pt-0.5">{p.abbr}</span>
+                  <p class="font-body text-[13px] text-white/90 leading-snug">{p.name}</p>
+                </div>
+              ))}
+            </div>
+            <div class="mt-6 pt-5 border-t border-white/10">
+              <a href="#yhteydenotto" class="block w-full text-center font-body text-[11px] tracking-[0.16em] uppercase bg-white text-forest px-4 py-3 hover:bg-white/90 transition-colors active:scale-[0.98]">
+                Varaa etäpalaveri
+              </a>
+            </div>
+          </div>
+
+          <div class="border border-[#1A1A1A]/8 p-5 space-y-3">
+            <p class="font-body text-[10px] tracking-[0.16em] uppercase text-[#1A1A1A]/50 mb-4">Ota yhteyttä</p>
+            <a href="tel:+358407656096" class="flex items-center gap-3 font-body text-sm text-[#1A1A1A]/65 hover:text-forest transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-forest/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+              040 7656 096
+            </a>
+            <a href="mailto:oskari@vattu.fi" class="flex items-center gap-3 font-body text-sm text-[#1A1A1A]/65 hover:text-forest transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-forest/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+              oskari@vattu.fi
+            </a>
+          </div>
+
+          <div>
+            <p class="font-body text-[10px] tracking-[0.16em] uppercase text-[#1A1A1A]/50 mb-3">Katso myös</p>
+            <div class="space-y-1">
+              {[
+                { href: '/lvi-suunnittelu-hinta', label: 'LVI-suunnittelun hinta' },
+                { href: '/energiaselvitys', label: 'Energiaselvitys' },
+                { href: '/energiatodistus-hinta', label: 'Energiatodistuksen hinta' },
+                { href: '/patteriverkoston-tasapainotus', label: 'Patteriverkoston tasapainotus' },
+              ].map(l => (
+                <a href={l.href} class="flex items-center justify-between group font-body text-[12px] text-[#1A1A1A]/50 hover:text-forest py-2 border-b border-[#1A1A1A]/6 last:border-0 transition-colors">
+                  {l.label}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-[#1A1A1A]/20 group-hover:text-forest/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </aside>
+
       </div>
     </div>
   </section>
 
   <!-- Yhteydenotto -->
   <section id="yhteydenotto" class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20 pb-24 lg:pb-20">
-    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/25 mb-3">Yhteydenotto</p>
+    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/50 mb-3">Yhteydenotto</p>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-3">Aloitetaan yhdessä</h2>
       <p class="font-body text-sm text-[#1A1A1A]/50 mb-8">Varaa ilmainen etäpalaveri tai lähetä viesti. Vastaan arkisin 1–2 päivän sisällä.</p>
 
-      <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8">
+      <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8 max-w-[800px]">
         <div class="bg-forest/5 border-b border-[#1A1A1A]/8 px-5 py-3 flex items-center gap-3">
           <div class="w-2 h-2 rounded-full bg-forest/40"></div>
           <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">Ilmainen etäpalaveri 60 min</span>
@@ -226,10 +243,6 @@ import heroImg from '../assets/images/MagiCAD-Cloud.jpg';
         </a>
       </div>
 
-      <!-- Suorat yhteystiedot -->
-      <p class="font-body text-base text-[#1A1A1A]/55 leading-relaxed mb-6">
-        Soita tai lähetä viestiä, jos kysymyksiä herää!
-      </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="tel:+358407656096" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">
           040 7656 096

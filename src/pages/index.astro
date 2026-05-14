@@ -464,87 +464,101 @@ import img0223 from '../assets/images/IMG_0223.jpg';
 </style>
 
 <script>
-  // ── Typewriter ──
-  const typeEl = document.getElementById('typewriter');
-  if (typeEl) {
-    const phrases = ['LVI-suunnittelu', 'Energiatodistukset', 'Energiasimulointi', 'Patteriverkoston tasapainotus', 'Moduulirakentaminen'];
-    let pi = 0, ci = 0, deleting = false;
-    const type = () => {
-      const phrase = phrases[pi];
-      typeEl.textContent = deleting ? phrase.slice(0, ci--) : phrase.slice(0, ci++);
-      if (!deleting && ci > phrase.length) { deleting = true; setTimeout(type, 1800); return; }
-      if (deleting && ci < 0)             { deleting = false; pi = (pi + 1) % phrases.length; ci = 0; setTimeout(type, 400); return; }
-      setTimeout(type, deleting ? 35 : 65);
-    };
-    setTimeout(type, 1200);
-  }
-
-  // ── Count-up ──
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target.querySelector('.stat-number') as HTMLElement;
-      if (!el) return;
-      const target = parseInt(el.dataset.target || '0');
-      let current = 0;
-      const step = () => {
-        current++;
-        el.textContent = String(current);
-        if (current < target) setTimeout(step, 120);
-      };
-      step();
-      statObserver.unobserve(entry.target);
+  function initPage() {
+    // ── Hero animations reset (nav-palatessa animaatio ei muuten toistu) ──
+    document.querySelectorAll<HTMLElement>('.hero-label, .hero-title, .hero-cta').forEach(el => {
+      el.style.animation = 'none';
+      void el.offsetWidth; // force reflow
+      el.style.animation = '';
     });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-item').forEach(el => statObserver.observe(el));
 
-  // Accordion
-  document.querySelectorAll('.accordion-item').forEach((item) => {
-    const trigger = item.querySelector('.accordion-trigger') as HTMLButtonElement;
-    const panel   = item.querySelector('.accordion-panel') as HTMLElement;
-    const icon    = item.querySelector('.accordion-icon') as HTMLElement;
-
-    if (item.getAttribute('data-open') === 'true') {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
+    // ── Typewriter ──
+    const typeEl = document.getElementById('typewriter');
+    if (typeEl) {
+      typeEl.textContent = '';
+      const phrases = ['LVI-suunnittelu', 'Energiatodistukset', 'Energiasimulointi', 'Patteriverkoston tasapainotus', 'Moduulirakentaminen'];
+      let pi = 0, ci = 0, deleting = false;
+      let timer: ReturnType<typeof setTimeout>;
+      const type = () => {
+        const phrase = phrases[pi];
+        typeEl.textContent = deleting ? phrase.slice(0, ci--) : phrase.slice(0, ci++);
+        if (!deleting && ci > phrase.length) { deleting = true; timer = setTimeout(type, 1800); return; }
+        if (deleting && ci < 0)             { deleting = false; pi = (pi + 1) % phrases.length; ci = 0; timer = setTimeout(type, 400); return; }
+        timer = setTimeout(type, deleting ? 35 : 65);
+      };
+      timer = setTimeout(type, 1200);
     }
 
-    trigger.addEventListener('click', () => {
-      const isOpen = item.getAttribute('data-open') === 'true';
-      if (isOpen) {
-        panel.style.maxHeight = '0';
-        icon.textContent = '+';
-        item.setAttribute('data-open', 'false');
-        trigger.setAttribute('aria-expanded', 'false');
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-        icon.textContent = '−';
-        item.setAttribute('data-open', 'true');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(
-    (entries) => {
+    // ── Count-up ──
+    const statObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+        if (!entry.isIntersecting) return;
+        const el = entry.target.querySelector('.stat-number') as HTMLElement;
+        if (!el) return;
+        const target = parseInt(el.dataset.target || '0');
+        let current = 0;
+        const step = () => {
+          current++;
+          el.textContent = String(current);
+          if (current < target) setTimeout(step, 120);
+        };
+        step();
+        statObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-item').forEach(el => statObserver.observe(el));
+
+    // ── Accordion ──
+    document.querySelectorAll('.accordion-item').forEach((item) => {
+      const trigger = item.querySelector('.accordion-trigger') as HTMLButtonElement;
+      const panel   = item.querySelector('.accordion-panel') as HTMLElement;
+      const icon    = item.querySelector('.accordion-icon') as HTMLElement;
+
+      if (item.getAttribute('data-open') === 'true') {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+
+      trigger.addEventListener('click', () => {
+        const isOpen = item.getAttribute('data-open') === 'true';
+        if (isOpen) {
+          panel.style.maxHeight = '0';
+          icon.textContent = '+';
+          item.setAttribute('data-open', 'false');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          icon.textContent = '−';
+          item.setAttribute('data-open', 'true');
+          trigger.setAttribute('aria-expanded', 'true');
         }
       });
-    },
-    { threshold: 0.08 }
-  );
-  reveals.forEach((el) => observer.observe(el));
+    });
 
-  // Sticky nav shadow
-  const nav = document.getElementById('site-nav');
-  window.addEventListener('scroll', () => {
-    window.scrollY > 10
-      ? nav?.classList.add('shadow-sm', 'shadow-black/8')
-      : nav?.classList.remove('shadow-sm', 'shadow-black/8');
-  }, { passive: true });
+    // ── Scroll reveal ──
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    reveals.forEach(el => el.classList.remove('visible'));
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    reveals.forEach((el) => revealObserver.observe(el));
 
+    // ── Sticky nav shadow ──
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      window.scrollY > 10
+        ? nav?.classList.add('shadow-sm', 'shadow-black/8')
+        : nav?.classList.remove('shadow-sm', 'shadow-black/8');
+    }, { passive: true });
+  }
+
+  // Käynnistyy sekä ensimmäisellä latauksella että jokaisella ClientRouter-navigoinnilla
+  document.addEventListener('astro:page-load', initPage);
 </script>

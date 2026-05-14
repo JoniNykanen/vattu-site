@@ -12,3 +12,29 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ── View transition animations ── */
+::view-transition-old(root) {
+  animation: vattu-fade-out 280ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: vattu-fade-in 280ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes vattu-fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes vattu-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
