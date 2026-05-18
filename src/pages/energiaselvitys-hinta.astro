@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 ---
 
 <Layout
-  title="Energiaselvityksen hinta 2026 — rakennuslupa | Vattu Oy"
+  title="Energiaselvityksen hinta 2026 | rakennuslupa | Vattu Oy"
   description="Energiaselvityksen hinta uudisrakentamiseen. Omakotitalo, rivitalo, kerrostalo. FISE-pätevä LVI-insinööri. Uusimaa, Pirkanmaa, Keski-Suomi."
 >
 
@@ -18,7 +16,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
         "name": "Paljonko energiaselvitys maksaa omakotitaloon?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Omakotitalon tai pientalon energiaselvityksen hinta on tyypillisesti 650–1 200 euroa. Hintaan vaikuttavat rakennuksen koko, talotekniikan monimutkaisuus ja lähtötietojen kattavuus."
+          "text": "Omakotitalon tai pientalon energiaselvityksen hinta on tyypillisesti 650-1 200 euroa. Hintaan vaikuttavat rakennuksen koko, talotekniikan monimutkaisuus ja lähtötietojen kattavuus."
         }
       },
       {
@@ -42,26 +40,20 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Hero -->
   <section class="bg-forest relative">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[60dvh]">
-      <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-0">
+    <div class="w-full">
+      <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-20">
         <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/55 mb-5">Palvelu · Energiaselvitys</p>
         <h1 class="font-heading text-white leading-[1.05] mb-5" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
-          Energiaselvitys<br />— hinta ja sisältö
+          Energiaselvitys<br />Hinta ja sisältö
         </h1>
         <div class="w-6 h-px bg-white/15 mb-6"></div>
         <p class="font-body text-sm text-white/55 leading-relaxed mb-8 max-w-[400px]">
           Rakennuslupaan vaadittava asiakirjakokonaisuus. Varmistan, että kaikki laskelmavaatimukset täyttyvät ensimmäisellä kerralla.
         </p>
-        <a href="#yhteydenotto" class="inline-block w-max font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98]">
+        <a href="#yhteydenotto" class="inline-block w-max font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest">
           Varaa etäpalaveri
         </a>
       </div>
-      <div class="hidden lg:block" aria-hidden="true"></div>
-    </div>
-    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-      <Image src={heroImg} alt="Energiaselvitys — LVI-insinööritoimisto Vattu Oy" loading="eager" class="absolute inset-0 w-full h-full object-cover object-center" />
-      <div class="absolute inset-0 bg-forest/35"></div>
-      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-forest to-transparent"></div>
     </div>
   </section>
 
@@ -74,9 +66,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Osio 1: Hintataulukko -->
   <section class="bg-cream py-12 lg:py-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-start">
-      <div>
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Hinnasto 2026</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Energiaselvityksen hinta rakennustyypeittäin</h2>
       <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">
@@ -93,10 +83,10 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
           </thead>
           <tbody class="divide-y divide-[#1A1A1A]/8">
             {[
-              ['Omakotitalo / pientalo', '650–1 200 €'],
-              ['Rivitalo', '1 200–2 500 €'],
-              ['Pienkerrostalo (alle 10 asuntoa)', '2 500–4 500 €'],
-              ['Toimisto / liiketila', '2 000–4 000 €'],
+              ['Omakotitalo / pientalo', '650-1 200 €'],
+              ['Rivitalo', '1 200-2 500 €'],
+              ['Pienkerrostalo (alle 10 asuntoa)', '2 500-4 500 €'],
+              ['Toimisto / liiketila', '2 000-4 000 €'],
             ].map(([type, price]) => (
               <tr>
                 <td class="font-body text-sm text-[#1A1A1A]/70 py-4 pr-6 leading-snug">{type}</td>
@@ -108,55 +98,14 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
       </div>
 
       <p class="font-body text-sm text-[#1A1A1A]/50 leading-relaxed mt-6">
-        Pyydä tarkka tarjous kohteellesi — <a href="#yhteydenotto" class="underline underline-offset-2 hover:text-forest transition-colors">varaa ilmainen etäpalaveri</a> tai lähetä sähköpostia.
+        Pyydä tarkka tarjous kohteellesi: <a href="#yhteydenotto" class="underline underline-offset-2 hover:text-forest transition-colors">varaa ilmainen etäpalaveri</a> tai lähetä sähköpostia.
       </p>
-      </div>
-
-      <!-- Sivupalkki -->
-      <aside class="lg:sticky lg:top-28 h-fit space-y-6">
-        <div class="bg-forest text-white p-6">
-          <p class="font-body text-[10px] tracking-[0.16em] uppercase text-white/55 mb-4">Energiaselvitys</p>
-          <p class="font-heading text-white text-lg leading-snug mb-1">FISE ylempi taso</p>
-          <p class="font-body text-[13px] text-white/55 leading-snug mb-5">Pakollinen rakennuslupaan. Laadin koko kokonaisuuden kerralla.</p>
-          <div class="border-t border-white/10 pt-5">
-            <a href="#yhteydenotto" class="block w-full text-center font-body text-[11px] tracking-[0.16em] uppercase bg-white text-forest px-4 py-3 hover:bg-white/90 transition-colors active:scale-[0.98]">Pyydä tarjous</a>
-          </div>
-        </div>
-        <div class="border border-[#1A1A1A]/8 p-5 space-y-3">
-          <p class="font-body text-[10px] tracking-[0.16em] uppercase text-[#1A1A1A]/50 mb-4">Ota yhteyttä</p>
-          <a href="tel:+358407656096" class="flex items-center gap-3 font-body text-sm text-[#1A1A1A]/65 hover:text-forest transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-forest/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-            040 7656 096
-          </a>
-          <a href="mailto:oskari@vattu.fi" class="flex items-center gap-3 font-body text-sm text-[#1A1A1A]/65 hover:text-forest transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-forest/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-            oskari@vattu.fi
-          </a>
-        </div>
-        <div>
-          <p class="font-body text-[10px] tracking-[0.16em] uppercase text-[#1A1A1A]/50 mb-3">Katso myös</p>
-          <div class="space-y-1">
-            {[
-              { href: '/energiaselvitys', label: 'Energiaselvitys' },
-              { href: '/energiatodistus-hinta', label: 'Energiatodistuksen hinta' },
-              { href: '/lvi-suunnittelu-hinta', label: 'LVI-suunnittelun hinta' },
-            ].map(l => (
-              <a href={l.href} class="flex items-center justify-between group font-body text-[12px] text-[#1A1A1A]/50 hover:text-forest py-2 border-b border-[#1A1A1A]/6 last:border-0 transition-colors">
-                {l.label}
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-[#1A1A1A]/20 group-hover:text-forest/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
-              </a>
-            ))}
-          </div>
-        </div>
-      </aside>
-
-      </div>
     </div>
   </section>
 
   <!-- Osio 2: Mikä vaikuttaa hintaan -->
   <section class="bg-forest py-12 lg:py-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-6">Hinnanmuodostus</span>
       <h2 class="font-heading text-white text-2xl lg:text-3xl mb-10">Mikä vaikuttaa energiaselvityksen hintaan</h2>
       <div class="divide-y divide-white/10">
@@ -174,7 +123,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
           {
             num: '03',
             title: 'Lähtötietojen kattavuus',
-            body: 'Mitä valmiimmat piirustukset ja rakennetyypit ovat, sitä nopeammin laskenta etenee. Jos lähtötiedot puuttuvat tai ovat epäselvät, joudutaan käyttämään oletusarvoja — tulos on usein heikompi ja työmäärä kasvaa.',
+            body: 'Mitä valmiimmat piirustukset ja rakennetyypit ovat, sitä nopeammin laskenta etenee. Jos lähtötiedot puuttuvat tai ovat epäselvät, joudutaan käyttämään oletusarvoja. Tulos on usein heikompi ja työmäärä kasvaa.',
           },
         ].map(item => (
           <div class="flex items-start gap-6 lg:gap-10 py-7 first:pt-0 last:pb-0">
@@ -191,14 +140,14 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Osio 3: Mitä sisältää -->
   <section class="bg-cream py-12 lg:py-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Sisältö</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Mitä energiaselvitys sisältää</h2>
       <ul class="space-y-4 mb-8">
         {[
-          { title: 'E-lukulaskelma', desc: 'Rakennuksen ostoenergiankulutus vakioidulla käyttöprofiililla. E-luku on energiaselvityksen ydin — sillä osoitetaan, että rakennus täyttää ympäristöministeriön vaatimukset.' },
+          { title: 'E-lukulaskelma', desc: 'Rakennuksen ostoenergiankulutus vakioidulla käyttöprofiililla. E-luku on energiaselvityksen ydin. Sillä osoitetaan, että rakennus täyttää ympäristöministeriön vaatimukset.' },
           { title: 'Lämpöhäviöiden tasauslaskelma', desc: 'Osoittaa, että rakennuksen vaippa ja ilmanvaihto täyttävät energiatehokkuusvaatimukset kokonaisuutena, vaikka yksittäinen rakenneosa poikkeaisi perusratkaisusta.' },
-          { title: 'Energiatodistus (A–G)', desc: 'Sisältyy aina energiaselvitykseen. Tarvitaan rakennusluvan lisäksi myöhemmin myynti- tai vuokrausilmoituksessa.' },
+          { title: 'Energiatodistus (A-G)', desc: 'Sisältyy aina energiaselvitykseen. Tarvitaan rakennusluvan lisäksi myöhemmin myynti- tai vuokrausilmoituksessa.' },
           { title: 'Kesäajan huonelämpötilatarkastelu', desc: 'Vaaditaan yleensä muissa kuin pienissä asuinrakennuksissa. Varmistaa, ettei rakennus ylikuumene kesällä ilman jäähdytystä.' },
         ].map(({ title, desc }) => (
           <li class="flex items-start gap-4 p-5 bg-forest/4 rounded-xl ring-1 ring-forest/8">
@@ -218,13 +167,18 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Osio 4: Milloin tarvitaan -->
   <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Vaatimukset</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Milloin energiaselvitys vaaditaan</h2>
-      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">Energiaselvitys on pakollinen liite rakennuslupahakemukseen kaikille uudisrakennuksille.</p>
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-4">Energiaselvitys on pakollinen liite rakennuslupahakemukseen kaikille uudisrakennuksille.</p>
+      <div class="p-5 bg-forest/5 ring-1 ring-forest/10 rounded-xl mb-8">
+        <p class="font-body text-sm text-[#1A1A1A]/70 leading-relaxed">
+          <strong class="text-[#1A1A1A]">Puuttuva tai puutteellinen energiaselvitys palauttaa lupahakemuksen.</strong> Viivästyminen siirtää rakennusluvan myöntämistä viikkoja tai kuukausia. Odotusaika maksaa.
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         {[
-          { title: 'Uusi asuinrakennus', body: 'Omakotitalot, rivitalot ja kerrostalot. Laaditaan ennen rakennuslupahakemusta — ilman energiaselvitystä lupaa ei myönnetä.' },
+          { title: 'Uusi asuinrakennus', body: 'Omakotitalot, rivitalot ja kerrostalot. Laaditaan ennen rakennuslupahakemusta. Ilman energiaselvitystä lupaa ei myönnetä.' },
           { title: 'Uusi toimitilarakennus', body: 'Toimistot, liiketilat, teollisuusrakennukset. Sama velvoite kuin asuinrakennuksilla. Laajuus ja vaatimukset vaihtelevat käyttötarkoituksen mukaan.' },
           { title: 'Laajamittainen korjausrakentaminen', body: 'Tietyissä laajamittaisissa saneerauksissa edellytetään energiaselvitys tai osittainen energiatarkastelu. Rakennusvalvonta ohjeistaa tapauskohtaisesti.' },
         ].map(item => (
@@ -239,18 +193,18 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Osio 5: FAQ -->
   <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Usein kysyttyä</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Usein kysyttyä energiaselvityksen hinnasta</h2>
       <div class="divide-y divide-[#1A1A1A]/12">
         {[
           {
             q: 'Onko energiaselvitys sama asia kuin energiatodistus?',
-            a: 'Ei. Energiatodistus on asiakirja myyntiä ja vuokrausta varten. Energiaselvitys on laajempi kokonaisuus rakennuslupaa varten — se sisältää energiatodistuksen, lämpöhäviöiden tasauslaskelman, E-lukulaskelman ja kesäajan huonelämpötilatarkastelun. Uudisrakentamisessa laaditaan aina energiaselvitys, johon energiatodistus sisältyy.',
+            a: 'Ei. Energiatodistus on asiakirja myyntiä ja vuokrausta varten. Energiaselvitys on laajempi kokonaisuus rakennuslupaa varten. Se sisältää energiatodistuksen, lämpöhäviöiden tasauslaskelman, E-lukulaskelman ja kesäajan huonelämpötilatarkastelun. Uudisrakentamisessa laaditaan aina energiaselvitys, johon energiatodistus sisältyy.',
           },
           {
             q: 'Kauanko energiaselvityksen laadinta kestää?',
-            a: 'Pientalokohteessa noin 1–2 viikkoa lähtötietojen vastaanottamisesta. Suuremmissa kohteissa 2–4 viikkoa. Kiireellisistä aikatauluista voidaan sopia erikseen — mainitse tarpeen kiireellisyys yhteydenottovaiheessa.',
+            a: 'Pientalokohteessa noin 1-2 viikkoa lähtötietojen vastaanottamisesta. Suuremmissa kohteissa 2-4 viikkoa. Kiireellisistä aikatauluista voidaan sopia erikseen. Mainitse tarpeen kiireellisyys yhteydenottovaiheessa.',
           },
           {
             q: 'Voiko energiaselvityksen tehdä itse?',
@@ -258,7 +212,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
           },
           {
             q: 'Mitä tapahtuu, jos energiaselvitys puuttuu rakennusluvasta?',
-            a: 'Rakennuslupahakemus palautetaan täydennettäväksi tai hylätään. Energiaselvitys on pakollinen liite — ilman sitä lupakäsittely ei etene. Viivästyminen voi siirtää rakennusluvan myöntämistä viikkojen tai jopa kuukausien verran.',
+            a: 'Rakennuslupahakemus palautetaan täydennettäväksi tai hylätään. Energiaselvitys on pakollinen liite. Ilman sitä lupakäsittely ei etene. Viivästyminen voi siirtää rakennusluvan myöntämistä viikkojen tai jopa kuukausien verran.',
           },
           {
             q: 'Mitä tietoja tarvitaan energiaselvityksen tekemiseen?',
@@ -270,7 +224,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
               <span class="text-sm pr-6">{item.q}</span>
               <span class="faq-icon text-xl leading-none select-none shrink-0">{i === 0 ? '−' : '+'}</span>
             </button>
-            <div class="faq-panel overflow-hidden transition-all duration-300" style={i === 0 ? '' : 'max-height:0'}>
+            <div class="faq-panel overflow-hidden transition-[max-height] duration-300" style={i === 0 ? '' : 'max-height:0'}>
               <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">{item.a}</p>
             </div>
           </div>
@@ -281,9 +235,9 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Osio 6: Palvelualue -->
   <section class="bg-forest py-10 lg:py-14">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-5">Palvelualue</span>
-      <p class="font-body text-sm text-white/65 leading-relaxed max-w-[600px]">
+      <p class="font-body text-sm text-white/65 leading-relaxed mx-auto">
         Laadin energiaselvityksiä <strong class="text-white font-medium">Uudellamaalla</strong> (Helsinki, Espoo, Vantaa ja ympäristökunnat), <strong class="text-white font-medium">Pirkanmaalla</strong> (Tampere ja lähikunnat) sekä <strong class="text-white font-medium">Keski-Suomessa</strong> (Jyväskylä ja ympäristö). Etätyönä myös muualla Suomessa.
       </p>
     </div>
@@ -298,10 +252,9 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Yhteydenotto -->
   <section id="yhteydenotto" class="bg-cream pt-10 pb-24 lg:py-20">
-    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-3">Yhteydenotto</span>
-      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-3">Pyydä tarjous energiaselvityksestä</h2>
-      <p class="font-body text-sm text-[#1A1A1A]/50 mb-8">Varaa ilmainen etäpalaveri tai lähetä viesti. Vastaan arkisin 1–2 päivän sisällä.</p>
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
+      <div class="flex justify-center mb-3"><span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55">Yhteydenotto</span></div>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-10">Lähetä piirustukset tai kerro kohteen perustiedot. Tarjous 1-2 arkipäivässä.</h2>
 
       <!-- Desktop kalenteri -->
       <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8">
@@ -309,10 +262,10 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
           <div class="w-2 h-2 rounded-full bg-forest/40"></div>
           <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">Ilmainen etäpalaveri 60 min</span>
         </div>
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" style="border:0;display:block;" width="100%" height="550" frameborder="0" title="Varaa etäpalaveri"></iframe>
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true&hl=fi" style="border:0;display:block;" width="100%" height="550" frameborder="0" title="Varaa etäpalaveri"></iframe>
       </div>
       <div class="lg:hidden mb-6">
-        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true&hl=fi" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform">
           <div>
             <p class="font-body text-[10px] tracking-[0.18em] uppercase text-white/50 mb-1">Ilmainen · 60 min · Google Meet</p>
             <p class="font-heading text-lg">Varaa etäpalaveri</p>
@@ -321,8 +274,25 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
         </a>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="tel:+358407656096" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">040 7656 096</a>
+      <!-- Suorat yhteystiedot -->
+      <div class="text-center mt-12">
+        <p class="font-heading text-[#1A1A1A] text-lg mb-6">
+          Soita, lähetä sähköpostia tai ota yhteyttä WhatsAppissa.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="tel:+358407656096" class="inline-flex items-center justify-center gap-2 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+            040 7656 096
+          </a>
+          <a href="mailto:oskari@vattu.fi" class="inline-flex items-center justify-center gap-2 font-body text-[11px] tracking-[0.16em] uppercase ring-1 ring-[#1A1A1A]/15 text-[#1A1A1A]/70 rounded-full px-6 py-3.5 hover:ring-[#1A1A1A]/30 hover:text-[#1A1A1A] transition-colors active:scale-[0.97]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            oskari@vattu.fi
+          </a>
+          <a href="https://wa.me/358407656096" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 font-body text-[11px] tracking-[0.16em] uppercase ring-1 ring-[#1A1A1A]/15 text-[#1A1A1A]/70 rounded-full px-6 py-3.5 hover:ring-[#1A1A1A]/30 hover:text-[#1A1A1A] transition-colors active:scale-[0.97]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>

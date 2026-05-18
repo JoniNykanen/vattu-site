@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 ---
 
 <Layout
-  title="LVI-suunnittelu Jyväskylä ja Keski-Suomi — LVI-insinööritoimisto Vattu Oy"
+  title="LVI-suunnittelu Jyväskylä ja Keski-Suomi | LVI-insinööritoimisto Vattu Oy"
   description="LVI-suunnittelua ja energiatodistuksia Jyväskylässä ja Keski-Suomessa. Palvelen Jyväskylää, Äänekoskea, Jämsää ja muita Keski-Suomen kuntia. Pyydä ilmainen etäpalaveri."
 >
 
@@ -23,8 +21,8 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- Hero -->
   <section class="bg-forest relative">
-    <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:min-h-[70dvh]">
-      <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-0">
+    <div class="w-full">
+      <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-20">
         <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/55 mb-5">LVI-suunnittelu · Keski-Suomi</p>
         <h1 class="font-heading text-white leading-[1.1] mb-5" style="font-size: clamp(1.75rem, 3vw, 2.75rem);">
           LVI-suunnittelu<br />Jyväskylä & Keski-Suomi
@@ -33,16 +31,10 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
         <p class="font-body text-sm text-white/55 leading-relaxed mb-8 max-w-[380px]">
           Palvelen rakennuttajia, isännöitsijöitä ja yksityishenkilöitä Jyväskylässä ja ympäristökunnissa.
         </p>
-        <a href="#yhteydenotto" class="self-start inline-block font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98]">
+        <a href="#yhteydenotto" class="self-start inline-block font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest">
           Varaa etäpalaveri
         </a>
       </div>
-      <div class="hidden lg:block" aria-hidden="true"></div>
-    </div>
-    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden">
-      <Image src={heroImg} alt="LVI-suunnittelu Jyväskylä Keski-Suomi" loading="eager" class="absolute inset-0 w-full h-full object-cover object-center" />
-      <div class="absolute inset-0 bg-forest/20"></div>
-      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-forest to-transparent"></div>
     </div>
   </section>
 
@@ -55,10 +47,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
   <!-- ── PÄÄSISÄLTÖ + SIVUPALKKI ── -->
   <section class="bg-cream py-12 lg:py-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 lg:gap-16 items-start">
-
-        <!-- ── VASEN: pääsisältö ── -->
+    <div class="max-w-[760px] mx-auto px-6 lg:px-12">
         <div>
 
           <!-- Intro -->
@@ -66,7 +55,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
             <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/50 mb-4">Palvelualue</p>
             <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-6">Keski-Suomi</h2>
             <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-              Toteutan LVI-suunnittelua asuin- ja toimitilakohteisiin sekä moduulirakentamisen projekteihin Keski-Suomessa. Suunnittelussa huomioidaan toimivuus, energiatehokkuus ja kohteen erityistarpeet.
+              Toteutan LVI-suunnittelua asuin- ja toimitilakohteisiin sekä moduulirakentamisen projekteihin Keski-Suomessa. Painotan toimivuutta ja energiatehokkuutta, varsinkin pohjoisen ilmaston vaatimukset huomioiden.
             </p>
             <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
               Toimin aktiivisesti Jyväskylässä, Äänekoskella, Jämsässä, Muuramessa, Laukaassa, Petäjävedellä, Hankasalmella ja Toivakassa.
@@ -76,15 +65,15 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
           <!-- Paikallistieto -->
           <div class="mb-12 lg:mb-16 pt-12 lg:pt-16 border-t border-[#1A1A1A]/8">
             <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Alueesta</span>
-            <h3 class="font-heading text-[#1A1A1A] text-xl lg:text-2xl mb-6">LVI-suunnittelu Jyväskylässä — yliopisto- ja kasvukaupungin rakentamisen erityispiirteet</h3>
+            <h3 class="font-heading text-[#1A1A1A] text-xl lg:text-2xl mb-6">LVI-suunnittelu Jyväskylässä: yliopisto- ja kasvukaupungin rakentamisen erityispiirteet</h3>
             <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-              Jyväskylä kasvaa yliopiston ja kasvavan teknologiasektorin vetämänä. Kaupunkiin rakennetaan vuosittain satoja uusia asuntoja, ja täydennysrakentaminen tiivistää erityisesti Kuokkalan, Keljon ja Palokän alueita. Samanaikaisesti Jyväskylän vanha rakennuskanta — 1960–1980-luvun kerrostalot ja omakotitalot — on energiasaneerausten kohderyhmää.
+              Jyväskylä kasvaa yliopiston ja teknologiasektorin vetämänä. Kaupunkiin rakennetaan vuosittain satoja uusia asuntoja, ja täydennysrakentaminen tiivistää erityisesti Kuokkalan, Keljon ja Palokän alueita. Samalla Jyväskylän vanha rakennuskanta (1960-1980-luvun kerrostalot ja omakotitalot) on energiasaneerausten kohderyhmää.
             </p>
             <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
               Keski-Suomen ilmasto on Uuttamaata selvästi kylmempi. Tämä vaikuttaa suoraan LVI-suunnitteluun: lämmitysjärjestelmien mitoitus on tehtävä oikein, ja energiatehokkuusvaatimukset korostuvat pohjoisemmalla sijainnilla. Energiatodistuksen E-luku lasketaan Keski-Suomen ilmastovyöhykkeen mukaan, ja laskennassa käytetyt säätiedot poikkeavat Etelä-Suomesta.
             </p>
             <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
-              Jyväskylässä kaukolämpö on yleisin lämmitysmuoto taajamassa, mutta ympäristökunnissa — Muuramessa, Laukaassa, Petäjävedellä — öljylämmitys ja puulämmitys ovat edelleen yleisiä. Näissä kohteissa lämmitysjärjestelmän uusiminen maalämpöön on ajankohtainen hanke, johon liittyy aina myös patteriverkoston tasapainotustarve.
+              Jyväskylässä kaukolämpö on yleisin lämmitysmuoto taajamassa, mutta ympäristökunnissa (Muuramessa, Laukaassa, Petäjävedellä) öljylämmitys ja puulämmitys ovat edelleen yleisiä. Näissä kohteissa lämmitysjärjestelmän uusiminen maalämpöön on ajankohtainen hanke, johon liittyy aina myös patteriverkoston tasapainotustarve.
             </p>
             <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-8">
               Keski-Suomessa toimivien LVI-urakoitsijoiden verkosto on suppeampi kuin pääkaupunkiseudulla, mutta luotettavia yhteistyökumppaneita löytyy. Voin tarvittaessa välittää tarjouspyynnön myös toteutuksesta suunnittelun yhteydessä.
@@ -107,16 +96,15 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
 
           <!-- Palvelut accordion -->
           <div class="pt-12 lg:pt-16 border-t border-[#1A1A1A]/8">
-            <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-4">Palvelut</span>
-            <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Mitä teen</h2>
+            <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-5">Palvelut</span>
             <div class="accordion divide-y divide-[#1A1A1A]/20">
               <div class="accordion-item" data-open="true">
                 <button class="accordion-trigger w-full flex items-center justify-between py-4 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded="true">
                   <span class="text-base">Asuinrakennukset &amp; toimitilat</span>
                   <span class="accordion-icon text-xl leading-none select-none">−</span>
                 </button>
-                <div class="accordion-panel overflow-hidden transition-all duration-300">
-                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua uusiin ja saneerattaviin asuin- ja toimitilakohteisiin. Suunnittelussa huomioidaan toimivuus, viihtyvyys ja energiatehokkuus kohteen tarpeiden mukaan. Tekniikasta on saatavissa myös BIM-tietomallit 3D-suunnitteluun.</p>
+                <div class="accordion-panel overflow-hidden transition-[max-height] duration-300">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua uusiin ja saneerattaviin asuin- ja toimitilakohteisiin. Suunnittelussa huomioin toimivuuden, viihtyvyyden ja energiatehokkuuden kohteen tarpeiden mukaan. Tekniikasta on saatavissa myös BIM-tietomallit 3D-suunnitteluun.</p>
                 </div>
               </div>
               <div class="accordion-item" data-open="false">
@@ -124,7 +112,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
                   <span class="text-base">Moduulirakentaminen</span>
                   <span class="accordion-icon text-xl leading-none select-none">+</span>
                 </button>
-                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                <div class="accordion-panel overflow-hidden transition-[max-height] duration-300" style="max-height:0">
                   <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">LVI-suunnittelua moduulirakentamisen projekteihin, jossa vaaditaan tarkkuutta ja tiivistä yhteistyötä muiden suunnittelijoiden kanssa.</p>
                 </div>
               </div>
@@ -133,7 +121,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
                   <span class="text-base">Patteriverkoston tasapainotus</span>
                   <span class="accordion-icon text-xl leading-none select-none">+</span>
                 </button>
-                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                <div class="accordion-panel overflow-hidden transition-[max-height] duration-300" style="max-height:0">
                   <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Patteriverkoston tasapainotuksella varmistetaan lämmön tasainen jakautuminen kiinteistössä. Tulos: energiatehokkuus paranee, kylmät huoneet lämpenevät ja lämmityskustannukset laskevat.</p>
                 </div>
               </div>
@@ -142,8 +130,8 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
                   <span class="text-base">Energiatodistukset &amp; Energiaselvitykset</span>
                   <span class="accordion-icon text-xl leading-none select-none">+</span>
                 </button>
-                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
-                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Laadin energiatodistukset ja -selvitykset asuinrakennuksille ja toimitiloille. Minulla on ylempi FISE-pätevyys — korkein saatavilla oleva taso.</p>
+                <div class="accordion-panel overflow-hidden transition-[max-height] duration-300" style="max-height:0">
+                  <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Laadin energiatodistukset ja -selvitykset asuinrakennuksille ja toimitiloille. Minulla on ylempi FISE-pätevyys, korkein saatavilla oleva taso.</p>
                 </div>
               </div>
               <div class="accordion-item" data-open="false">
@@ -151,7 +139,7 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
                   <span class="text-base">Olosuhde- ja energiasimulointi</span>
                   <span class="accordion-icon text-xl leading-none select-none">+</span>
                 </button>
-                <div class="accordion-panel overflow-hidden transition-all duration-300" style="max-height:0">
+                <div class="accordion-panel overflow-hidden transition-[max-height] duration-300" style="max-height:0">
                   <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">Olosuhde- ja energiasimuloinnilla varmistetaan hyvät sisäolosuhteet ja optimoidaan energiankulutus jo suunnitteluvaiheessa ennen rakentamista.</p>
                 </div>
               </div>
@@ -159,82 +147,24 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
           </div>
 
         </div>
-
-        <!-- ── OIKEA: sivupalkki ── -->
-        <aside class="lg:sticky lg:top-28 h-fit space-y-6">
-
-          <div class="bg-forest text-white p-6">
-            <p class="font-body text-[10px] tracking-[0.16em] uppercase text-white/55 mb-5">Pätevyydet</p>
-            <div class="space-y-4">
-              {[
-                { abbr: 'KVV', name: 'Vesi- ja viemärilaitteiston suunnittelija' },
-                { abbr: 'IV',  name: 'Ilmanvaihdon suunnittelija' },
-                { abbr: 'FISE', name: 'Energiatodistuksen laatija, ylempi taso' },
-              ].map(p => (
-                <div class="flex items-start gap-3">
-                  <span class="font-body text-[11px] tracking-[0.1em] uppercase text-accent w-10 shrink-0 pt-0.5">{p.abbr}</span>
-                  <p class="font-body text-[13px] text-white/90 leading-snug">{p.name}</p>
-                </div>
-              ))}
-            </div>
-            <div class="mt-6 pt-5 border-t border-white/10">
-              <a href="#yhteydenotto" class="block w-full text-center font-body text-[11px] tracking-[0.16em] uppercase bg-white text-forest px-4 py-3 hover:bg-white/90 transition-colors active:scale-[0.98]">
-                Varaa etäpalaveri
-              </a>
-            </div>
-          </div>
-
-          <div class="border border-[#1A1A1A]/8 p-5 space-y-3">
-            <p class="font-body text-[10px] tracking-[0.16em] uppercase text-[#1A1A1A]/50 mb-4">Ota yhteyttä</p>
-            <a href="tel:+358407656096" class="flex items-center gap-3 font-body text-sm text-[#1A1A1A]/65 hover:text-forest transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-forest/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-              040 7656 096
-            </a>
-            <a href="mailto:oskari@vattu.fi" class="flex items-center gap-3 font-body text-sm text-[#1A1A1A]/65 hover:text-forest transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-forest/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-              oskari@vattu.fi
-            </a>
-          </div>
-
-          <div>
-            <p class="font-body text-[10px] tracking-[0.16em] uppercase text-[#1A1A1A]/50 mb-3">Katso myös</p>
-            <div class="space-y-1">
-              {[
-                { href: '/lvi-suunnittelu-hinta', label: 'LVI-suunnittelun hinta' },
-                { href: '/energiaselvitys', label: 'Energiaselvitys' },
-                { href: '/energiatodistus-hinta', label: 'Energiatodistuksen hinta' },
-                { href: '/patteriverkoston-tasapainotus', label: 'Patteriverkoston tasapainotus' },
-              ].map(l => (
-                <a href={l.href} class="flex items-center justify-between group font-body text-[12px] text-[#1A1A1A]/50 hover:text-forest py-2 border-b border-[#1A1A1A]/6 last:border-0 transition-colors">
-                  {l.label}
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-[#1A1A1A]/20 group-hover:text-forest/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
-                </a>
-              ))}
-            </div>
-          </div>
-
-        </aside>
-
-      </div>
     </div>
   </section>
 
   <!-- Yhteydenotto -->
   <section id="yhteydenotto" class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20 pb-24 lg:pb-20">
-    <div class="max-w-[1140px] mx-auto px-6 lg:px-12">
-      <p class="font-body text-[10px] tracking-[0.22em] uppercase text-[#1A1A1A]/50 mb-3">Yhteydenotto</p>
-      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-3">Aloitetaan yhdessä</h2>
-      <p class="font-body text-sm text-[#1A1A1A]/50 mb-8">Varaa ilmainen etäpalaveri tai lähetä viesti. Vastaan arkisin 1–2 päivän sisällä.</p>
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
+      <div class="flex justify-center mb-3"><span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55">Yhteydenotto</span></div>
+      <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-10">Tarvitsetko LVI-suunnittelijan Keski-Suomessa? Kerro kohteesta, niin aloitetaan.</h2>
 
       <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8 max-w-[800px]">
         <div class="bg-forest/5 border-b border-[#1A1A1A]/8 px-5 py-3 flex items-center gap-3">
           <div class="w-2 h-2 rounded-full bg-forest/40"></div>
           <span class="font-body text-[11px] tracking-[0.14em] uppercase text-[#1A1A1A]/35">Ilmainen etäpalaveri 60 min</span>
         </div>
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" style="border:0;display:block;" width="100%" height="550" frameborder="0" title="Varaa etäpalaveri"></iframe>
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true&hl=fi" style="border:0;display:block;" width="100%" height="550" frameborder="0" title="Varaa etäpalaveri"></iframe>
       </div>
       <div class="lg:hidden mb-6">
-        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0EiCYaQeHPOreKXBXVhRlFcn7Ag2rVd6PC4938WN1oFasif4wKNPu8jUwBSsfZKMKPWs0oqAld?gv=true&hl=fi" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full bg-forest text-white px-6 py-5 active:scale-[0.98] transition-transform">
           <div>
             <p class="font-body text-[10px] tracking-[0.18em] uppercase text-white/50 mb-1">Ilmainen · 60 min · Google Meet</p>
             <p class="font-heading text-lg">Varaa etäpalaveri</p>
@@ -243,10 +173,25 @@ import heroImg from '../assets/images/lvitaskinen-lvi-suunnttelu-Oulu.webp';
         </a>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="tel:+358407656096" class="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">
-          040 7656 096
-        </a>
+      <!-- Suorat yhteystiedot -->
+      <div class="text-center mt-12">
+        <p class="font-heading text-[#1A1A1A] text-lg mb-6">
+          Soita, lähetä sähköpostia tai ota yhteyttä WhatsAppissa.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="tel:+358407656096" class="inline-flex items-center justify-center gap-2 font-body text-[11px] tracking-[0.16em] uppercase bg-forest text-white rounded-full px-6 py-3.5 hover:bg-forest/85 transition-colors active:scale-[0.97]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+            040 7656 096
+          </a>
+          <a href="mailto:oskari@vattu.fi" class="inline-flex items-center justify-center gap-2 font-body text-[11px] tracking-[0.16em] uppercase ring-1 ring-[#1A1A1A]/15 text-[#1A1A1A]/70 rounded-full px-6 py-3.5 hover:ring-[#1A1A1A]/30 hover:text-[#1A1A1A] transition-colors active:scale-[0.97]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            oskari@vattu.fi
+          </a>
+          <a href="https://wa.me/358407656096" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 font-body text-[11px] tracking-[0.16em] uppercase ring-1 ring-[#1A1A1A]/15 text-[#1A1A1A]/70 rounded-full px-6 py-3.5 hover:ring-[#1A1A1A]/30 hover:text-[#1A1A1A] transition-colors active:scale-[0.97]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
