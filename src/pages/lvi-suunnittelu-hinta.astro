@@ -34,6 +34,46 @@ import Layout from '../layouts/Layout.astro';
           "@type": "Answer",
           "text": "LVI-suunnittelun hinta koostuu suunnittelutyöstä, kohteen katselmuksesta, piirustuksista ja asiakirjoista, kokouksista sekä rakennusvalvontaan tehtävistä toimenpiteistä. Hintaan vaikuttavat kohteen koko, käytettävät järjestelmät ja suunnittelun laajuus."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Kauanko LVI-suunnittelun tekeminen kestää?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pientalokohteessa suunnittelu kestää tyypillisesti 2–4 viikkoa lähtötietojen vastaanottamisesta. Taloyhtiön linjasaneerauksessa tai suuremmissa kohteissa aikataulu on 4–8 viikkoa. Aikatauluun vaikuttavat kohteen laajuus, suunnitteluvaiheen kokousten määrä ja lähtötietojen valmius."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mitä tietoja tarvitaan LVI-suunnittelun aloittamiseen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vähintään pohjapiirustukset ja tieto rakennuksen käyttötarkoituksesta. Saneerauskohteissa olemassa olevat LVI-piirustukset nopeuttavat työtä. Uudiskohteissa tarvitaan arkkitehtipiirustukset ja tieto valitusta lämmitysjärjestelmästä. Tarkempi lista käydään läpi etäpalaverissa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Miten muutokset kesken suunnittelun vaikuttavat hintaan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pienet muutokset (esim. pisteen siirto, varusteen vaihto) kuuluvat normaaliin suunnitteluprosessiin. Jos pohjaratkaisua muutetaan merkittävästi suunnittelun aikana, lisätyö laskutetaan erikseen tuntihinnan mukaan. Tästä sovitaan aina etukäteen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tarvitaanko LVI-suunnittelija kaikkiin rakennuslupahankkeisiin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kyllä. Rakennuslupa edellyttää KVV- ja IV-suunnittelijan, jolla on riittävä pätevyys kohteen vaativuuteen nähden. Rakennusvalvonta tarkistaa pätevyyden lupahakemuksen yhteydessä."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sisältyykö energiaselvitys LVI-suunnittelun hintaan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ei automaattisesti. Energiaselvitys on erillinen palvelu, joka laaditaan usein LVI-suunnittelun rinnalla. Yhdistämällä molemmat samalle suunnittelijalle säästät aikaa ja vältät ristiriitoja lähtötiedoissa. Kysy yhdistelmätarjous etäpalaverissa."
+        }
       }
     ]
   })} />
@@ -42,12 +82,11 @@ import Layout from '../layouts/Layout.astro';
   <section class="bg-forest relative">
     <div class="w-full">
       <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-20">
-        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/55 mb-5">Hinnasto</p>
+        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/50 mb-5">Hinnasto</p>
         <h1 class="font-heading text-white leading-[1.1] mb-5" style="font-size: clamp(1.75rem, 3vw, 2.75rem);">
           Paljonko LVI-suunnittelu maksaa?
         </h1>
-        <div class="w-6 h-px bg-white/15 mb-6"></div>
-        <p class="font-body text-sm text-white/55 leading-relaxed mb-8 max-w-[400px]">
+        <p class="font-body text-sm text-white/50 leading-relaxed mb-8 max-w-[400px]">
           Hinta vaihtelee kohteen koon ja laajuuden mukaan. Pientaloista taloyhtiöihin: esimerkkihinnat ja mistä kokonaiskulut koostuvat.
         </p>
         <a href="#yhteydenotto" class="self-start inline-block font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest">
@@ -57,23 +96,16 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Wave -->
-  <div class="bg-forest overflow-hidden leading-none -mt-px -mb-px">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
-    </svg>
-  </div>
-
   <!-- Pääsisältö -->
   <section class="bg-cream py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
       <!-- Intro -->
       <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-7">Hintaopas</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-5">LVI-suunnittelun hinta lyhyesti</h2>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-4">
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-4">
         LVI-suunnittelun hinta määräytyy ensisijaisesti kohteen koon, järjestelmävalintojen ja suunnittelun laajuuden mukaan. Uudiskohde ja saneeraus ovat eri hintaisia. Saneerauksessa olemassa olevan tekniikan kartoitus lisää työtä.
       </p>
-      <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed mb-10">
+      <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-10">
         Alla esimerkkihinnat tyypillisimmille kohteille. Tarkka hinta selviää aina kohdekohtaisesti. Pyydä tarjous ilmaisessa etäpalaverissa.
       </p>
 
@@ -143,6 +175,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed">
             Toimitilakohteissa ja moduulirakentamisen projekteissa hinta määräytyy täysin kohteen vaatimusten mukaan. Pyydä tarjous etäpalaverissa.
           </p>
+          <p class="font-body text-[11px] text-[#1A1A1A]/50 mt-2">Suuntaa-antava neliöhinta rakennuttajille: 6–8 €/m²</p>
         </div>
 
       </div>
@@ -155,7 +188,7 @@ import Layout from '../layouts/Layout.astro';
           { title: 'Kohdekatselmus', desc: 'Olemassa olevan tekniikan kartoitus saneerauskohteissa.' },
           { title: 'Kokoukset', desc: 'Aloitus-, luonnos- ja toteutussuunnitelmien esittelypalaverit. Määrä vaihtelee projektin laajuuden mukaan.' },
           { title: 'Rakennusvalvonta-asiakirjat', desc: 'Leimaus rakennusvalvonnassa ja mahdolliset lisäselvitykset.' },
-          { title: 'BIM-tietomallinnus', desc: 'Valinnainen lisä: 3D-suunnittelu AutoCAD/MagiCAD -ympäristössä.' },
+          { title: 'BIM-tietomallinnus', desc: '3D-suunnittelu AutoCAD- ja MagiCAD-ympäristössä. Tietomallinnus mahdollistaa törmäystarkastelun muiden suunnittelualojen kanssa.' },
         ].map(({ title, desc }) => (
           <li class="flex items-start gap-4">
             <span class="mt-1 w-1.5 h-1.5 rounded-full bg-forest/50 shrink-0"></span>
@@ -171,7 +204,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="mb-10">
         <div class="p-5 bg-forest/8 ring-1 ring-forest/12 rounded-xl">
           <p class="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/35 mb-2">Vinkki</p>
-          <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed">
+          <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed">
             Kiireellinen aikataulu tai puutteelliset lähtötiedot nostavat hintaa. Aikaisin tilattu suunnittelu on edullisin vaihtoehto.
           </p>
         </div>
@@ -180,10 +213,51 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
+    <div class="max-w-[800px] mx-auto px-6 lg:px-12">
+      <p class="border-l-2 border-accent pl-3 font-body text-[11px] tracking-[0.2em] uppercase text-forest/50 mb-6">Usein kysyttyä</p>
+      <h2 class="font-heading text-[#1A1A1A] text-xl lg:text-2xl mb-6">Kysymyksiä LVI-suunnittelun hinnasta ja prosessista</h2>
+      <div class="divide-y divide-[#1A1A1A]/10">
+        {[
+          {
+            q: 'Kauanko LVI-suunnittelun tekeminen kestää?',
+            a: 'Pientalokohteessa suunnittelu kestää tyypillisesti 2–4 viikkoa lähtötietojen vastaanottamisesta. Taloyhtiön linjasaneerauksessa tai suuremmissa kohteissa aikataulu on 4–8 viikkoa. Aikatauluun vaikuttavat kohteen laajuus, suunnitteluvaiheen kokousten määrä ja lähtötietojen valmius.',
+          },
+          {
+            q: 'Mitä tietoja tarvitaan LVI-suunnittelun aloittamiseen?',
+            a: 'Vähintään pohjapiirustukset ja tieto rakennuksen käyttötarkoituksesta. Saneerauskohteissa olemassa olevat LVI-piirustukset nopeuttavat työtä. Uudiskohteissa tarvitaan arkkitehtipiirustukset ja tieto valitusta lämmitysjärjestelmästä. Tarkempi lista käydään läpi etäpalaverissa.',
+          },
+          {
+            q: 'Miten muutokset kesken suunnittelun vaikuttavat hintaan?',
+            a: 'Pienet muutokset (esim. pisteen siirto, varusteen vaihto) kuuluvat normaaliin suunnitteluprosessiin. Jos pohjaratkaisua muutetaan merkittävästi suunnittelun aikana, lisätyö laskutetaan erikseen tuntihinnan mukaan. Tästä sovitaan aina etukäteen.',
+          },
+          {
+            q: 'Tarvitaanko LVI-suunnittelija kaikkiin rakennuslupahankkeisiin?',
+            a: 'Kyllä. Rakennuslupa edellyttää KVV- ja IV-suunnittelijan, jolla on riittävä pätevyys kohteen vaativuuteen nähden. Rakennusvalvonta tarkistaa pätevyyden lupahakemuksen yhteydessä.',
+          },
+          {
+            q: 'Sisältyykö energiaselvitys LVI-suunnittelun hintaan?',
+            a: 'Ei automaattisesti. Energiaselvitys on erillinen palvelu, joka laaditaan usein LVI-suunnittelun rinnalla. Yhdistämällä molemmat samalle suunnittelijalle säästät aikaa ja vältät ristiriitoja lähtötiedoissa. Kysy yhdistelmätarjous etäpalaverissa.',
+          },
+        ].map((item, i) => (
+          <div class="faq-item" data-open={i === 0 ? 'true' : 'false'}>
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-body text-[#1A1A1A] hover:text-forest transition-colors" aria-expanded={i === 0 ? 'true' : 'false'}>
+              <span class="text-sm pr-6">{item.q}</span>
+              <span class="faq-icon text-xl leading-none select-none shrink-0">{i === 0 ? '−' : '+'}</span>
+            </button>
+            <div class="faq-panel overflow-hidden transition-[max-height] duration-300" style={i === 0 ? '' : 'max-height:0'}>
+              <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed pb-5">{item.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Yhteydenotto -->
   <section id="yhteydenotto" class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20 pb-24 lg:pb-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
-      <div class="flex justify-center mb-3"><span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55">Yhteydenotto</span></div>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-10">Kerro kohteen koko ja aikataulu, niin lasken tarjouksen etäpalaverissa.</h2>
 
       <div class="hidden lg:block border border-[#1A1A1A]/8 overflow-hidden shadow-sm mb-8">
@@ -227,3 +301,30 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
 </Layout>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const trigger = item.querySelector('.faq-trigger') as HTMLButtonElement;
+    const panel   = item.querySelector('.faq-panel') as HTMLElement;
+    const icon    = item.querySelector('.faq-icon') as HTMLElement;
+
+    if (item.getAttribute('data-open') === 'true') {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.getAttribute('data-open') === 'true';
+      if (isOpen) {
+        panel.style.maxHeight = '0';
+        icon.textContent = '+';
+        item.setAttribute('data-open', 'false');
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        icon.textContent = '−';
+        item.setAttribute('data-open', 'true');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

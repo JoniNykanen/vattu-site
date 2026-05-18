@@ -26,12 +26,11 @@ import Layout from '../layouts/Layout.astro';
   <section class="bg-forest relative">
     <div class="w-full">
       <div class="flex flex-col justify-center px-8 lg:px-12 xl:px-16 py-14 lg:py-20">
-        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/55 mb-5">Palvelu · Energiatodistus</p>
+        <p class="font-body text-[10px] tracking-[0.22em] uppercase text-white/50 mb-5">Palvelu · Energiatodistus</p>
         <h1 class="font-heading text-white leading-[1.05] mb-5" style="font-size: clamp(1.75rem, 3.5vw, 3rem);">
           Energiatodistus<br />Hinta ja tilaus
         </h1>
-        <div class="w-6 h-px bg-white/15 mb-6"></div>
-        <p class="font-body text-sm text-white/55 leading-relaxed mb-8 max-w-[400px]">
+        <p class="font-body text-sm text-white/50 leading-relaxed mb-8 max-w-[400px]">
           Myyntiä, vuokrausta tai rakennuslupaa varten. Laadin todistuksen FISE ylempi taso -pätevyydellä. Oikein ensimmäisellä kerralla.
         </p>
         <a href="#yhteydenotto" class="inline-block w-max font-body text-[11px] tracking-[0.18em] uppercase text-white border border-accent/50 px-8 py-4 hover:bg-accent hover:border-accent transition-colors duration-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-forest">
@@ -40,13 +39,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
-  <!-- Wave -->
-  <div class="bg-forest overflow-hidden leading-none -mt-px -mb-px">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,36 C240,72 480,0 720,36 C960,72 1200,0 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
-    </svg>
-  </div>
 
   <!-- Loss framing -->
   <section class="bg-cream pt-10 lg:pt-16 pb-0">
@@ -102,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 2: Mikä vaikuttaa hintaan -->
   <section class="bg-forest py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-6">Hinnanmuodostus</span>
+      <span class="font-body text-[11px] tracking-[0.2em] uppercase text-white/40 mb-6">Hinnanmuodostus</span>
       <h2 class="font-heading text-white text-2xl lg:text-3xl mb-10">Mikä vaikuttaa energiatodistuksen hintaan</h2>
       <p class="font-body text-sm text-white/50 leading-relaxed mb-10">Hintaero selittyy kolmella asialla.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -123,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="p-1.5 bg-white/5 ring-1 ring-white/10 rounded-[1.25rem]">
             <div class="bg-forest rounded-[calc(1.25rem-6px)] p-6 h-full">
               <h3 class="font-heading text-white text-base mb-3">{item.title}</h3>
-              <p class="font-body text-sm text-white/55 leading-relaxed">{item.body}</p>
+              <p class="font-body text-sm text-white/50 leading-relaxed">{item.body}</p>
             </div>
           </div>
         ))}
@@ -134,7 +126,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 3: Mitä hinta sisältää -->
   <section class="bg-cream py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Sisältö</span>
+      <span class="font-body text-[11px] tracking-[0.2em] uppercase text-forest/50 mb-6">Sisältö</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Mitä energiatodistuksen hinta sisältää</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
@@ -147,8 +139,8 @@ import Layout from '../layouts/Layout.astro';
               'Toimenpidesuositukset energiatehokkuuden parantamiseksi',
               'Sähköinen allekirjoitus (eIDAS-vaatimusten mukainen)',
             ].map(item => (
-              <li class="flex items-start gap-3 font-body text-sm text-[#1A1A1A]/65">
-                <span class="mt-0.5 text-forest font-heading text-base leading-none">✓</span>
+              <li class="flex items-start gap-3 font-body text-sm text-[#1A1A1A]/60">
+                <span class="mt-1.5 w-1 h-1 rounded-full bg-forest/50 shrink-0"></span>
                 {item}
               </li>
             ))}
@@ -161,8 +153,8 @@ import Layout from '../layouts/Layout.astro';
               'Rakenteiden, ikkunoiden ja talotekniikan tarkastus paikan päällä',
               'Mitattujen tietojen käyttö laskennassa oletusarvojen sijaan. Tulos on tarkempi.',
             ].map(item => (
-              <li class="flex items-start gap-3 font-body text-sm text-[#1A1A1A]/65">
-                <span class="mt-0.5 text-forest font-heading text-base leading-none">✓</span>
+              <li class="flex items-start gap-3 font-body text-sm text-[#1A1A1A]/60">
+                <span class="mt-1.5 w-1 h-1 rounded-full bg-forest/50 shrink-0"></span>
                 {item}
               </li>
             ))}
@@ -175,7 +167,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 4: Milloin pakollinen -->
   <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Pakollinen vai ei</span>
+      <p class="border-l-2 border-accent pl-3 font-body text-[11px] tracking-[0.2em] uppercase text-forest/50 mb-6">Pakollinen vai ei</p>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Milloin energiatodistus on pakollinen</h2>
       <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">Energiatodistuksen hankkiminen on rakennuksen omistajan vastuulla.</p>
 
@@ -214,12 +206,12 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 5: Miksi FISE ylempi taso -->
   <section class="bg-forest py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-6">FISE ylempi taso</span>
+      <span class="font-body text-[11px] tracking-[0.2em] uppercase text-white/40 mb-6">FISE ylempi taso</span>
       <h2 class="font-heading text-white text-2xl lg:text-3xl mb-6">Miksi valita FISE ylemmän tason pätevyydellä</h2>
-      <p class="font-body text-sm text-white/55 leading-relaxed mb-6">
+      <p class="font-body text-sm text-white/50 leading-relaxed mb-6">
         Energiatodistuksen saa laatia vain pätevöitynyt ammattilainen, joka on rekisteröity Varken energiatodistusrekisteriin. Pätevyyksiä on kaksi tasoa.
       </p>
-      <p class="font-body text-sm text-white/85 leading-relaxed mb-8">
+      <p class="font-body text-sm text-white/80 leading-relaxed mb-8">
         Minulla on <strong class="text-white font-medium">FISE ylempi taso</strong>, korkein saatavilla oleva pätevyysluokka. Se kattaa sekä tavanomaiset asuinrakennukset että vaativammat kohteet, joihin perustaso ei riitä.
       </p>
       <ul class="space-y-3">
@@ -228,8 +220,8 @@ import Layout from '../layouts/Layout.astro';
           'Dynaaminen laskenta onnistuu tarvittaessa',
           'Ei uusintakierroksia viranomaisten kanssa',
         ].map(item => (
-          <li class="flex items-start gap-3 font-body text-sm text-white/65">
-            <span class="mt-0.5 text-white/40 font-heading text-base leading-none">✓</span>
+          <li class="flex items-start gap-3 font-body text-sm text-white/70">
+            <span class="mt-1.5 w-1 h-1 rounded-full bg-white/40 shrink-0"></span>
             {item}
           </li>
         ))}
@@ -240,7 +232,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 6: Lähtötiedot -->
   <section class="bg-cream py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Lähtötiedot</span>
+      <span class="font-body text-[11px] tracking-[0.2em] uppercase text-forest/50 mb-6">Lähtötiedot</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-4">Mitä tietoja energiatodistuksen laadintaan tarvitaan</h2>
       <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed mb-8">Laskenta sujuu nopeimmin, kun nämä tiedot ovat valmiina:</p>
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
@@ -252,7 +244,7 @@ import Layout from '../layouts/Layout.astro';
           'Ikkunoiden koko ja tyyppi',
           'Lämmitetty nettoala tai bruttoala',
         ].map(item => (
-          <li class="flex items-start gap-3 font-body text-sm text-[#1A1A1A]/65">
+          <li class="flex items-start gap-3 font-body text-sm text-[#1A1A1A]/60">
             <span class="mt-1.5 w-1 h-1 rounded-full bg-forest/40 shrink-0"></span>
             {item}
           </li>
@@ -267,7 +259,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 7: FAQ -->
   <section class="bg-cream border-t border-[#1A1A1A]/8 py-12 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55 mb-6">Usein kysyttyä</span>
+      <span class="font-body text-[11px] tracking-[0.2em] uppercase text-forest/50 mb-6">Usein kysyttyä</span>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-8">Usein kysyttyä energiatodistuksen hinnasta</h2>
       <div class="accordion divide-y divide-[#1A1A1A]/12">
         {[
@@ -298,7 +290,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="faq-icon text-xl leading-none select-none shrink-0">{i === 0 ? '−' : '+'}</span>
             </button>
             <div class="faq-panel overflow-hidden transition-[max-height] duration-300" style={i === 0 ? '' : 'max-height:0'}>
-              <p class="font-body text-sm text-[#1A1A1A]/65 leading-relaxed pb-5">{item.a}</p>
+              <p class="font-body text-sm text-[#1A1A1A]/60 leading-relaxed pb-5">{item.a}</p>
             </div>
           </div>
         ))}
@@ -309,24 +301,16 @@ import Layout from '../layouts/Layout.astro';
   <!-- Osio 8: Palvelualue -->
   <section class="bg-forest py-10 lg:py-14">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
-      <span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/10 text-white/50 mb-5">Palvelualue</span>
-      <p class="font-body text-sm text-white/65 leading-relaxed mx-auto">
+      <span class="font-body text-[11px] tracking-[0.2em] uppercase text-white/40 mb-5">Palvelualue</span>
+      <p class="font-body text-sm text-white/70 leading-relaxed mx-auto">
         Laadin energiatodistuksia ja energiaselvityksiä <strong class="text-white font-medium">Uudellamaalla</strong> (Helsinki, Espoo, Vantaa ja ympäristökunnat), <strong class="text-white font-medium">Pirkanmaalla</strong> (Tampere ja lähikunnat) sekä <strong class="text-white font-medium">Keski-Suomessa</strong> (Jyväskylä ja ympäristö).
       </p>
     </div>
   </section>
 
-  <!-- Wave -->
-  <div class="bg-forest overflow-hidden leading-none -mb-px">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" class="w-full block h-10 lg:h-14" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,36 C240,0 480,72 720,36 C960,0 1200,72 1440,36 L1440,72 L0,72 Z" fill="#F4F0E8" />
-    </svg>
-  </div>
-
   <!-- Yhteydenotto -->
   <section id="yhteydenotto" class="bg-cream pt-10 pb-24 lg:py-20">
     <div class="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
-      <div class="flex justify-center mb-3"><span class="inline-flex rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium bg-forest/8 text-forest/55">Yhteydenotto</span></div>
       <h2 class="font-heading text-[#1A1A1A] text-2xl lg:text-3xl mb-10">Kerro rakennustyyppi ja pinta-ala, niin saat tarkan hinnan saman päivän aikana.</h2>
 
       <!-- Desktop kalenteri -->
